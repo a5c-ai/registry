@@ -1,0 +1,52 @@
+# Example user configuration for A5C Runner
+# This file overrides settings from the built-in default configuration
+# Uncomment and modify the sections you want to customize
+
+# Override default settings
+# defaults:
+#   cli_command: "myagent --model gpt-4 --message {{prompt}}"
+#   model: "claude-3-opus-20240229"
+#   max_turns: 25
+#   timeout: 45
+
+# Override MCP configuration path
+# mcp_config_path: ".a5c/custom-mcps.json"
+
+# Override file processing settings
+# file_processing:
+#   include_patterns:
+#     - "src/**/*.ts"
+#     - "lib/**/*.js"
+#     - "**/*.md"
+#   exclude_patterns:
+#     - "node_modules/**"
+#     - "dist/**"
+#     - "*.test.*"
+
+# Enable and configure remote agents (optional)
+remote_agents:
+  enabled: true
+  cache_timeout: 120  # 2 hours
+  retry_attempts: 5
+  retry_delay: 2000   # 2 seconds
+  sources:
+    individual:
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/developer-agent.agent.md"
+        alias: "developer-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/code-review-agent.agent.md"
+        alias: "code-review-agent"
+#     repositories:
+#       - uri: "https://github.com/myorg/a5c-for-develpment"
+#         pattern: ".a5c/agents/**/*.agent.md"
+
+# Override agent discovery settings
+# agent_discovery:
+#   enabled: true
+#   max_agents_in_context: 15
+#   include_same_directory: true
+
+# Override prompt URI settings
+# prompt_uri:
+#   cache_timeout: 120
+#   retry_attempts: 5
+#   retry_delay: 2000 
