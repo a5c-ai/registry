@@ -31,13 +31,19 @@ remote_agents:
   retry_delay: 2000   # 2 seconds
   sources:
     individual:
+      # development agents
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/developer-agent.agent.md"
         alias: "developer-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/code-review-agent.agent.md"
         alias: "code-review-agent"
-#     repositories:
-#       - uri: "https://github.com/myorg/a5c-for-develpment"
-#         pattern: ".a5c/agents/**/*.agent.md"
+      # news agents
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/news/news-aggregator-agent.agent.md"
+        alias: "news-aggregator-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/news/project-news-analyzer-agent.agent.md"
+        alias: "project-news-analyzer-agent"
+    # repositories:
+    #   - uri: "https://github.com/a5c-ai/registry/main/agents"
+    #     pattern: ".a5c/agents/**/*.agent.md"
 
 # Override agent discovery settings
 # agent_discovery:
