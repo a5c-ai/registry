@@ -23,7 +23,7 @@ verbose: false
 timeout: 25
 
 # Trigger Configuration
-events: ["pull_request", "push", "pull_request_review"]  # Events this agent can respond to (acts as filter)
+events: ["pull_request", "push", "pull_request_review", "issue_comment", "issue_opened"]  # Events this agent can respond to (acts as filter)
 # Mention-based activation  
 mentions: "@code-review,@review-code,@ai-review,@quality-check"
 prompt-uri: https://raw.githubusercontent.com/a5c-ai/registry/main/prompts/development/code-review-agent.prompt.md
