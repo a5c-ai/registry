@@ -16,9 +16,3 @@ remote_agents:
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/code-review-agent.agent.md"
         alias: "code-review-agent"
 ```
-
-## Development
-
-
-
-
