@@ -1,0 +1,6 @@
+{
+  "_comment": "MCP Servers Configuration - This file contains configuration for MCP (Model Context Protocol) servers. Core servers (agent-executor, github) are always available and don't need to be configured here.",
+  "mcpServers": {
+    
+  }
+} 

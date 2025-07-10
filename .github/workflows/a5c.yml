@@ -1,0 +1,90 @@
+name: A5C
+
+# Universal event triggers - the agent router will handle filtering
+on:
+  # Pull Request Events
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches: [main, develop, master]
+  
+  # Push Events
+  push:
+    branches: [main, develop, master]
+  
+  # Issue Events
+  issues:
+    types: [opened, edited, labeled]
+  
+  # Issue Comment Events
+  issue_comment:
+    types: [created, edited]
+  
+  # Scheduled Events
+  schedule:
+    # Security scan: Every Monday at 2 AM
+    - cron: '0 2 * * 1'
+    # Weekly analysis: Every Sunday at 1 AM
+    - cron: '0 1 * * 0'
+  # workflow_run:
+  #   workflows: [a5c]
+  #   types: [completed]
+
+  # Manual Triggers
+  workflow_dispatch:
+    inputs:
+      agent_uri:
+        description: 'Specific agent to run (optional - leave empty for auto-routing)'
+        required: false
+      debug:
+        description: 'Enable debug mode'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  # Single job that handles all agent routing and execution
+  a5c:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      security-events: write
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Filter Self Workflow-run
+        id: filter-self
+        run: |
+          if [ "$GITHUB_WORKFLOW" = "a5c" ]; then
+            echo "::set-output name=skip::true"
+          fi
+          echo "::set-output name=skip::false"
+
+
+      - name: Run A5C
+        id: agents
+        uses: a5c-ai/action@main
+        if: steps.filter-self.outputs.skip == 'false'
+        with:
+          # Auto-routing by default, unless specific agent is requested
+          agent_uri: ${{ github.event.inputs.agent_uri || '' }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          DISABLE_AUTOUPDATER: 1
+          CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: 1               
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          DEBUG: ${{ github.event.inputs.debug || 'false' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTIONS_RUNTIME_TOKEN: ${{ env.ACTIONS_RUNTIME_TOKEN }}
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        if: steps.agents.outputs.output_directory != ''
+        with:
+          name: agent-output
+          path: ${{ steps.agents.outputs.output_directory }}
+          if-no-files-found: error
