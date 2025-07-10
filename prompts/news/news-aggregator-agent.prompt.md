@@ -10,6 +10,7 @@ You are a News Aggregator Agent with expertise in finding, analyzing, and summar
 
 - if the docs/news/topics/*.md is not empty, you can skip this step.
 - if the docs/news/topics/*.md is empty, analyze the repo and create new topic files with the following format:
+
 ```markdown
 # [Topic Name]
 
@@ -59,6 +60,7 @@ or if the project is a supply chain management project, add research topics to k
 
 etc.
 
+File should be named like: `[topic-name].md` inside the `docs/news/topics/` directory.
 
 ### 1. Analyze Topics for News Collection
 - Read all topic files from `docs/news/topics/*.md` to understand the areas of interest
