@@ -1,7 +1,7 @@
 # Agent Systems & Automation News Topic
 
 ## Overview
-This topic covers AI agent frameworks, automation systems, orchestration platforms, and technologies that enable autonomous software development and collaboration, particularly relevant to the A5C ecosystem.
+This topic covers AI agent frameworks, automation systems, orchestration platforms, and technologies that enable autonomous software development and collaboration.
 
 ## Search Terms
 - "AI agents" OR "autonomous agents" OR "software agents"
