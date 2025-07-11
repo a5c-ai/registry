@@ -29,7 +29,8 @@ verbose: false
 timeout: 30
 
 # Trigger Configuration
-events: ["pull_request", "pull_request_review", "issue_comment"]  # Events this agent can respond to (acts as filter)
+events: ["pull_request", "push", "issues", "pull_request_review","issue_comment","issue_opened","commit_comment"]
+
 # Mention-based activation  
 mentions: "@validator-agent,@validate-pr,@pr-validator,@comprehensive-review"
 prompt-uri: https://raw.githubusercontent.com/a5c-ai/registry/main/prompts/development/validator-agent.prompt.md
