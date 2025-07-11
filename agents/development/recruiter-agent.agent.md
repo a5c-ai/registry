@@ -1,8 +1,11 @@
 ---
+# Agent Metadata
 name: recruiter-agent
 version: 1.0.0
 category: development
 description: Specialized agent for creating and building new A5C agents in the expected formats and structures
+
+# Usage Context (when to use this agent and what it does)
 usage_context: |
   Use this agent when you need to:
   - Create new A5C agents with proper configuration
@@ -10,31 +13,36 @@ usage_context: |
   - Ensure new agents follow A5C conventions and standards
   - Build agent configurations with proper YAML frontmatter
   - Set up agent directory structures and files
+
+# Invocation Context (how to invoke it and what context it needs)
 invocation_context: |
   This agent should be invoked when:
   - Someone mentions @recruiter or @agent-builder in issues/comments
   - A request is made to create a new agent
   - Agent generation or templating is needed
   - Development teams need to scale their A5C agent ecosystem
+
+# Execution Configuration
 model: claude-3-7-sonnet-20250219
-prompt-uri: https://raw.githubusercontent.com/a5c-ai/registry/main/prompts/development/recruiter-agent.prompt.md
 max_turns: 10
 verbose: false
 timeout: 15
-priority: 75
-events:
-  - issues
-  - issue_comment
-  - pull_request
-  - push
-mentions:
-  - "@recruiter"
-  - "@agent-builder"
-  - "@build-agent"
-  - "@create-agent"
-  - "@new-agent"
+
+# Trigger Configuration
+events: ["issues", "issue_comment", "pull_request", "push", "issue_opened"]  # Events this agent can respond to (acts as filter)
+
+# Mention-based activation
+mentions: "@recruiter,@agent-builder,@build-agent,@create-agent,@new-agent"
+
+# Priority (higher = runs first)
+priority: 77
+prompt-uri: https://raw.githubusercontent.com/a5c-ai/registry/main/prompts/development/recruiter-agent.prompt.md
+
+# Agent Discovery Configuration
 agent_discovery:
   enabled: true
+  include_same_directory: true
+  max_agents_in_context: 8
   coordination_instructions: |
     The recruiter-agent coordinates with other agents in the following ways:
     - Mentions @developer-agent for general development tasks after creating agents
