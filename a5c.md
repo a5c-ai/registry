@@ -170,6 +170,21 @@ A flexible GitHub Action for automated agent-based code operations using various
 
    **Note:** For private repositories containing agents, ensure your `GITHUB_TOKEN` has the `repo` scope. The default `GITHUB_TOKEN` in GitHub Actions has sufficient permissions for public repositories but may need additional permissions for private repositories.
 
+## Architecture
+
+The system has been refactored into focused modules:
+
+### Core Components
+
+- **Resource Handler** (`src/resource-handler.js`): Unified resource loading with caching and retry logic
+- **Agent Router** (`agent-router.js`): Agent discovery and routing logic
+- **Configuration Manager** (`src/config.js`): Hierarchical configuration merging
+- **Prompt Engine** (`src/prompt.js`): Template-based prompt generation
+- **Agent Execution** (`src/agent-execution.js`): CLI tool execution and response handling
+- **Output Processor** (`src/output-processor.js`): Structured data extraction and formatting
+- **MCP Manager** (`src/mcp-manager.js`): Built-in and user-defined MCP server management
+- **Utilities** (`src/utils.js`): Common utility functions and helpers
+
 ### Configuration System
 
 The configuration system uses a hierarchical approach:
@@ -243,6 +258,132 @@ your-repo/
 ### Agent Configuration
 
 Agents are configured using YAML frontmatter in `.agent.md` files:
+
+### Agent Inheritance
+
+A5C supports agent inheritance, allowing you to create specialized agents that inherit from base agents. This enables code reuse and hierarchical agent organization.
+
+#### Basic Inheritance
+
+Use the `from` field to specify the base agent:
+
+```yaml
+---
+# Child agent configuration
+name: security-reviewer
+version: 1.0.0
+from: base-reviewer  # Inherits from base-reviewer agent
+category: security
+description: Security-focused code review agent
+priority: 80
+mentions: "@security-review,@sec-review"
+---
+
+{{base-prompt}}
+
+## Additional Security Analysis
+
+As a security-focused reviewer, I will also examine:
+- Security vulnerabilities and exploits
+- Dependency security issues
+- Authentication and authorization flaws
+```
+
+#### Multi-level Inheritance
+
+Agents can inherit from other agents that also inherit, creating inheritance chains:
+
+```yaml
+---
+# Advanced agent inheriting from security-reviewer
+name: advanced-security-reviewer
+version: 1.0.0
+from: security-reviewer  # Which inherits from base-reviewer
+category: security
+priority: 100
+mentions: "@advanced-security,@threat-analysis"
+max_turns: 20
+timeout: 30
+---
+
+{{base-prompt}}
+
+## Advanced Threat Analysis
+
+I will additionally perform:
+- AI-powered threat detection
+- Zero-day vulnerability analysis
+- Supply chain security assessment
+```
+
+#### Inheritance Features
+
+1. **Field Overriding**: Child agents can override any field from parent agents
+2. **Array Merging**: Array fields (like `mcp_servers`, `trigger_events`) are merged, not overridden
+3. **Base Prompt Variable**: Use `{{base-prompt}}` in child prompts to include the resolved parent prompt
+4. **Multi-level Support**: Inheritance works across multiple levels (A inherits from B which inherits from C)
+5. **Circular Detection**: System prevents circular inheritance loops
+6. **Remote Inheritance**: Agents can inherit from remote agents using URIs
+
+#### Supported Inheritance Sources
+
+- **Agent ID**: `from: base-reviewer` (searches in `.a5c/agents/` directories)
+- **File Path**: `from: ./agents/base-reviewer.agent.md`
+- **Remote URI**: `from: https://example.com/agents/base-reviewer.agent.md`
+- **Agent URI**: `from: agent://base-reviewer`
+
+#### Example Inheritance Chain
+
+```yaml
+# Base agent (.a5c/agents/base-reviewer.agent.md)
+---
+name: base-reviewer
+model: claude-3-5-sonnet-20241022
+max_turns: 10
+mentions: "@base-review"
+mcp_servers: ["filesystem", "github"]
+trigger_events: ["pull_request"]
+---
+
+Basic code review prompt...
+
+# Security-focused agent (.a5c/agents/security-reviewer.agent.md)
+---
+name: security-reviewer
+from: base-reviewer
+category: security
+priority: 80
+mentions: "@security-review"
+mcp_servers: ["filesystem", "github", "search"]
+trigger_events: ["pull_request", "push"]
+trigger_labels: ["security", "critical"]
+---
+
+{{base-prompt}}
+
+Additional security analysis...
+
+# Advanced security agent (.a5c/agents/advanced-security-reviewer.agent.md)
+---
+name: advanced-security-reviewer
+from: security-reviewer
+priority: 100
+mentions: "@advanced-security"
+mcp_servers: ["filesystem", "github", "search", "memory"]
+max_turns: 20
+timeout: 30
+---
+
+{{base-prompt}}
+
+Advanced threat analysis...
+```
+
+This creates a three-level inheritance chain where `advanced-security-reviewer` inherits from `security-reviewer` which inherits from `base-reviewer`.
+
+### Standard Agent Configuration
+
+For agents without inheritance, use the standard configuration format:
 
 ```yaml
 ---
@@ -473,6 +614,7 @@ Agents can be triggered on a schedule using cron expressions:
 name: "Daily Security Scan"
 activation_cron: "0 9 * * 1-5"  # Weekdays at 9 AM
 events: []
+cli_command: "cat {{prompt_path}} | claude -p 'fulfill the request'"
 ---
 ```
 
@@ -485,6 +627,7 @@ Agents can be triggered when specific labels are added to issues or pull request
 name: "Security Scanner"
 labels: "security,critical,vulnerability"
 events: ["issues", "pull_request", "pull_request_target"]
+cli_command: "cat {{prompt_path}} | claude -p 'fulfill the request'"
 ---
 ```
 
@@ -502,6 +645,7 @@ Agents can be triggered based on branch name patterns:
 name: "Feature Branch CI"
 branches: "feature/*,hotfix/*,release/*"
 events: ["push", "pull_request"]
+cli_command: "cat {{prompt_path}} | claude -p 'fulfill the request'"
 ---
 ```
 
@@ -520,6 +664,7 @@ Agents can be triggered when specific files or directories are modified:
 name: "Frontend Changes"
 paths: "src/**/*.js,src/**/*.ts,components/**/*"
 events: ["push", "pull_request"]
+cli_command: "cat {{prompt_path}} | claude -p 'fulfill the request'"
 ---
 ```
 
@@ -560,6 +705,7 @@ Agents can specify which MCP servers to use (built-in + user-defined):
 ---
 name: "Database Agent"
 mcp_servers: ["filesystem", "memory", "database", "slack"]
+cli_command: "cat {{prompt_path}} | claude {{#if mcp_config}}--mcp-config {{mcp_config}}{{/if}} -p 'fulfill the request'"
 ---
 ```
 
@@ -578,3 +724,65 @@ file_processing:
     - "*.test.js"
     - "dist/**"
 ```
+
+### Structured Output
+
+The output processor extracts structured data from agent responses:
+
+```yaml
+# Agent response can include:
+PR Title: Fix authentication bug
+Labels: bug, security, urgent
+Severity: high
+Summary: Fixed critical authentication vulnerability
+Action Items:
+- Update tests
+- Deploy to staging
+```
+
+## Development
+
+### Project Structure
+
+```
+a5c-githubaction/
+├── src/
+│   ├── resource-handler.js    # Unified resource loading
+│   ├── config.js              # Configuration management
+│   ├── prompt.js              # Prompt processing
+│   ├── agent-execution.js     # CLI execution
+│   ├── output-processor.js    # Output processing
+│   ├── mcp-manager.js         # MCP server management
+│   ├── utils.js               # Common utilities
+│   └── agent-router.js        # Routing handlers
+├── agent-router.js            # Main agent routing logic
+├── index.js                   # Main entry point
+├── default-config.yml         # Built-in defaults
+├── package.json               # Dependencies
+└── action.yml                 # GitHub Action definition
+```
+
+### Testing
+
+```bash
+# Install dependencies
+npm ci
+
+# Run tests
+npm test
+
+# Run linting
+npm run lint
+```
+
+### Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests for new functionality
+5. Submit a pull request
+
+## License
+
+MIT License - see LICENSE file for details. 
