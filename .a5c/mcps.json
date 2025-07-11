@@ -1,6 +1,116 @@
 {
   "_comment": "MCP Servers Configuration - This file contains configuration for MCP (Model Context Protocol) servers. Core servers (agent-executor, github) are always available and don't need to be configured here.",
   "mcpServers": {
-    
+    "mcp-imagen": {
+      "command": "npx",
+      "args": ["-y", "@google-cloud/vertex-ai-creative-studio-mcp-imagen"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}",
+        "VERTEX_AI_PROJECT_ID": "${VERTEX_AI_PROJECT_ID}"
+      }
+    },
+    "mcp-flux": {
+      "command": "npx",
+      "args": ["-y", "@blackforestlabs/mcp-flux"],
+      "env": {
+        "FLUX_API_KEY": "${FLUX_API_KEY}"
+      }
+    },
+    "mcp-dalle": {
+      "command": "npx",
+      "args": ["-y", "@openai/mcp-dalle"],
+      "env": {
+        "OPENAI_API_KEY": "${OPENAI_API_KEY}"
+      }
+    },
+    "mcp-stability-ai": {
+      "command": "npx",
+      "args": ["-y", "@stabilityai/mcp-stability"],
+      "env": {
+        "STABILITY_API_KEY": "${STABILITY_API_KEY}"
+      }
+    },
+    "mcp-veo": {
+      "command": "npx",
+      "args": ["-y", "@google-cloud/vertex-ai-creative-studio-mcp-veo"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}",
+        "VERTEX_AI_PROJECT_ID": "${VERTEX_AI_PROJECT_ID}"
+      }
+    },
+    "mcp-luma": {
+      "command": "npx",
+      "args": ["-y", "@lumaai/mcp-luma"],
+      "env": {
+        "LUMA_API_KEY": "${LUMA_API_KEY}"
+      }
+    },
+    "mcp-runway": {
+      "command": "npx",
+      "args": ["-y", "@runwayml/mcp-runway"],
+      "env": {
+        "RUNWAY_API_KEY": "${RUNWAY_API_KEY}"
+      }
+    },
+    "mcp-lyria": {
+      "command": "npx",
+      "args": ["-y", "@google-cloud/vertex-ai-creative-studio-mcp-lyria"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}",
+        "VERTEX_AI_PROJECT_ID": "${VERTEX_AI_PROJECT_ID}"
+      }
+    },
+    "mcp-musiclm": {
+      "command": "npx",
+      "args": ["-y", "@google-cloud/vertex-ai-creative-studio-mcp-musiclm"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}",
+        "VERTEX_AI_PROJECT_ID": "${VERTEX_AI_PROJECT_ID}"
+      }
+    },
+    "mcp-aiva": {
+      "command": "npx",
+      "args": ["-y", "@aiva/mcp-aiva"],
+      "env": {
+        "AIVA_API_KEY": "${AIVA_API_KEY}"
+      }
+    },
+    "mcp-chirp": {
+      "command": "npx",
+      "args": ["-y", "@google-cloud/vertex-ai-creative-studio-mcp-chirp"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}",
+        "VERTEX_AI_PROJECT_ID": "${VERTEX_AI_PROJECT_ID}"
+      }
+    },
+    "mcp-azure-speech": {
+      "command": "npx",
+      "args": ["-y", "@azure/mcp-speech"],
+      "env": {
+        "AZURE_SPEECH_KEY": "${AZURE_SPEECH_KEY}",
+        "AZURE_SPEECH_REGION": "${AZURE_SPEECH_REGION}"
+      }
+    },
+    "mcp-elevenlabs": {
+      "command": "npx",
+      "args": ["-y", "@elevenlabs/mcp-elevenlabs"],
+      "env": {
+        "ELEVENLABS_API_KEY": "${ELEVENLABS_API_KEY}"
+      }
+    },
+    "mcp-ffmpeg-ai": {
+      "command": "npx",
+      "args": ["-y", "@ffmpeg/mcp-ffmpeg-ai"],
+      "env": {
+        "FFMPEG_PATH": "${FFMPEG_PATH}"
+      }
+    },
+    "mcp-upscaler": {
+      "command": "npx",
+      "args": ["-y", "@realsr/mcp-upscaler"],
+      "env": {
+        "UPSCALER_MODEL_PATH": "${UPSCALER_MODEL_PATH}"
+      }
+    }
   }
 } 
