@@ -2,7 +2,7 @@
 
 Agents registry
 
-## Other Repositories:
+## Other Repositories
 
 - [A5C CLI](https://github.com/a5c-ai/cli)
 - [A5C Specification](https://github.com/a5c-ai/spec)
