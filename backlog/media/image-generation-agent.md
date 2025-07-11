@@ -1,6 +1,10 @@
 # Image Generation Agent
 
+**Status**: ✅ IMPLEMENTED - Agent created and added to registry
+
 **Purpose**: Generates high-quality images from text prompts using advanced AI models like Imagen, Flux, and other MCP GenMedia services
+
+**Implementation**: Available at `/agents/media/image-generation-agent.agent.md`
 
 ## Key Features
 

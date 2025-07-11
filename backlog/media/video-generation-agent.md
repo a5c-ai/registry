@@ -1,6 +1,10 @@
 # Video Generation Agent
 
+**Status**: ✅ IMPLEMENTED - Agent created and added to registry
+
 **Purpose**: Generates high-quality videos from text prompts, images, or video clips using advanced AI models like Veo 2/3, Luma AI, and other MCP GenMedia services
+
+**Implementation**: Available at `/agents/media/video-generation-agent.agent.md`
 
 ## Key Features
 

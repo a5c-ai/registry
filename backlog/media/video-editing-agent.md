@@ -1,6 +1,10 @@
 # Video Editing Agent
 
+**Status**: ✅ IMPLEMENTED - Agent created and added to registry
+
 **Purpose**: Performs advanced video editing and post-production using AI-powered tools like video inpainting, object tracking, effects application, and automated editing through MCP GenMedia video processing services
+
+**Implementation**: Available at `/agents/media/video-editing-agent.agent.md`
 
 ## Key Features
 

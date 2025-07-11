@@ -1,6 +1,10 @@
 # Speech Generation Agent
 
+**Status**: ✅ IMPLEMENTED - Agent created and added to registry
+
 **Purpose**: Generates high-quality speech and voice synthesis from text using advanced AI models like Chirp 3, Azure Speech Services, and other MCP GenMedia text-to-speech services
+
+**Implementation**: Available at `/agents/media/speech-generation-agent.agent.md`
 
 ## Key Features
 

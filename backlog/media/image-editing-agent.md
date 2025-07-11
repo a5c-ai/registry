@@ -1,6 +1,10 @@
 # Image Editing Agent
 
+**Status**: ✅ IMPLEMENTED - Agent created and added to registry
+
 **Purpose**: Performs advanced image editing and manipulation using AI-powered tools like inpainting, outpainting, upscaling, and style transfer through MCP GenMedia editing services
+
+**Implementation**: Available at `/agents/media/image-editing-agent.agent.md`
 
 ## Key Features
 
