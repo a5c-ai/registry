@@ -19,19 +19,19 @@ invocation_context: |
   Works best when provided with project description, requirements, or technical specifications.
 
 # Execution Configuration
-model: claude-3-5-sonnet-20241022
+model: claude-3-7-sonnet-20250219
 max_turns: 50
 verbose: true
 timeout: 60
 
 # Trigger Configuration
-events: ["issues", "issue_comment", "push", "repository_dispatch"]  # Events this agent can respond to
+events: ["pull_request", "push", "issues", "pull_request_review", "issue_comment", "issue_opened", "commit_comment", "repository_dispatch"]  # Events this agent can respond to
 
 # Mention-based activation  
 mentions: "@project-seeder,@seed-project,@scaffold,@bootstrap-project,@project-setup"
 
 # Priority (higher = runs first)
-priority: 90
+priority: 80
 prompt-uri: https://raw.githubusercontent.com/a5c-ai/registry/main/prompts/development/project-seeder-agent.prompt.md
 
 # Agent Discovery Configuration
