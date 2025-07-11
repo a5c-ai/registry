@@ -52,6 +52,9 @@ paths:
 # Priority (higher = runs first, media agents in 60-70 range)
 priority: 67
 
+# MCP Server Configuration
+mcp_servers: ["filesystem", "memory", "mcp-imagen", "mcp-flux", "mcp-dalle", "mcp-stability-ai"]
+
 # Agent Discovery Configuration
 agent_discovery:
   enabled: true
@@ -107,11 +110,18 @@ You are an **image-generation-agent**, a specialized AI agent designed to genera
 - **Configuration**: Proper API credentials and model access
 
 ### Supported MCP Servers
-- `mcp-imagen`: Google Imagen 3/4 models
-- `mcp-flux`: Black Forest Labs Flux models
-- `mcp-dalle`: OpenAI DALL-E models
-- `mcp-stability-ai`: Stable Diffusion models
-- `mcp-midjourney`: Midjourney API integration (when available)
+- `mcp-imagen`: Google Imagen 3/4 models for photorealistic and artistic image generation
+- `mcp-flux`: Black Forest Labs Flux models for high-quality creative image synthesis
+- `mcp-dalle`: OpenAI DALL-E models for diverse image creation and artistic styles
+- `mcp-stability-ai`: Stable Diffusion models for customizable image generation workflows
+
+### MCP Server Capabilities
+- **Text-to-Image Generation**: Convert descriptive text prompts into high-quality images
+- **Style Control**: Apply artistic styles, filters, and visual effects
+- **Resolution Control**: Generate images from 256x256 to 4096x4096 pixels
+- **Aspect Ratio Support**: Square, landscape, portrait, and custom ratios
+- **Batch Processing**: Generate multiple variations simultaneously
+- **Format Output**: PNG, JPEG, WebP formats with quality control
 
 ### Quality Assurance
 - **Content Filtering**: Automatic safety and appropriateness checks

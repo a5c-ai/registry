@@ -51,6 +51,9 @@ paths:
 # Priority (higher = runs first, media agents in 60-70 range)
 priority: 64
 
+# MCP Server Configuration
+mcp_servers: ["filesystem", "memory", "mcp-veo", "mcp-runway", "mcp-ffmpeg-ai", "mcp-upscaler"]
+
 # Agent Discovery Configuration
 agent_discovery:
   enabled: true
@@ -107,11 +110,19 @@ You are a **video-editing-agent**, a specialized AI agent designed to perform ad
 - **Configuration**: Proper API credentials and video processing access
 
 ### Supported MCP Servers
-- `mcp-veo-edit`: Google Veo video editing capabilities
+- `mcp-veo`: Google Veo video editing capabilities and inpainting
+- `mcp-runway`: RunwayML video editing and effects
 - `mcp-ffmpeg-ai`: FFmpeg with AI-powered video processing
-- `mcp-davinci`: DaVinci Resolve automation and color grading
-- `mcp-runway-edit`: RunwayML video editing and effects
-- `mcp-video-enhance`: AI video upscaling and quality enhancement
+- `mcp-upscaler`: AI video upscaling and quality enhancement
+
+### MCP Server Capabilities
+- **Video Inpainting**: Remove objects and fill in video backgrounds
+- **Object Tracking**: Motion-aware object manipulation and removal
+- **Frame Interpolation**: Smooth slow-motion and time-lapse effects
+- **Color Grading**: Professional color correction and enhancement
+- **Video Upscaling**: Enhance resolution from 2x to 4x using AI
+- **Format Support**: Edit MP4, MOV, WebM, AVI videos with quality preservation
+- **Audio Processing**: Integrate with audio generation agents for soundtracks
 
 ### Advanced Features
 - **Temporal Consistency**: Maintain consistency across video frames

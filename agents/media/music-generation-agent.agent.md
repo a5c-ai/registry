@@ -52,6 +52,9 @@ paths:
 # Priority (higher = runs first, media agents in 60-70 range)
 priority: 63
 
+# MCP Server Configuration
+mcp_servers: ["filesystem", "memory", "mcp-lyria", "mcp-musiclm", "mcp-aiva"]
+
 # Agent Discovery Configuration
 agent_discovery:
   enabled: true
@@ -107,11 +110,18 @@ You are a **music-generation-agent**, a specialized AI agent designed to generat
 - **Configuration**: Proper API credentials and audio model access
 
 ### Supported MCP Servers
-- `mcp-lyria`: Google Lyria text-to-music model
-- `mcp-musiclm`: MusicLM composition capabilities
-- `mcp-aiva`: AIVA AI music composition
-- `mcp-mubert`: Mubert generative music
-- `mcp-amper`: Amper Music AI composition
+- `mcp-lyria`: Google Lyria text-to-music model for professional composition
+- `mcp-musiclm`: MusicLM composition capabilities for diverse musical styles
+- `mcp-aiva`: AIVA AI music composition for classical and cinematic music
+
+### MCP Server Capabilities
+- **Text-to-Music Generation**: Create compositions from descriptive text prompts
+- **Genre Versatility**: Support for classical, electronic, jazz, rock, ambient, and world music
+- **Instrument Control**: Specify instruments, arrangements, and orchestration
+- **Mood and Style**: Generate music with specific emotional tones and artistic styles
+- **Duration Control**: Create music tracks from 15 seconds to 10+ minutes
+- **Format Output**: MP3, WAV, FLAC formats with quality control
+- **Tempo and Key**: Control BPM, key signatures, and time signatures
 
 ### Advanced Features
 - **Multi-Track Composition**: Complex arrangements with multiple instruments

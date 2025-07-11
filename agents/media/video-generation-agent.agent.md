@@ -50,6 +50,9 @@ paths:
 # Priority (higher = runs first, media agents in 60-70 range)
 priority: 65
 
+# MCP Server Configuration
+mcp_servers: ["filesystem", "memory", "mcp-veo", "mcp-luma", "mcp-runway", "mcp-imagen"]
+
 # Agent Discovery Configuration
 agent_discovery:
   enabled: true
@@ -105,11 +108,19 @@ You are a **video-generation-agent**, a specialized AI agent designed to generat
 - **Configuration**: Proper API credentials and model access
 
 ### Supported MCP Servers
-- `mcp-veo`: Google Veo 2/3 models
-- `mcp-luma`: Luma AI Dream Machine
-- `mcp-runway`: RunwayML video generation
-- `mcp-stable-video`: Stable Video Diffusion
-- `mcp-minimax`: Advanced video generation capabilities
+- `mcp-veo`: Google Veo 2/3 models for high-quality text-to-video and image-to-video
+- `mcp-luma`: Luma AI Dream Machine for creative video generation
+- `mcp-runway`: RunwayML video generation and AI video effects
+- `mcp-imagen`: Google Imagen for source image generation in video workflows
+
+### MCP Server Capabilities
+- **Text-to-Video Generation**: Create videos from descriptive text prompts
+- **Image-to-Video Conversion**: Transform static images into dynamic video content
+- **Video Enhancement**: Improve existing video quality and add effects
+- **Camera Control**: Simulate various camera movements and angles
+- **Style Transfer**: Apply artistic styles to video content
+- **Resolution Support**: Generate videos in various resolutions up to 4K
+- **Format Output**: MP4, WebM, MOV formats with quality control
 
 ### Quality Assurance
 - **Content Filtering**: Automatic safety and appropriateness checks

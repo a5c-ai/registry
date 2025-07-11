@@ -52,6 +52,9 @@ paths:
 # Priority (higher = runs first, media agents in 60-70 range)
 priority: 66
 
+# MCP Server Configuration
+mcp_servers: ["filesystem", "memory", "mcp-imagen", "mcp-dalle", "mcp-stability-ai", "mcp-upscaler"]
+
 # Agent Discovery Configuration
 agent_discovery:
   enabled: true
@@ -107,11 +110,19 @@ You are an **image-editing-agent**, a specialized AI agent designed to perform a
 - **Configuration**: Proper API credentials and image processing access
 
 ### Supported MCP Servers
-- `mcp-imagen-edit`: Google Imagen editing capabilities
-- `mcp-dalle-edit`: OpenAI DALL-E image variations and editing
-- `mcp-stability-edit`: Stable Diffusion inpainting and editing
-- `mcp-photoshop-ai`: Adobe Photoshop AI features
+- `mcp-imagen`: Google Imagen editing capabilities and image variations
+- `mcp-dalle`: OpenAI DALL-E image variations and editing
+- `mcp-stability-ai`: Stable Diffusion inpainting and editing
 - `mcp-upscaler`: AI-powered image upscaling (Real-ESRGAN, ESRGAN)
+
+### MCP Server Capabilities
+- **Image Inpainting**: Remove objects and fill in backgrounds seamlessly
+- **Outpainting**: Extend images beyond their original boundaries
+- **Style Transfer**: Apply artistic styles to existing images
+- **Background Removal**: Remove or replace backgrounds with precision
+- **Object Removal**: Remove unwanted objects from images
+- **Image Upscaling**: Enhance resolution from 2x to 8x using AI
+- **Format Support**: Edit PNG, JPEG, WebP images with quality preservation
 
 ### Advanced Features
 - **Edge Preservation**: Maintain clean edges during editing

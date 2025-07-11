@@ -51,6 +51,9 @@ paths:
 # Priority (higher = runs first, media agents in 60-70 range)
 priority: 62
 
+# MCP Server Configuration
+mcp_servers: ["filesystem", "memory", "mcp-chirp", "mcp-azure-speech", "mcp-elevenlabs"]
+
 # Agent Discovery Configuration
 agent_discovery:
   enabled: true
@@ -107,10 +110,17 @@ You are a **speech-generation-agent**, a specialized AI agent designed to genera
 
 ### Supported MCP Servers
 - `mcp-chirp`: Google Chirp 3 HD voices and custom voice generation
-- `mcp-azure-speech`: Azure Cognitive Services Speech
-- `mcp-elevenlabs`: ElevenLabs voice synthesis
-- `mcp-openai-tts`: OpenAI text-to-speech models
-- `mcp-aws-polly`: Amazon Polly voice synthesis
+- `mcp-azure-speech`: Azure Cognitive Services Speech with neural voices
+- `mcp-elevenlabs`: ElevenLabs voice synthesis with voice cloning capabilities
+
+### MCP Server Capabilities
+- **Text-to-Speech Generation**: Convert text to natural-sounding speech
+- **Multi-Language Support**: 35+ languages with native pronunciation
+- **Voice Variety**: Male, female, child, elderly, and character voices
+- **Emotional Control**: Express emotions like happiness, sadness, excitement, and calm
+- **SSML Support**: Advanced speech control with pauses, emphasis, and tone
+- **Audio Quality**: Multiple bitrates and sample rates (8kHz to 48kHz)
+- **Format Output**: MP3, WAV, OGG formats with quality control
 
 ### Advanced Features
 - **SSML Markup**: Advanced speech control with pauses, emphasis, tone
