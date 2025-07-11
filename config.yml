@@ -34,8 +34,8 @@ remote_agents:
       # development agents
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/developer-agent.agent.md"
         alias: "developer-agent"
-      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/code-review-agent.agent.md"
-        alias: "code-review-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/validator-agent.agent.md"
+        alias: "validator-agent"
       # news agents
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/news/news-aggregator-agent.agent.md"
         alias: "news-aggregator-agent"

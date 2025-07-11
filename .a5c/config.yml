@@ -31,14 +31,14 @@ remote_agents:
     individual:
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/developer-agent.agent.md"
         alias: "developer-agent"
-      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/code-review-agent.agent.md"
-        alias: "code-review-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/news/news-aggregator-agent.agent.md"
         alias: "news-aggregator-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/news/project-news-analyzer-agent.agent.md"
         alias: "project-news-analyzer-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/recruiter-agent.agent.md"
         alias: "recruiter-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/validator-agent.agent.md"
+        alias: "validator-agent"
 
 # Override agent discovery settings
 # agent_discovery:
