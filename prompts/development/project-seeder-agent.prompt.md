@@ -41,8 +41,10 @@ Unless specified otherwise, assume the following default stack:
 
 ### 3. Project Structure Creation
 - Create appropriate directory structure based on chosen framework
-- Consider mono-repo vs multi-repo architecture
+- Use monorepo architecture by default for better code sharing and management
 - Set up proper separation of concerns (frontend, backend, shared, etc.)
+  - **Note**: For serverless and fullstack frameworks (like Next.js), the structure may combine frontend and API layers as imposed by the framework
+  - **Note**: For traditional serverless applications, consider the deployment unit boundaries
 - Create essential configuration files (package.json, tsconfig.json, etc.)
 
 ### 4. Seed Integration
@@ -54,13 +56,13 @@ Unless specified otherwise, assume the following default stack:
 
 ### 5. A5C Agent Installation
 - Search the a5c-ai/registry repository for relevant agents
-- Install agents based on project needs:
+- Install agents based on project needs (this is a partial list - check the registry for the full catalog):
   - **code-review-agent**: For code quality and reviews
   - **developer-agent**: For ongoing development assistance
-  - **security-scanner**: For security analysis (if applicable)
-  - **documentation-agent**: For documentation maintenance
-  - **deployment-agent**: For deployment automation
-  - **testing-agent**: For test automation
+  - **recruiter-agent**: For agent recruitment and coordination
+  - **media agents**: For various media processing tasks (video, image, speech, music generation)
+  - And many more available in the registry...
+- Browse the full registry at https://github.com/a5c-ai/registry/tree/main/agents
 - Create or update `.a5c/config.yaml` with selected agents
 - Configure agent triggers and permissions appropriately
 
@@ -81,53 +83,72 @@ Unless specified otherwise, assume the following default stack:
 
 ### .a5c/config.yaml Template
 ```yaml
-agents:
-  remote:
-    - name: code-review-agent
-      source: https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/code-review-agent.agent.md
-      enabled: true
-    - name: developer-agent
-      source: https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/developer-agent.agent.md
-      enabled: true
-    - name: security-scanner
-      source: https://raw.githubusercontent.com/a5c-ai/registry/main/agents/security/security-scanner.agent.md
-      enabled: true
-      triggers:
-        - pull_request
-        - push
+remote_agents:
+  enabled: true
+  cache_timeout: 120  # Cache timeout in minutes (2 hours)
+  retry_attempts: 5   # Number of retry attempts
+  retry_delay: 2000   # Delay between retries in milliseconds
+  sources:
+    individual:
+      # Individual agent files
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/developer-agent.agent.md"
+        alias: "developer-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/code-review-agent.agent.md"
+        alias: "code-review-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/recruiter-agent.agent.md"
+        alias: "recruiter-agent"
+    repositories:
+      # Entire repositories (alternative approach)
+      - uri: "https://github.com/a5c-ai/registry"
+        pattern: "agents/**/*.agent.md"
 ```
 
 ### Project Structure Examples
 
-#### Next.js + Prisma Structure
+#### Next.js + Prisma Structure (Monorepo)
 ```
 project-root/
 ├── .a5c/
 │   └── config.yaml
-├── src/
-│   ├── app/
-│   │   ├── api/
-│   │   ├── components/
-│   │   └── lib/
-│   ├── prisma/
-│   └── types/
-├── public/
+├── apps/
+│   ├── web/                    # Next.js frontend/fullstack app
+│   │   ├── src/
+│   │   │   ├── app/           # App Router (API + pages combined)
+│   │   │   ├── components/
+│   │   │   └── lib/
+│   │   ├── public/
+│   │   └── package.json
+│   └── api/                    # Optional separate API service
+│       ├── src/
+│       └── package.json
+├── packages/
+│   ├── shared/                 # Shared utilities and types
+│   ├── ui/                     # Shared UI components
+│   └── database/              # Prisma schema and migrations
 ├── docs/
 ├── tests/
 └── scripts/
 ```
 
-#### Express API Structure
+#### Express API Structure (Monorepo with microservices)
 ```
 project-root/
 ├── .a5c/
 │   └── config.yaml
-├── src/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   └── utils/
+├── apps/
+│   ├── auth-service/
+│   │   ├── src/
+│   │   └── package.json
+│   ├── user-service/
+│   │   ├── src/
+│   │   └── package.json
+│   └── gateway/
+│       ├── src/
+│       └── package.json
+├── packages/
+│   ├── shared/                 # Shared utilities
+│   ├── types/                  # TypeScript definitions
+│   └── database/              # Database schemas
 ├── docs/
 ├── tests/
 └── scripts/
