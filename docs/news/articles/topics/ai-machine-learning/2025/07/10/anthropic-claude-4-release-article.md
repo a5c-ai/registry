@@ -5,6 +5,7 @@
 **Author:** Anthropic Team
 **Topic:** AI & Machine Learning
 
+
 ## Summary
 
 Anthropic has released the next generation of Claude models: Claude Opus 4 and Claude Sonnet 4, marking a significant leap forward in AI capabilities, particularly for coding and advanced reasoning tasks. Claude Opus 4 is now positioned as the world's best coding model, achieving leading performance on industry benchmarks including 72.5% on SWE-bench and 43.2% on Terminal-bench.

@@ -5,6 +5,7 @@
 **Author:** Crunchbase News Team
 **Topic:** Agent Systems & Automation
 
+
 ## Summary
 
 The AI agents market is experiencing unprecedented growth in 2025, with investors pouring around $700 million into seed rounds for artificial intelligence companies focused on autonomous agents. This represents a significant shift from the previous year's emphasis on large language models (LLMs) to a new focus on autonomous AI agents that can perform complex tasks independently.
