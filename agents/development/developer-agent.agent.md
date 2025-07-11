@@ -24,7 +24,8 @@ verbose: false
 timeout: 30
 
 # Trigger Configuration
-events: ["pull_request", "push", "issues", "pull_request_review"]  # Events this agent can respond to (acts as filter)
+events: ["pull_request", "push", "issues", "pull_request_review","issue_comment","issue_opened","commit_comment"]  # Events this agent can respond to (acts as filter)
+
 # Mention-based activation  
 mentions: "@developer,@dev-help,@ai-dev,@coding-help,@implement"
 
