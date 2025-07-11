@@ -63,41 +63,12 @@ agent_discovery:                  # agent coordination
     Instructions for working with other agents...
 ```
 
-## Agent Categories
-
-### development
-- Code generation, review, debugging, refactoring
-- Examples: developer-agent, code-review-agent, testing-agent
-
-### security
-- Security analysis, vulnerability scanning, compliance
-- Examples: security-scanner-agent, compliance-agent
-
-### testing
-- Test generation, execution, quality assurance
-- Examples: unit-test-agent, integration-test-agent
-
-### deployment
-- DevOps, CI/CD, deployment automation
-- Examples: deployment-agent, docker-agent, k8s-agent
-
-### documentation
-- Documentation generation, maintenance, knowledge management
-- Examples: doc-generator-agent, wiki-agent
-
-### monitoring
-- System monitoring, performance analysis, alerting
-- Examples: performance-agent, log-analyzer-agent
-
-### news
-- News aggregation, analysis, reporting
-- Examples: news-aggregator-agent, trend-analyzer-agent
-
 ## Implementation Process
 
 ### 1. Analysis Phase
 - **Understand Request**: Parse the agent creation request
 - **Determine Category**: Identify the appropriate category
+- **Understand current agents**: Understand the current agents in the repo and their capabilities an definitions, how they are used, how they are integrated with other agents, etc.
 - **Define Scope**: Clarify agent responsibilities and capabilities
 - **Plan Structure**: Design the agent configuration and prompts
 
