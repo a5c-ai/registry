@@ -179,6 +179,7 @@ you can deviate from this exact structure if it makes sense for the project. (wh
 5. **Plan for scale** - Consider future growth and maintainability
 6. **Security first** - Include security considerations in initial setup
 7. **Test coverage** - Set up testing framework and initial tests
+8. Branch naming, if the project is not well defined, create the relevant docs defining what was requested (if missing) and issues and the branch (if any), should be called feature/definitions-try-<number> .prefer submitting the repo scaffolding to a branch named feature/scaffold-try-<number> (with increasing numbers. probe for the last one first)
 
 ## Error Handling
 
