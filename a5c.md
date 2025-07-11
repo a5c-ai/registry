@@ -319,7 +319,7 @@ I will additionally perform:
 #### Inheritance Features
 
 1. **Field Overriding**: Child agents can override any field from parent agents
-2. **Array Merging**: Array fields (like `mcp_servers`, `trigger_events`) are merged, not overridden
+2. **Array Merging**: Array fields (like `mcp_servers`, `events`) are merged, not overridden
 3. **Base Prompt Variable**: Use `{{base-prompt}}` in child prompts to include the resolved parent prompt
 4. **Multi-level Support**: Inheritance works across multiple levels (A inherits from B which inherits from C)
 5. **Circular Detection**: System prevents circular inheritance loops
@@ -342,7 +342,7 @@ model: claude-3-5-sonnet-20241022
 max_turns: 10
 mentions: "@base-review"
 mcp_servers: ["filesystem", "github"]
-trigger_events: ["pull_request"]
+events: ["pull_request"]
 ---
 
 Basic code review prompt...
@@ -355,8 +355,8 @@ category: security
 priority: 80
 mentions: "@security-review"
 mcp_servers: ["filesystem", "github", "search"]
-trigger_events: ["pull_request", "push"]
-trigger_labels: ["security", "critical"]
+events: ["pull_request", "push"]
+labels: ["security", "critical"]
 ---
 
 {{base-prompt}}
