@@ -32,7 +32,7 @@ timeout: 15
 events: ["issues", "issue_comment", "pull_request", "push", "issue_opened"]  # Events this agent can respond to (acts as filter)
 
 # Mention-based activation
-mentions: "@recruiter,@agent-builder,@build-agent,@create-agent,@new-agent,@recruiter-agent"
+mentions: "@recruiter,@agent-builder,@build-agent,@create-agent,@new-agent,@recruiter-agent, @recruit-these-agents"
 
 # Priority (higher = runs first)
 priority: 77
