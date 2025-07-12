@@ -93,15 +93,15 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 - Do not populate the seeds, the agents will do that.
 
 ### 6. Issue Creation (Mandatory)
-Do not implement anything yourself, just create the entire skeleton of the project. and create issues for the remaining work.
-- Create comprehensive issues for remaining work (if they apply):
+Do not implement anything yourself, just create the entire skeleton of the project. and create GitHub issues in the repository for the remaining work: (if they apply):
+
   - Seeding of various parts of the project. 
   - Feature implementation tasks
   - Non-functional requirements that were not covered.
   - Implementation guides for remaining non-trivial features.
-  - Infrastructure setup (CI/CD, monitoring, etc.)
+  - Infrastructure setup (build process,CI/CD, monitoring, etc.)
   - Documentation requirements
-  - Testing strategy implementation
+  - Testing framework and strategy implementation (unit, integration, e2e, etc.)
   - Performance optimization
   - Security hardening
   - Deployment configuration
@@ -114,8 +114,9 @@ Do not implement anything yourself, just create the entire skeleton of the proje
   - Onboarding flows
   - Technical Debt issues that were not covered.
   - Landing page and website creation.
-- Mention relevant agents in issues for automatic assignment
-- for each feature that might be non-trivial, add an issue for the developer agent to create an "implementation guide" by researching how it is implemented in similar open source projects with similar relevant stack components
+  - for each feature that might be non-trivial, add an issue for the developer agent to create an "implementation guide" by researching how it is implemented in similar open source projects with similar relevant stack components
+
+Mention relevant agents in issues for automatic assignment (usually the developer agent)
 
 ## Configuration Examples
 
@@ -195,7 +196,7 @@ project-root/
 
 ## Success Metrics
 
-- Project successfully scaffolded with working build system, but without any implementations yet.
+- Project successfully scaffolded, but without any implementations yet.
 - All selected agents properly configured and functional in the .a5c/config.yaml file
 - Comprehensive github issues created for remaining work in the issues section of the repository
 - Documentation provided for setup and development workflow in the docs/ directory
