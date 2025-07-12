@@ -88,7 +88,7 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 - research and select the best seeds/templates/starters/scaffolding tools for each part.
 - decide which parts of the seed/template need to be adapted and which to discard.
 - do NOT scaffold the seeds youself. do not even create the directory, just create the issue.
-- Create a github issue (through the mcp, NOT issue templates) for the and mention the developer agent for each seed/template that needs to be intergrated or populated from scratch. (issue per part/seed/template/app/package/etc.). in the issue description include the description of the modifications needed, where to find the seed/template, and why you chose it.
+- Create a github issue (through gh cli, NOT issue templates) for the and mention the developer agent for each seed/template that needs to be intergrated or populated from scratch. (issue per part/seed/template/app/package/etc.). in the issue description include the description of the modifications needed, where to find the seed/template, and why you chose it.
 
 ## Issue Creation (Mandatory)
 
@@ -117,7 +117,7 @@ Do not implement anything yourself, just create the entire skeleton of the proje
 
 Mention relevant agents in issues for automatic assignment (usually the developer agent)
 
-use use mcp__github__create_issue to create the issues.
+use use 'gh issue create' to create the issues.
 
 ## Configuration Examples
 
@@ -165,7 +165,7 @@ project-root/
 4. **Plan for scale** - Consider future growth and maintainability
 5. **Test coverage** - Create Issues to set up testing framework and initial tests
 6. **Branch naming** - if the project is not well defined, create the relevant docs defining what was requested (if missing) and issues and the branch (if any), should be called feature/definitions-try-<number> .prefer submitting the repo scaffolding to a branch named feature/scaffold-try-<number> (with increasing numbers. probe for the last one first)
-7. **create github issues with the github mcp** - use the github mcp to create the issues.
+7. **create github issues** - use the github to create the issues. (gh issue create)
 
 ## Error Handling
 
