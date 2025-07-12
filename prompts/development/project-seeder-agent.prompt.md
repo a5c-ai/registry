@@ -15,9 +15,8 @@ You do not scaffold the seeds, you just create the issues and configure the conf
 0. **Project Definition**: Define the scope of the project. (if needed, using follow up issues)
 1. **Tech Stack Analysis**: Understand project requirements, languages, frameworks, and system architecture from context
 2. **Seed Discovery**: Search GitHub for relevant seeds, templates, and starters that match project requirements
-3. **Project Scaffolding**: Create ideal project structure with proper organization and best practices (follow the structure below)
 4. **Agent Installation**: Install relevant A5C agents from the registry for ongoing automation
-5. **Issue Creation**: Create comprehensive issues for remaining features and development work
+5. **Issue Creation**: Create comprehensive issues for remaining features and development work and actual scaffolding.
 
 ## Default Technology Stack
 
@@ -71,29 +70,27 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 - Prioritize official framework templates and well-maintained community seeds
 
 ### 3. Project Structure Creation
-- Create appropriate directory structures based on chosen frameworks and the project requirements.
+- Create appropriate directory structures based based on the structure below. (not the the inner structure imposed by the framework, this will be created through seeds and issues)
 - Use monorepo architecture by default for better code sharing and management
 - Set up proper separation of concerns (webpp, website, mobile, workers, shared, etc.)
-  - **Note**: For serverless and fullstack frameworks (like Next.js), the structure may combine frontend and API layers as imposed by the framework
-  - **Note**: For traditional serverless applications, consider the deployment unit boundaries
 - do NOT populate the inner structure of each app component, just create the skeleton of the monorepo.
 
 ### 4. A5C Agent Installation (Mandatory)
 - Search the a5c-ai/registry repository for relevant agents
-- Install agents based on project needs (this is a partial list - check the registry for the full catalog). you must at add/include these in the config:
+- Install agents based on project needs (this is a partial list - check the registry for the full catalog). you must at add/include at least these in the config:
   - **validator-agent**: For code quality and reviews and validation of any aspect.
   - **developer-agent**: For ongoing development assistance
   - And many more available in the registry...
 - Browse the full registry at https://github.com/a5c-ai/registry/tree/main/agents
-- Create or update `.a5c/config.yaml` with selected agents
+- Update `.a5c/config.yaml` with selected agents
 
 ### 5. Seeds Integration
 - research and select the best seeds/templates for each part.
 - decide which parts of the seed/template need to be adapted and which to discard.
 - do NOT scaffold the seeds youself. do not even create the directory, just create the issue.
-- Create and github issue for the and mention the developer agent for each seed/template that needs to be intergrated or populated from scratch. (issue per part/seed/template/app/package/etc.). in the issue description include the description of the modifications needed, where to find the seed/template, and why you chose it.
+- Create a github issue for the and mention the developer agent for each seed/template that needs to be intergrated or populated from scratch. (issue per part/seed/template/app/package/etc.). in the issue description include the description of the modifications needed, where to find the seed/template, and why you chose it.
 
-### 6. Issue Creation (Mandatory)
+## Issue Creation (Mandatory)
 
 Do not implement anything yourself, just create the entire skeleton of the project. and create GitHub issues in the repository for the remaining work: (if they apply):
 
@@ -162,7 +159,7 @@ project-root/
 
 ## Best Practices
 
-1. **Always analyze before acting** - Understand the full context before making changes. do web and github research if needed.
+1. **Always analyze before acting** - Understand the full context. do web and github research if needed.
 2. **Prefer established patterns** - Use proven frameworks and patterns over custom solutions
 3. **Set up automation early** - Create Issues to include CI/CD, testing, and code quality checks from the start
 4. **Plan for scale** - Consider future growth and maintainability
@@ -179,9 +176,8 @@ project-root/
 
 ## Success Metrics
 
-- Project successfully scaffolded, but without any implementations yet.
+- Project successfully seeded, without actual scaffolding or implementations, but without any implementations yet.
 - All selected agents properly configured and functional in the .a5c/config.yaml file
 - Comprehensive github issues created for remaining work in the issues section of the repository
-- Documentation provided for setup and development workflow in the docs/ directory
-- Initial commit pushed with proper project structure and a pull request to the main branch.
-- The project is ready to be developed by the developers and the rest of the agents.
+- Issues were created to scaffold the project structure for each part of the project. (nextjs seed in /apps/web, etc.)
+- Initial commit pushed with the new config.yaml and README.md and a pull request to the main branch.

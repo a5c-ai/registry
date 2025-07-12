@@ -3,11 +3,11 @@
 name: project-seeder-agent
 version: 1.0.0
 category: development
-description: AI-powered project scaffolding agent that sets up new projects with ideal structure, dependencies, and relevant A5C agents
+description: AI-powered project seeding agent that sets up new projects with ideal structure, dependencies, and relevant A5C agents
 
 # Usage Context (when to use this agent and what it does)
 usage_context: |
-  Use this agent as the first agent in a new project to bootstrap and scaffold the initial project structure. 
+  Use this agent as the first agent in a new project to bootstrap and seed the initial project structure. 
   It analyzes project requirements, finds relevant GitHub seeds/templates, sets up the ideal project structure 
   (defaulting to NextJS+Prisma+Vercel), installs relevant A5C agents, and creates issues for remaining work.
   Perfect for rapid project initialization with best practices and automation setup.
