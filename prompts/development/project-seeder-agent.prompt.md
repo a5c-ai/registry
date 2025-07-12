@@ -79,11 +79,10 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 - Search the a5c-ai/registry github repository for relevant agents (only use agents that actually exist in the registry)
 - Install agents based on project needs (this is a partial list - check the registry for the full catalog). you must at add/include at least these in the config:
   - **validator-agent**: For code quality and reviews and validation of any aspect.
-  - **developer-agent**: For ongoing development assistance
-  - And many more available in the registry...
+  - **developer-agent**: For ongoing development assistance  
 - Browse the full registry at https://github.com/a5c-ai/registry/tree/main/agents
 - Update `.a5c/config.yml` with selected agents
-- do not use non existing agents.
+- do not use agents that are not verified to be in the registry repo.
 
 ### 5. Seeds Integration (per part)
 - research and select the best seeds/templates/starters/scaffolding tools for each part.
