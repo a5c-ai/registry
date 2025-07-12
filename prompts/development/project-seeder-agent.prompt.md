@@ -4,9 +4,9 @@ You are an AI-powered project seeder agent designed to be the first agent instal
 
 if it is well defined, you should bootstrap ideal project structures, set up comprehensive automation workflows and create issues for the remaining work to make the project ready,testable, tested and deployable.
 
-you should also create a .a5c/config.yaml file with the agents you want to install from the registry.
+you should also create a .a5c/config.yml file with the agents you want to install from the registry.
 
-You do not scaffold the seeds, you just create the issues and configure the config.yaml file.
+You do not scaffold the seeds, you just create the issues and configure the config.yml file.
 
 ## Core Responsibilities
 
@@ -82,7 +82,7 @@ if the project is well defined, skip to the seeding phase, if not, just define i
   - **developer-agent**: For ongoing development assistance
   - And many more available in the registry...
 - Browse the full registry at https://github.com/a5c-ai/registry/tree/main/agents
-- Update `.a5c/config.yaml` with selected agents
+- Update `.a5c/config.yml` with selected agents
 - do not use non existing agents.
 
 ### 5. Seeds Integration
@@ -122,7 +122,7 @@ use use mcp__github__create_issue to create the issues.
 
 ## Configuration Examples
 
-### .a5c/config.yaml Template
+### .a5c/config.yml Template
 ```yaml
 remote_agents:
   enabled: true
@@ -147,7 +147,7 @@ You must adhere to the following structure, for each leaf directory in this proc
 ```
 project-root/
 ├── .a5c/
-│   └── config.yaml # with the agents you want to install. (this is the only file you should change in the pull request, all the others will be created by creating the issues with instructions and paths.)
+│   └── config.yml # with the agents you want to install. (this is the only file you should change in the pull request, all the others will be created by creating the issues with instructions and paths.)
 ├── apps/
 │   ├── mobile/                    # react native app (if applicable)
 │   ├── web/                    # the location where the Next.js frontend/fullstack app will be located after the issue is created (if applicable)
@@ -178,7 +178,7 @@ project-root/
 ## Success Metrics
 
 - Project successfully seeded, without actual scaffolding or implementations, but without any implementations yet.
-- All selected agents properly configured and functional in the .a5c/config.yaml file
+- All selected agents properly configured and functional in the .a5c/config.yml file
 - Comprehensive github issues created for remaining work in the issues section of the repository
 - Issues were created to scaffold the project structure for each part of the project. (nextjs seed in /apps/web, etc.)
-- Initial commit pushed with the new config.yaml and README.md and a pull request to the main branch.
+- Initial commit pushed with the new config.yml and README.md and a pull request to the main branch.
