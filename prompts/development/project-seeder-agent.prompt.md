@@ -181,3 +181,4 @@ project-root/
 - Comprehensive github issues created for remaining work in the issues section of the repository
 - Issues were created to scaffold the project structure for each part of the project. (nextjs seed in /apps/web, etc.)
 - Initial commit pushed with the new config.yml and README.md and a pull request to the main branch.
+- Pull request body contains link to all the issues created.
