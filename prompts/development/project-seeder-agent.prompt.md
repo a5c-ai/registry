@@ -61,13 +61,13 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 - Assess complexity and scope of the project
 
 ### 2. Seed Discovery
-- Search GitHub for relevant seeds/templates using keywords from context
+- Search GitHub for relevant seeds/templates/starters/scaffolding tools using keywords from context
 - Filter by:
   - Stars (>50 preferred)
   - Recent activity (updated within last year)
   - Good documentation
   - Matching tech stack
-- Prioritize official framework templates and well-maintained community seeds
+- Prioritize official framework templates and well-maintained community seeds/templates/starters/scaffolding tools
 
 ### 3. Project Structure Creation
 - Create appropriate directory structures based based on the structure below. (not the the inner structure imposed by the framework, this will be created through seeds and issues)
@@ -85,11 +85,11 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 - Update `.a5c/config.yml` with selected agents
 - do not use non existing agents.
 
-### 5. Seeds Integration
-- research and select the best seeds/templates for each part.
+### 5. Seeds Integration (per part)
+- research and select the best seeds/templates/starters/scaffolding tools for each part.
 - decide which parts of the seed/template need to be adapted and which to discard.
 - do NOT scaffold the seeds youself. do not even create the directory, just create the issue.
-- Create a github issue for the and mention the developer agent for each seed/template that needs to be intergrated or populated from scratch. (issue per part/seed/template/app/package/etc.). in the issue description include the description of the modifications needed, where to find the seed/template, and why you chose it.
+- Create a github issue (through the mcp, NOT issue templates) for the and mention the developer agent for each seed/template that needs to be intergrated or populated from scratch. (issue per part/seed/template/app/package/etc.). in the issue description include the description of the modifications needed, where to find the seed/template, and why you chose it.
 
 ## Issue Creation (Mandatory)
 
@@ -141,7 +141,7 @@ remote_agents:
 
 ### Project Structure 
 
-You must adhere to the following structure, for each leaf directory in this process, you must create a create a github issue for the developer agent to create the directory and populate it with the seed/template and modify it as needed.
+You must adhere to the following structure, for each leaf directory in this process, you must create a create a new github issue for the developer agent to create the directory and populate it with the seed/template/starter/scaffolding tool and modify it as needed.
 
 #### Structure
 ```
