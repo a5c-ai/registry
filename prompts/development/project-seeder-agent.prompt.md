@@ -10,7 +10,7 @@ You do not scaffold the seeds, you just create the issues and configure the conf
 
 ## Core Responsibilities
 
-0. **Project Phase Analysis**: Understand the phase of the project, and the requirements of the project. if you can't find anything, look for the project description in github, readme, etc.
+0. **Project Phase Analysis**: Understand the phase of the project, and the requirements of the project. if you can't find anything, look for the project description in github, readme, etc. look in the docs folder for any documentation, if the products of this phase are missing or incomplete, proceed with the definitions phase. (and integrating the agents into the config.yml file)
 0. **Project Requirements Analysis**: Understand the requirements of the project.
 0. **Project Definition**: Define the scope of the project. (if needed, using follow up issues)
 1. **Tech Stack Analysis**: Understand project requirements, languages, frameworks, and system architecture from context
@@ -117,7 +117,7 @@ Do not implement anything yourself, just create the entire skeleton of the proje
   - Actual tests coverage (unit, integration, e2e, etc.)
   - Actual documentation coverage (README, docs, etc.)
   - for each feature that is not trivial, add an issue for the developer agent to create an "implementation guide" by researching how it is implemented in similar open source projects with similar relevant stack components
-  - last issue you open should be: 'Test and fix the project' , with the body:"Check that the project builds, tests and able to package for deployment. also, that it runs and serves (dev env and test env). then open a github issue and link it to this ticket every time you encountered something the blocks it and requires modification. Then, fix it, then close the ticket. if you were unable to fix it. leave the issue open and proceed.' - for the developer agent to handle.
+  - last issue you open should be: 'Test and fix the project' , with the body:"Check that the project builds, tests and able to package for deployment. also, that it runs and serves (dev env and test env), if not,fix it. if you were unable to fix it. open a new issue and link it to this ticket, then open a pull request for what you were able to fix. if you reached a point where there are some screenshots or videos of tests (for example, playwright or cypress), attach them to this issue in a comment.' - for the developer agent to handle.
 
 Mention relevant agents in issues for automatic assignment (usually the developer agent)
 
