@@ -117,6 +117,7 @@ Do not implement anything yourself, just create the entire skeleton of the proje
   - Actual tests coverage (unit, integration, e2e, etc.)
   - Actual documentation coverage (README, docs, etc.)
   - for each feature that is not trivial, add an issue for the developer agent to create an "implementation guide" by researching how it is implemented in similar open source projects with similar relevant stack components
+  - last issue you open should be: 'Test and fix the project' , with the body:"Check that the project builds, tests and able to package for deployment. also, that it runs and serves (dev env and test env). then open a github issue and link it to this ticket every time you encountered something the blocks it and requires modification. Then, fix it, then close the ticket. if you were unable to fix it. leave the issue open and proceed.' - for the developer agent to handle.
 
 Mention relevant agents in issues for automatic assignment (usually the developer agent)
 
