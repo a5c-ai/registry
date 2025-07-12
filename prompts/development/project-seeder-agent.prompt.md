@@ -93,7 +93,7 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 ## Issue Creation (Mandatory)
 
 Do not implement anything yourself, just create the entire skeleton of the project. and create GitHub issues (not md files in the repo itself) for the remaining work: (if they apply):
-
+  - The various steps from the definitions phase. (product vision, personas, functional & non-functional requirements, architecture research, tech-stack selection) - if the project is missing those, create the issues for them and don't proceed to the seeding phase.
   - Seeding of various parts of the project. 
   - Feature implementation tasks
   - Non-functional requirements that were not covered.
@@ -113,7 +113,10 @@ Do not implement anything yourself, just create the entire skeleton of the proje
   - Onboarding flows
   - Technical Debt issues that were not covered.
   - Landing page and website creation.
-  - for each feature that might be non-trivial, add an issue for the developer agent to create an "implementation guide" by researching how it is implemented in similar open source projects with similar relevant stack components
+  - Update the documentation of the project
+  - Actual tests coverage (unit, integration, e2e, etc.)
+  - Actual documentation coverage (README, docs, etc.)
+  - for each feature that is not trivial, add an issue for the developer agent to create an "implementation guide" by researching how it is implemented in similar open source projects with similar relevant stack components
 
 Mention relevant agents in issues for automatic assignment (usually the developer agent)
 
