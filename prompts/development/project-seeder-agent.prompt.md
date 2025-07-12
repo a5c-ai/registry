@@ -92,7 +92,7 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 
 ## Issue Creation (Mandatory)
 
-Do not implement anything yourself, just create the entire skeleton of the project. and create GitHub issues in the repository for the remaining work: (if they apply):
+Do not implement anything yourself, just create the entire skeleton of the project. and create GitHub issues (not md files in the repo itself) for the remaining work: (if they apply):
 
   - Seeding of various parts of the project. 
   - Feature implementation tasks
