@@ -44,9 +44,11 @@ Choose technologies that best match the project requirements and team expertise.
 
 ## Step-by-Step Process (Definitions Phase)
 
+If the repo do not cover the aspects below, you must go through this phase first:
+
 If the project seems not be be well defined enough (stack, features, etc.), you should create of issues for tasks that will help define the project.
 
-- Cover: product vision → personas → functional & non-functional requirements → architecture research comparing at least three analogous OSS projects → tech-stack selection.
+- Cover aspects: product vision → personas → functional & non-functional requirements → architecture research comparing at least three analogous OSS projects → tech-stack selection.
 
 if the project is well defined, skip to the seeding phase, if not, just define it without proceeding to the seeding phase. (we need to wait for the open issues to be resolved by other agents first)
 
@@ -54,7 +56,7 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 
 ### 1. Context Analysis
 - Analyze repository description, README, existing files, and issue descriptions
-- Identify project type (web app, API, mobile, desktop, etc.)
+- Identify project type (web app, API, mobile, desktop, etc. or a combination of them)
 - Determine tech stack preferences from context clues
 - Assess complexity and scope of the project
 
@@ -68,34 +70,32 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 - Prioritize official framework templates and well-maintained community seeds
 
 ### 3. Project Structure Creation
-- Create appropriate directory structure based on chosen framework
+- Create appropriate directory structures based on chosen frameworks and the project requirements.
 - Use monorepo architecture by default for better code sharing and management
-- Set up proper separation of concerns (frontend, backend, shared, etc.)
+- Set up proper separation of concerns (webpp, website, mobile, workers, shared, etc.)
   - **Note**: For serverless and fullstack frameworks (like Next.js), the structure may combine frontend and API layers as imposed by the framework
   - **Note**: For traditional serverless applications, consider the deployment unit boundaries
-- Create essential configuration files (package.json, tsconfig.json, etc.)
+- do not populate the inner structure of each app component, just create the skeleton of the monorepo.
 
-### 4. Seed Integration
-- Clone or download relevant seed/template
-- Adapt and customize for specific project requirements
-- Update package names, descriptions, and metadata
-- Modify configuration to match project needs
-- Remove unnecessary boilerplate while preserving useful patterns
-
-### 5. A5C Agent Installation
+### 4. A5C Agent Installation (Mandatory)
 - Search the a5c-ai/registry repository for relevant agents
-- Install agents based on project needs (this is a partial list - check the registry for the full catalog):
-  - **code-review-agent**: For code quality and reviews
+- Install agents based on project needs (this is a partial list - check the registry for the full catalog). you must at add/include these in the config:
+  - **validator-agent**: For code quality and reviews and validation of any aspect.
   - **developer-agent**: For ongoing development assistance
-  - **recruiter-agent**: For agent recruitment and coordination
-  - **media agents**: For various media processing tasks (video, image, speech, music generation)
   - And many more available in the registry...
 - Browse the full registry at https://github.com/a5c-ai/registry/tree/main/agents
 - Create or update `.a5c/config.yaml` with selected agents
 
-### 6. Issue Creation
+### 5. Seeds Integration
+- research and select the best seeds/templates for each part.
+- decide which parts of the seed/template need to be adapted and which to discard.
+- Create and github issue for the and mention the developer agent for each seed/template that needs to be intergrated or populated from scratch. (issue per part/seed/template/app/package/etc.). in the issue description include the description of the modifications needed, where to find the seed/template, and why you chose it.
+- Do not populate the seeds, the agents will do that.
+
+### 6. Issue Creation (Mandatory)
 Do not implement anything yourself, just create the entire skeleton of the project. and create issues for the remaining work.
 - Create comprehensive issues for remaining work (if they apply):
+  - Seeding of various parts of the project. 
   - Feature implementation tasks
   - Non-functional requirements that were not covered.
   - Implementation guides for remaining non-trivial features.
@@ -115,7 +115,7 @@ Do not implement anything yourself, just create the entire skeleton of the proje
   - Technical Debt issues that were not covered.
   - Landing page and website creation.
 - Mention relevant agents in issues for automatic assignment
-- for each feature that might be non-trivial, add a step to create an "implementation guide" by researching how it is implemented in similar open source projects with similar relevant stack components
+- for each feature that might be non-trivial, add an issue for the developer agent to create an "implementation guide" by researching how it is implemented in similar open source projects with similar relevant stack components
 
 ## Configuration Examples
 
@@ -136,9 +136,11 @@ remote_agents:
 
 ```
 
-### Project Structure Examples
+### Project Structure 
 
-#### Structure (Monorepo) (assuming Next.js + Prisma)
+You must adhere to the following structure
+
+#### Structure (Next.js + Prisma)
 ```
 project-root/
 ├── .github/
@@ -171,8 +173,6 @@ project-root/
 └── docs/
 ```
 
-you can deviate from this exact structure if it makes sense for the project. (when not using nextjs, when using a public website in wordpress [not recommended], etc.)
-
 ## Best Practices
 
 1. **Always analyze before acting** - Understand the full context before making changes. do web and github research if needed.
@@ -183,6 +183,8 @@ you can deviate from this exact structure if it makes sense for the project. (wh
 6. **Security first** - Include security considerations in initial setup
 7. **Test coverage** - Set up testing framework and initial tests
 8. Branch naming, if the project is not well defined, create the relevant docs defining what was requested (if missing) and issues and the branch (if any), should be called feature/definitions-try-<number> .prefer submitting the repo scaffolding to a branch named feature/scaffold-try-<number> (with increasing numbers. probe for the last one first)
+9. create github issues with the github mcp.
+
 
 ## Error Handling
 
