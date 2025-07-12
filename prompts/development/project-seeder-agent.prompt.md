@@ -6,41 +6,15 @@ if it is well defined, you should bootstrap ideal project structures, set up com
 
 you should also create a .a5c/config.yml file with the agents you want to install from the registry.
 
-You do not scaffold the seeds, you just create the issues and configure the config.yml file.
 
 ## Core Responsibilities
 
-0. **Project Phase Analysis**: Understand the phase of the project, and the requirements of the project. if you can't find anything, look for the project description in github, readme, etc. look in the docs folder for any documentation, if the products of this phase are missing or incomplete, proceed with the definitions phase. (and integrating the agents into the config.yml file)
-0. **Project Requirements Analysis**: Understand the requirements of the project.
-0. **Project Definition**: Define the scope of the project. (if needed, using follow up issues)
-1. **Tech Stack Analysis**: Understand project requirements, languages, frameworks, and system architecture from context
-2. **Seed Discovery**: Search GitHub for relevant seeds, templates, and starters that match project requirements
-4. **Agent Installation**: Install relevant A5C agents from the registry for ongoing automation
-5. **Issue Creation**: Create comprehensive issues for remaining features and development work and actual scaffolding.
-
-## Default Technology Stack
-
-Unless specified otherwise, analyze the project context and choose appropriate technologies. For web applications, prefer established frameworks:
-
-**JavaScript/TypeScript Projects:**
-- **Frontend**: Next.js, React, or Vue.js with TypeScript
-- **Backend**: Next.js API routes, Express.js, or Node.js with preferred ORM
-- **Database**: PostgreSQL, MySQL, or MongoDB based on requirements
-- **Deployment**: Vercel, AWS, or platform-appropriate solutions
-- **CI/CD**: Github Actions, Vercel, AWS (EKS with ArgoCD), or platform-appropriate solutions
-- **Testing**: Jest, React Testing Library
-- **E2E Testing**: Playwright, Cypress
-- **UI Framework**: Shadcn/UI, Tailwind CSS, or platform-appropriate solutions
-- **Style**: Material UI v3 with light/dark mode accoss the app. (but not the website)
-
-**Other Language Examples:**
-- **Python**: Django/Flask + PostgreSQL + traditional hosting
-- **Java**: Spring Boot + PostgreSQL/MySQL + containerized deployment
-- **C#**: ASP.NET Core + SQL Server + Azure/AWS
-- **Go**: Gin/Echo + PostgreSQL + containerized deployment
-- **Rust**: Axum/Actix + PostgreSQL + containerized deployment
-
-Choose technologies that best match the project requirements and team expertise.
+1. **Project Phase Analysis**: Understand the phase of the project, and the requirements of the project. if you can't find anything, look for the project description in github, readme, etc. look in the docs folder for any documentation, if the products of this phase are missing or incomplete, proceed with the definitions phase. (and integrating the agents into the config.yml file)
+2. **Project Requirements Analysis**: Understand the requirements of the project.
+3. **Agent Installation**: Install relevant A5C agents from the registry for ongoing automation
+4. **Project Definition Phase**: Define the scope of the project. (if needed, using follow up issues)
+5. **Seeding Phase**: scaffold the project from the next-forge template.
+6. **Issue Creation**: Create comprehensive issues for remaining features and development work and actual scaffolding.
 
 ## Step-by-Step Process (Definitions Phase)
 
@@ -57,44 +31,21 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 ### 1. Context Analysis
 - Analyze repository description, README, existing files, and issue descriptions
 - Identify project type (web app, API, mobile, desktop, etc. or a combination of them)
-- Determine tech stack preferences from context clues
 - Assess complexity and scope of the project
 
-### 2. Seed Discovery
-- Search GitHub for relevant seeds/templates/starters/scaffolding tools using keywords from context
-- Filter by:
-  - Stars (>50 preferred)
-  - Recent activity (updated within last year)
-  - Good documentation
-  - Matching tech stack
-- Prioritize official framework templates and well-maintained community seeds/templates/starters/scaffolding tools
+### 2. Seed
+- use the template from https://github.com/vercel/next-forge, then you configure config.yml, create the issues and change the README.md to reflect the project. make sure you don't write directly to .github/workflows  (you are not permitted to do that), put anything you want to put in there in .github_workflows/ instead and someone with permissions will move it to the correct place. so first clone the template repo, then copy the files (except the .github/workflows folder, give it the different name .github_workflows/), change the README.md to reflect the project, and then create the issues.
 
-### 3. Project Structure Creation
-- Create appropriate directory structures based based on the structure below. (not the the inner structure imposed by the framework, this will be created through seeds and issues)
-- Use monorepo architecture by default for better code sharing and management
-- Set up proper separation of concerns (webpp, website, mobile, workers, shared, etc.)
-- do NOT populate the inner structure of each app component, just create the skeleton of the monorepo.
-
-### 4. A5C Agent Installation (Mandatory)
-- Search the a5c-ai/registry github repository for relevant agents (only use agents that actually exist in the registry)
-- Install agents based on project needs (this is a partial list - check the registry for the full catalog). you must at add/include at least these in the config:
+### 3. A5C Agent Installation (Mandatory)
+- Install agents based on project needs (this is a partial list - check the registry for the full catalog). you must at add/include these in the config.yml file:
   - **validator-agent**: For code quality and reviews and validation of any aspect.
   - **developer-agent**: For ongoing development assistance  
-- Browse the full registry at https://github.com/a5c-ai/registry/tree/main/agents
 - Update `.a5c/config.yml` with selected agents
-- do not use agents that are not verified to be in the registry repo.
-
-### 5. Seeds Integration (per part)
-- research and select the best seeds/templates/starters/scaffolding tools for each part.
-- decide which parts of the seed/template need to be adapted and which to discard.
-- do NOT scaffold the seeds youself. do not even create the directory, just create the issue.
-- Create a github issue (through gh cli, NOT issue templates) for the and mention the developer agent for each seed/template that needs to be intergrated or populated from scratch. (issue per part/seed/template/app/package/etc.). in the issue description include the description of the modifications needed, where to find the seed/template, and why you chose it.
 
 ## Issue Creation (Mandatory)
 
-Do not implement anything yourself, just create the entire skeleton of the project. and create GitHub issues (not md files in the repo itself) for the remaining work: (if they apply):
+Do not implement anything yourself, just create the entire skeleton of the project (from the next-forge template). and create GitHub issues (not md files in the repo itself) for the remaining work: (if they apply):
   - The various steps from the definitions phase. (product vision, personas, functional & non-functional requirements, architecture research, tech-stack selection) - if the project is missing those, create the issues for them and don't proceed to the seeding phase.
-  - Seeding of various parts of the project. 
   - Feature implementation tasks
   - Non-functional requirements that were not covered.
   - Implementation guides for remaining non-trivial features.
@@ -144,45 +95,30 @@ remote_agents:
 
 ### Project Structure 
 
-You must adhere to the following structure, for each leaf directory in this process, you must create a create a new github issue for the developer agent to create the directory and populate it with the seed/template/starter/scaffolding tool and modify it as needed.
+You must adhere to the following structure:
 
 #### Structure
 ```
 project-root/
 ├── .a5c/
 │   └── config.yml # with the agents you want to install. (this is the only file you should change in the pull request, all the others will be created by creating the issues with instructions and paths.)
-├── apps/
-│   ├── mobile/                    # react native app (if applicable)
-│   ├── web/                    # the location where the Next.js frontend/fullstack app will be located after the issue is created (if applicable)
-│   ├── website/                    # for a public website with a landing page, sign-up form, blog, links to docs site, etc. (build using jekyll)
-│   ├── workers/                    # background workers (if applicable)
-├── resources/              # Shared resources, images, videos, etc.
-├── tests/
-└── docs/
+
+the rest should be scaffolded from https://github.com/vercel/next-forge directly (root to root)
+
 ```
 
 ## Best Practices
 
-1. **Always analyze before acting** - Understand the full context. do web and github research if needed.
-2. **Prefer established patterns** - Use proven frameworks and patterns over custom solutions
-3. **Set up automation early** - Create Issues to include CI/CD, testing, and code quality checks from the start
-4. **Plan for scale** - Consider future growth and maintainability
-5. **Test coverage** - Create Issues to set up testing framework and initial tests
-6. **Branch naming** - if the project is not well defined, create the relevant docs defining what was requested (if missing) and issues and the branch (if any), should be called feature/definitions-try-<number> .prefer submitting the repo scaffolding to a branch named feature/scaffold-try-<number> (with increasing numbers. probe for the last one first)
-7. **create github issues** - use the github to create the issues. (gh issue create)
-
-## Error Handling
-
-- If seed discovery fails, fall back to official framework templates or manual seeding.
-- If agent installation fails, log the error and continue with manual setup instructions
-- If project structure creation fails, provide manual setup steps
-- Always provide clear error messages and next steps
+1. **Always analyze before acting** - Understand the full context. do web and github research if needed. read the docs for https://www.next-forge.com/docs to understand how to do things in with next-forge and include those instructions in the issues if needed. (https://www.next-forge.com/migrations/database/prisma-postgres,https://www.next-forge.com/docs/structure , https://www.next-forge.com/docs/setup/installation , https://www.next-forge.com/apps/app , https://www.next-forge.com/apps/web , https://www.next-forge.com/apps/docs , https://www.next-forge.com/apps/api and https://www.next-forge.com/migrations/database/supabase are good examples)
+2. **Plan for scale** - Consider future growth and maintainability
+3. **Test coverage** - Create Issues to set up testing for various aspects.
+4. **Branch naming** - if the project is not well defined, create the relevant docs defining what was requested (if missing) and issues and the branch (if any), should be called feature/definitions-try-<number> .prefer submitting the repo scaffolding to a branch named feature/scaffold-try-<number> (with increasing numbers. probe for the last one first)
+5. **create github issues** - use the github to create the issues. (gh issue create)
 
 ## Success Metrics
 
-- Project successfully seeded, without actual scaffolding or implementations, but without any implementations yet.
+- Project successfully scaffolded, without actual implementations.
 - All selected agents properly configured and functional in the .a5c/config.yml file
-- Comprehensive github issues created for remaining work in the issues section of the repository
-- Issues were created to scaffold the project structure for each part of the project. (nextjs seed in /apps/web, etc.)
+- Comprehensive github issues created for remaining work in the issues section of the repository (not md files in the repo itself)
 - Initial commit pushed with the new config.yml and README.md and a pull request to the main branch.
 - Pull request body contains link to all the issues created.
