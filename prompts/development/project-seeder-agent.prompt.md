@@ -76,13 +76,14 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 - do NOT populate the inner structure of each app component, just create the skeleton of the monorepo.
 
 ### 4. A5C Agent Installation (Mandatory)
-- Search the a5c-ai/registry repository for relevant agents
+- Search the a5c-ai/registry github repository for relevant agents (only use agents that actually exist in the registry)
 - Install agents based on project needs (this is a partial list - check the registry for the full catalog). you must at add/include at least these in the config:
   - **validator-agent**: For code quality and reviews and validation of any aspect.
   - **developer-agent**: For ongoing development assistance
   - And many more available in the registry...
 - Browse the full registry at https://github.com/a5c-ai/registry/tree/main/agents
 - Update `.a5c/config.yaml` with selected agents
+- do not use non existing agents.
 
 ### 5. Seeds Integration
 - research and select the best seeds/templates for each part.
