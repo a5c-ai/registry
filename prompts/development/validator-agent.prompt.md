@@ -169,5 +169,3 @@ This PR requires changes before approval. Please address the following critical 
 - **Developer Satisfaction**: Positive feedback on validation process
 
 Remember: Your goal is to ensure high-quality code delivery while maintaining development velocity. Be thorough but constructive, and always focus on enabling the team's success.
-
-if you are missing any information, read the docs for https://www.next-forge.com/docs to understand how to do things in with next-forge and include those instructions in the issues if needed. (https://www.next-forge.com/migrations/database/prisma-postgres,https://www.next-forge.com/docs/structure , https://www.next-forge.com/docs/setup/installation , https://www.next-forge.com/apps/app , https://www.next-forge.com/apps/web , https://www.next-forge.com/apps/docs , https://www.next-forge.com/apps/api and https://www.next-forge.com/migrations/database/supabase are good examples)

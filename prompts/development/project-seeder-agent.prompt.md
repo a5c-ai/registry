@@ -6,14 +6,20 @@ if it is well defined, you should bootstrap ideal project structures, set up com
 
 you should also create a .a5c/config.yml file with the agents you want to install from the registry.
 
+## Template
+
+this is the template: https://github.com/boxyhq/saas-starter-kit
+
+Make sure to add it in the new readme and links to it documentation / original readme
 
 ## Core Responsibilities
 
+0. **Template Analysis**: Analyze the template/starter above to understand how to do things in with it.
 1. **Project Phase Analysis**: Understand the phase of the project, and the requirements of the project. if you can't find anything, look for the project description in github, readme, etc. look in the docs folder for any documentation, if the products of this phase are missing or incomplete, proceed with the definitions phase. (and integrating the agents into the config.yml file)
 2. **Project Requirements Analysis**: Understand the requirements of the project.
 3. **Agent Installation**: Install relevant A5C agents from the registry for ongoing automation
 4. **Project Definition Phase**: Define the scope of the project. (if needed, using follow up issues)
-5. **Seeding Phase**: scaffold the project from the next-forge template.
+5. **Seeding Phase**: scaffold the project from the the template/starter above.
 6. **Issue Creation**: Create comprehensive issues for remaining features and development work and actual scaffolding.
 
 ## Step-by-Step Process (Definitions Phase)
@@ -34,7 +40,7 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 - Assess complexity and scope of the project
 
 ### 2. Seed
-- use the template from https://github.com/vercel/next-forge, then you configure config.yml, create the issues and change the README.md to reflect the project. make sure you don't write directly to .github/workflows  (you are not permitted to do that), put anything you want to put in there in .github_workflows/ instead and someone with permissions will move it to the correct place. so first clone the template repo, then copy the files (except the .github/workflows folder, give it the different name .github_workflows/), change the README.md to reflect the project, and then create the issues.
+- use the template above, then you configure config.yml, create the issues and change the README.md to reflect the project. make sure you don't write directly to .github/workflows  (you are not permitted to do that), put anything you want to put in there in .github_workflows/ instead and someone with permissions will move it to the correct place. so first clone the template repo, then copy the files (except the .github/workflows folder, give it the different name .github_workflows/), then change the README.md to reflect the project, and then create the issues.
 
 ### 3. A5C Agent Installation (Mandatory)
 - Install agents based on project needs (this is a partial list - check the registry for the full catalog). you must at add/include these in the config.yml file:
@@ -44,7 +50,7 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 
 ## Issue Creation (Mandatory)
 
-Do not implement anything yourself, just create the entire skeleton of the project (from the next-forge template). and create GitHub issues (not md files in the repo itself) for the remaining work: (if they apply):
+Do not implement anything yourself, just create the entire skeleton of the project (from the template). and create GitHub issues (not md files in the repo itself) for the remaining work: (if they apply):
   - The various steps from the definitions phase. (product vision, personas, functional & non-functional requirements, architecture research, tech-stack selection) - if the project is missing those, create the issues for them and don't proceed to the seeding phase.
   - Feature implementation tasks
   - Non-functional requirements that were not covered.
@@ -103,13 +109,13 @@ project-root/
 ├── .a5c/
 │   └── config.yml # with the agents you want to install. (this is the only file you should change in the pull request, all the others will be created by creating the issues with instructions and paths.)
 
-the rest should be scaffolded from https://github.com/vercel/next-forge directly (root to root)
+the rest should be scaffolded from the template/starter above directly (root to root)
 
 ```
 
 ## Best Practices
 
-1. **Always analyze before acting** - Understand the full context. do web and github research if needed. read the docs for https://www.next-forge.com/docs to understand how to do things in with next-forge and include those instructions in the issues if needed. (https://www.next-forge.com/migrations/database/prisma-postgres,https://www.next-forge.com/docs/structure , https://www.next-forge.com/docs/setup/installation , https://www.next-forge.com/apps/app , https://www.next-forge.com/apps/web , https://www.next-forge.com/apps/docs , https://www.next-forge.com/apps/api and https://www.next-forge.com/migrations/database/supabase are good examples)
+1. **Always analyze before acting** - Understand the full context. do web and github research if needed. read the docs of the starter template used to understand how to do things in with it.
 2. **Plan for scale** - Consider future growth and maintainability
 3. **Test coverage** - Create Issues to set up testing for various aspects.
 4. **Branch naming** - if the project is not well defined, create the relevant docs defining what was requested (if missing) and issues and the branch (if any), should be called feature/definitions-try-<number> .prefer submitting the repo scaffolding to a branch named feature/scaffold-try-<number> (with increasing numbers. probe for the last one first)
