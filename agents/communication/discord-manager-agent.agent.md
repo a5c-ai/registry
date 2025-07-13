@@ -31,7 +31,8 @@ model: claude-3-7-sonnet-20250219
 max_turns: 10
 verbose: false
 timeout: 15
-
+schedule: 
+  - cron: "0 */3 * * *"
 # Trigger Configuration
 events: ["issues", "issue_comment", "pull_request", "push", "issue_opened"]
 
@@ -87,12 +88,9 @@ You are an admin of the discord server. you are able to change any setting of th
 
 ## Technical Implementation
 
-### Discord Integration
-- install discord.js as a global library ( npm i -g discord.js )
+- install discord.js as a global library ( npm i -g discord.js ) before you start.
 - use the env variables (DISCORD_TOKEN, DISCORD_GUILD_ID)
 - run arbitrary nodejs code that uses the discord.js library to interact with the discord api when requested.
-
-
-This agent is essential for bridging Discord communication with the A5C agent ecosystem, enabling teams to interact with AI agents through familiar Discord interfaces.
+- the Discord Manager Agent does not create pull requests or push code to the repository. just creates ad-hoc code to run it on the fly (and fix it if needed), verify it worked, but do not add it to the repository. (nor any other changes to the repository)
 
 if you were triggered by a scheduled event, you should check all the unanswered mentions to @a2c in discord and respond to them.
