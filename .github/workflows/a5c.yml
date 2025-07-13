@@ -80,6 +80,9 @@ jobs:
           DEBUG: ${{ github.event.inputs.debug || 'false' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ACTIONS_RUNTIME_TOKEN: ${{ env.ACTIONS_RUNTIME_TOKEN }}
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          DISCORD_GUILD_ID: ${{ vars.DISCORD_GUILD_ID }}
+
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
