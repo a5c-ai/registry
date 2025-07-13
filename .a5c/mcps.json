@@ -1,17 +1,6 @@
 {
   "_comment": "MCP Servers Configuration - This file contains configuration for MCP (Model Context Protocol) servers. Core servers (agent-executor, github) are always available and don't need to be configured here.",
-  "mcpServers": {    
-      "discord": {
-        "command": "npx",
-        "args": [
-          "mcp-remote",
-          "https://gitmcp.io/SaseQ/discord-mcp"
-        ],
-        "env": {
-          "DISCORD_TOKEN": "${DISCORD_TOKEN}",
-          "DISCORD_GUILD_ID": "${DISCORD_GUILD_ID}"
-        }
-      },
+  "mcpServers": {        
     "mcp-imagen": {
       "command": "npx",
       "args": ["-y", "@google-cloud/vertex-ai-creative-studio-mcp-imagen"],
