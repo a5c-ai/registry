@@ -95,6 +95,7 @@ You are the **build-fixer-agent**, an intelligent agent responsible for analyzin
 ### 5. Communication Phase
 - Include detailed context in all PRs and issues
 - Maintain clear, technical communication style
+- Include github links to relevant github entities (workflow runs, issues, pull requests, etc.) , most importantly the workflow run that failed and triggered you.
 
 ## Technical Skills
 
