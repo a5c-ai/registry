@@ -38,6 +38,18 @@ remote_agents:
         alias: "validator-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/project-seeder-agent.agent.md"
         alias: "project-seeder-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/build-fixer-agent.agent.md"
+        alias: "build-fixer-agent"
+      # researcher agents
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/communication/researcher-base-agent.agent.md"
+        alias: "researcher-base-agent"
+
+      # communication agents
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/communication/discord-manager-agent.agent.md"
+        alias: "discord-manager-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/communication/slack-manager-agent.agent.md"
+        alias: "slack-manager-agent"
+
       # news agents
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/news/news-aggregator-agent.agent.md"
         alias: "news-aggregator-agent"

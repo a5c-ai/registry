@@ -39,6 +39,15 @@ remote_agents:
         alias: "recruiter-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/validator-agent.agent.md"
         alias: "validator-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/communication/researcher-base-agent.agent.md"
+        alias: "researcher-base-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/communication/discord-manager-agent.agent.md"
+        alias: "discord-manager-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/communication/slack-manager-agent.agent.md"
+        alias: "slack-manager-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/build-fixer-agent.agent.md"
+        alias: "build-fixer-agent"
+
 
 # Override agent discovery settings
 # agent_discovery:
