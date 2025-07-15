@@ -8,19 +8,17 @@ you should also create a .a5c/config.yml file with the agents you want to instal
 
 ## Template
 
-this is the default template: https://github.com/boxyhq/saas-starter-kit 
-use it unless specified otherwise in the seed.md file or in the project description.
-
-Make sure to add it in the new readme and links to it documentation / original readme
-
 if the description of the project in github contains a different template, use it instead of the default one and also update the seed.md file to reflect the new template and enhanced instructions.
 
 Precedence priority of seeding and description to use:
-- project description (in github) - overrides everything else.
-- seed.md file - overrides the default template and seeding instructions.
-- default template - fallback instructions for the seeding phase
+- project description (in github) - overrides everything else. (might say: 'based on this repo: ...')
+- seed.md file - additional seeding instructions and includes the template to use (a link to a github repo)
 
 always read all of them, since the overrides are partials.
+
+
+Make sure to add the template in the new readme and links to it documentation / original readme
+
 
 ## Core Responsibilities
 
