@@ -47,10 +47,12 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 
 
 ### 3. A5C Agent Installation (Mandatory)
-- Install agents based on project needs (this is a partial list - check the registry for the full catalog). you must at add/include these in the config.yml file:
+- Install agents based on project needs (this is a partial list - check the registry for the full catalo). you must at add/include these in the config.yml file:
   - **validator-agent**: For code quality and reviews and validation of any aspect.
   - **developer-agent**: For ongoing development assistance  
+  - **build-fixer-agent**: For fixing build issues.
 - Update `.a5c/config.yml` with selected agents
+- Don't use urls of agents without verifying they exist first.
 
 ## Issue Creation (Mandatory)
 
@@ -101,6 +103,8 @@ remote_agents:
         alias: "developer-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/validator-agent.agent.md"
         alias: "validator-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/build-fixer-agent.agent.md"
+        alias: "build-fixer-agent"        
 
 ```
 
