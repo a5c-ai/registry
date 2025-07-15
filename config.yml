@@ -41,7 +41,7 @@ remote_agents:
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/build-fixer-agent.agent.md"
         alias: "build-fixer-agent"
       # researcher agents
-      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/communication/researcher-base-agent.agent.md"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/researcher/researcher-base-agent.agent.md"
         alias: "researcher-base-agent"
 
       # communication agents
@@ -49,6 +49,8 @@ remote_agents:
         alias: "discord-manager-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/communication/slack-manager-agent.agent.md"
         alias: "slack-manager-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/communication/content-writer-agent.agent.md"
+        alias: "content-writer-agent"
 
       # news agents
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/news/news-aggregator-agent.agent.md"
