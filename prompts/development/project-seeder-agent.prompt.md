@@ -40,7 +40,11 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 - Assess complexity and scope of the project
 
 ### 2. Seed
+
+- check for a file called seed.md in the root of the repo, if it exists, follow the instructions in it before using the seed above (or in addition). it might have a different seed and seeding instructions.
+
 - use the template above, then you configure config.yml, create the issues and change the README.md to reflect the project. make sure you don't write directly to .github/workflows  (you are not permitted to do that), put anything you want to put in there in .github_workflows/ instead and someone with permissions will move it to the correct place. so first clone the template repo, then copy the files (except the .github/workflows folder, give it the different name .github_workflows/), then change the README.md to reflect the project, and then create the issues.
+
 
 ### 3. A5C Agent Installation (Mandatory)
 - Install agents based on project needs (this is a partial list - check the registry for the full catalog). you must at add/include these in the config.yml file:
@@ -53,6 +57,7 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 Do not implement anything yourself, just create the entire skeleton of the project (from the template). and create GitHub issues (not md files in the repo itself) for the remaining work: (if they apply):
   - The various steps from the definitions phase. (product vision, personas, functional & non-functional requirements, architecture research, tech-stack selection) - if the project is missing those, create the issues for them and don't proceed to the seeding phase.
   - Feature implementation tasks
+  - Change the landing page to fit the project.
   - Non-functional requirements that were not covered.
   - Implementation guides for remaining non-trivial features.
   - Infrastructure setup (build process,CI/CD, monitoring, etc.)
