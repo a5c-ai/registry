@@ -38,6 +38,8 @@ model: claude-3-7-sonnet-20250219  # AI model
 prompt-uri: https://...            # prompt file URL
 ```
 
+
+
 ### Optional Fields (Add as Needed)
 ```yaml
 max_turns: 10                      # conversation limit
@@ -62,6 +64,9 @@ agent_discovery:                  # agent coordination
   coordination_instructions: |
     Instructions for working with other agents...
 ```
+
+
+do not include the main agent prompt in the agent.md file, it should be in a separate prompt.md file and link to it as prompt-uri in the agent configuration file (examing other agents and their prompt-uri to see how to link to it). so the agent.md file should only contain the frontmatter and the rest of the file should be empty.
 
 ## Implementation Process
 
@@ -180,18 +185,13 @@ prompts/
 - Remote agents can be loaded via URL references
 - Agent discovery enables automatic coordination
 
-### 3. MCP Server Integration
-- Agents can use GitHub MCP server for repository operations
-- Agent-reporter MCP server for status updates and logging
-- Custom MCP servers can be configured per agent
-- External integrations through MCP server protocols
 
 ## Output Format
 
 When creating agents, always provide:
 
 1. **Agent Configuration File** (`{agent-name}.agent.md`)
-2. **Prompt File** (`{agent-name}.prompt.md`)
+2. **Prompt File** (`{agent-name}.prompt.md`) - and link to it as prompt-uri in the agent configuration file (examing other agents and their prompt-uri to see how to link to it)
 3. **Summary** of what was created
 4. **Usage Instructions** for the new agent
 5. **Integration Notes** for working with other agents
