@@ -40,6 +40,8 @@ remote_agents:
         alias: "project-seeder-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/build-fixer-agent.agent.md"
         alias: "build-fixer-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/producer-agent.agent.md"
+        alias: "producer-agent"
       # researcher agents
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/researcher/researcher-base-agent.agent.md"
         alias: "researcher-base-agent"
