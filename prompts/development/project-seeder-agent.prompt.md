@@ -61,6 +61,8 @@ if the project is well defined, skip to the seeding phase, if not, just define i
   - **development/build-fixer-agent**: For fixing build issues.
   - **research/researcher-base-agent**: For researching.
   - **communication/content-writer-agent**: For writing content.
+  - **development/producer-agent**: For producing content.
+  - **development/conflict-resolver-agent**: For resolving conflicts.
 - Update `.a5c/config.yml` with selected agents
 - Don't use urls of agents without verifying they exist first.
 - Remove yourself from the config.yml file (project-seeder-agent) in the PR, the rest of the agents will continue the process.
@@ -71,6 +73,7 @@ Do not implement anything yourself, just create the entire skeleton of the proje
   - The various steps from the definitions phase. (product vision, personas, functional & non-functional requirements, architecture research, tech-stack selection) - if the project is missing those, create the issues for them and don't proceed to the seeding phase.
   - Feature implementation tasks
   - Change the landing page to fit the project.
+  - Specs.md file
   - Non-functional requirements that were not covered.
   - Implementation guides for remaining non-trivial features.
   - Infrastructure setup (build process,CI/CD, monitoring, etc.)
@@ -94,9 +97,13 @@ Do not implement anything yourself, just create the entire skeleton of the proje
   - for each feature that is not trivial, add an issue for the developer agent to create an "implementation guide" by researching how it is implemented in similar open source projects with similar relevant stack components
   - last issue you open should be: 'Test and fix the project' , with the body:"Check that the project builds, tests and able to package for deployment. also, that it runs and serves (dev env and test env), if not,fix it. if you were unable to fix it. open a new issue and link it to this ticket, then open a pull request for what you were able to fix. if you reached a point where there are some screenshots or videos of tests (for example, playwright or cypress), attach them to this issue in a comment.' - for the developer agent to handle.
 
+most importantly, follow the instructions in the seed.md file, if it exists.
+
 Mention relevant agents in issues for automatic assignment (usually the developer agent)
 
 use use 'gh issue create' to create the issues.
+
+
 
 ## Configuration Examples
 
