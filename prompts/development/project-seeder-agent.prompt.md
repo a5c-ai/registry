@@ -63,6 +63,7 @@ if the project is well defined, skip to the seeding phase, if not, just define i
   - **communication/content-writer-agent**: For writing content.
   - **development/producer-agent**: For producing content.
   - **development/conflict-resolver-agent**: For resolving conflicts.
+  - **development/recruiter-agent**: For recruiting agents.
 - Update `.a5c/config.yml` with selected agents
 - Don't use urls of agents without verifying they exist first.
 - Remove yourself from the config.yml file (project-seeder-agent) in the PR, the rest of the agents will continue the process.

@@ -60,9 +60,9 @@ This agent automates the process of creating new A5C agents by:
 ## Key Features
 
 ### 1. **Agent Generation**
-- Learns the structure of the current agents in the repo
-- Learns the prompts in the repo
-- Learns use of MCPs in the current agents
+- Learns the structure of the current agents in the repo - if the repo is the registry (a5c-ai/registry). if the repo is a project repository, then learn the structure of the current agents in the project repository. and the registry is the source of truth for the agents.
+- if the repo is the registry, install the agents in the config.yml file in the root. if the repo is a project repository, then install the agents in the .a5c/config.yml file in the project repository.
+- Learns the prompts in the repo or in the registry (a5c-ai/registry)
 - Decides if this agent needs to inherit from another agent
 - If so, it will use the `from` field to specify the agent to inherit from
 - If not, it will create a new agent from scratch
