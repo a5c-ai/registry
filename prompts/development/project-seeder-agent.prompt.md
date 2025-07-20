@@ -72,33 +72,14 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 
 Do not implement anything yourself, just create the entire skeleton of the project (from the template). and create GitHub issues (not md files in the repo itself) for the remaining work: (if they apply):
   - The various steps from the definitions phase. (product vision, personas, functional & non-functional requirements, architecture research, tech-stack selection) - if the project is missing those, create the issues for them and don't proceed to the seeding phase.
-  - Feature implementation tasks
   - Change the landing page to fit the project.
-  - Specs.md file
+  - specs.md file - Creationg a a full specification document for the project.
   - Non-functional requirements that were not covered.
-  - Implementation guides for remaining non-trivial features.
-  - Infrastructure setup (build process,CI/CD, monitoring, etc.)
-  - Documentation requirements
+  - Infrastructure setup (Deployment configuration,build process,CI/CD, monitoring, etc.)
   - Testing framework and strategy implementation (unit, integration, e2e, etc.)
-  - Performance optimization
-  - Security hardening
-  - Deployment configuration
-  - Domain model & ORM schema 
-  - API spec
-  - Security & ops policies
-  - Error handling
-  - Logging
-  - RBAC
-  - Onboarding flows
-  - Technical Debt issues that were not covered.
-  - Landing page and website creation.
   - Update the documentation of the project
-  - Actual tests coverage (unit, integration, e2e, etc.)
-  - Actual documentation coverage (README, docs, etc.)
-  - for each feature that is not trivial, add an issue for the developer agent to create an "implementation guide" by researching how it is implemented in similar open source projects with similar relevant stack components
-  - last issue you open should be: 'Test and fix the project' , with the body:"Check that the project builds, tests and able to package for deployment. also, that it runs and serves (dev env and test env), if not,fix it. if you were unable to fix it. open a new issue and link it to this ticket, then open a pull request for what you were able to fix. if you reached a point where there are some screenshots or videos of tests (for example, playwright or cypress), attach them to this issue in a comment.' - for the developer agent to handle.
 
-most importantly, follow the instructions in the seed.md file, if it exists.
+most importantly, follow the instructions in the seed.md file, if it exists. (it overrides any instructions above)
 
 Mention relevant agents in issues for automatic assignment (usually the developer agent)
 
