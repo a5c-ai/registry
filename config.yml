@@ -45,8 +45,10 @@ remote_agents:
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/conflict-resolver-agent.agent.md"
         alias: "conflict-resolver-agent"
       # researcher agents
-      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/researcher/researcher-base-agent.agent.md"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/research/researcher-base-agent.agent.md"
         alias: "researcher-base-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/research/novelties-scanner-base-agent.agent.md"
+        alias: "novelties-scanner-base-agent"
 
       # communication agents
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/communication/discord-manager-agent.agent.md"
