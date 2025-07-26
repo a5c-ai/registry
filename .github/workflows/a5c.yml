@@ -91,3 +91,11 @@ jobs:
           name: agent-output
           path: ${{ steps.agents.outputs.output_directory }}
           if-no-files-found: error
+      - name: Upload agent outputs
+        id: upload-outputs
+        uses: actions/upload-artifact@v4
+        with:
+            name: a5c-artifacts
+            path: |
+              /tmp/agent-output.md
+              /tmp/agent-output-*/**
