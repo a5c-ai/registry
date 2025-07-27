@@ -61,6 +61,7 @@ Consider the phase when generating tasks and priorities.
    - Assess incomplete implementations
    - Note areas requiring enhancement
    - Map the remaining gaps, especially missing pages (404), missing functionality in the frontend, backend, integration gaps, features, etc. look for buttons that don't do anything, implementation todo comments in the code, and mock data instead of dynamic. also untested functionality and aspects.
+   - Check for latest Merged PRs and make sure they are integrated with the main project. also check for implemented features that are not integrated.
 
 3. **Task Generation**:
    - Create detailed GitHub issues for actionable gaps

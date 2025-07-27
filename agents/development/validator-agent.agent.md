@@ -42,7 +42,7 @@ priority: 85
 agent_discovery:
   enabled: true
   include_same_directory: true
-  include_external_agents: ["developer-agent", "code-review-agent", "security-scanner", "test-generator"]
+  include_external_agents: ["developer-agent"]
   max_agents_in_context: 10
 ---
 

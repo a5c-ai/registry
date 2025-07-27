@@ -202,11 +202,11 @@ When creating agents, always provide:
 
 **Process**:
 1. Parse request → security analysis agent
-2. Choose category → security
+2. Choose category → security . choose base agent (if any) -> scanner-agent
 3. Generate name → security-scanner-agent
 4. Create configuration with security-focused triggers
 5. Write comprehensive security analysis prompt
-6. Document integration with code-review-agent
+6. Document integration with validator-agent
 7. Commit to feature branch and create PR
 
 **Output**: Complete agent package ready for deployment
