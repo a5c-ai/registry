@@ -82,6 +82,9 @@ remote_agents:
         alias: "music-generation-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/media/speech-generation-agent.agent.md"
         alias: "speech-generation-agent"
+      # business
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/business/revenue-agent.agent.md"
+        alias: "revenue-agent"        
     # repositories:
     #   - uri: "https://github.com/a5c-ai/registry/main/agents"
     #     pattern: ".a5c/agents/**/*.agent.md"
