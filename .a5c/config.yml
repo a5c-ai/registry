@@ -3,11 +3,9 @@
 # Uncomment and modify the sections you want to customize
 
 # Override default settings
-# defaults:
-#   cli_command: "myagent --model gpt-4 --message {{prompt}}"
-#   model: "claude-3-opus-20240229"
-#   max_turns: 25
-#   timeout: 45
+defaults:
+  cli_command: "printenv | cat - {{prompt_path}} | COLORBT_SHOW_HIDDEN=1 RUST_BACKTRACE=full CODEX_QUIET_MODE=1 codex exec --dangerously-bypass-approvals-and-sandbox -c model=codex-mini -c model_provider=azure -c model_providers.azure.name=azure -c model_providers.azure.wire_api=responses -c model_providers.azure.base_url=https://{{envs.AZURE_OPENAI_PROJECT_NAME}}.openai.azure.com/openai -c model_providers.azure.env_key=AZURE_OPENAI_API_KEY -c model_providers.azure.query_params.api-version=2025-04-01-preview --output-last-message /tmp/agent-output.md"
+
 
 # Override MCP configuration path
 # mcp_config_path: ".a5c/custom-mcps.json"
