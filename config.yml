@@ -59,6 +59,8 @@ remote_agents:
         alias: "slack-manager-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/communication/content-writer-agent.agent.md"
         alias: "content-writer-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/communication/content-validator-agent.agent.md"
+        alias: "content-validator-agent"
 
       # news agents
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/news/news-aggregator-agent.agent.md"
