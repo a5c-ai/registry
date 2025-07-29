@@ -1,7 +1,7 @@
 ---
 # Agent Metadata
 name: producer-agent
-version: 1.0.0
+version: 1.0.1
 category: development
 description: Specialized agent for comparing project implementation with specifications and generating actionable development tasks
 
