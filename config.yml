@@ -90,7 +90,16 @@ remote_agents:
         alias: "speech-generation-agent"
       # business
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/business/revenue-agent.agent.md"
-        alias: "revenue-agent"        
+        alias: "revenue-agent"
+      # sre agents
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/sre/sre-base-agent.agent.md"
+        alias: "sre-base-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/sre/azure-sre-engineer-agent.agent.md"
+        alias: "azure-sre-engineer-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/sre/aws-sre-agent.agent.md"
+        alias: "aws-sre-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/sre/gcp-sre-agent.agent.md"
+        alias: "gcp-sre-agent"
     # repositories:
     #   - uri: "https://github.com/a5c-ai/registry/main/agents"
     #     pattern: ".a5c/agents/**/*.agent.md"
