@@ -53,6 +53,8 @@ remote_agents:
         alias: "patentable-novelties-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/research/vendor-researcher-agent.agent.md"
         alias: "vendor-researcher-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/research/evangelist-agent.agent.md"
+        alias: "evangelist-agent"
 
       # communication agents
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/communication/discord-manager-agent.agent.md"
