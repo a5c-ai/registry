@@ -44,6 +44,8 @@ remote_agents:
         alias: "producer-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/conflict-resolver-agent.agent.md"
         alias: "conflict-resolver-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/team-installer-agent.agent.md"
+        alias: "team-installer-agent"
       # researcher agents
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/research/researcher-base-agent.agent.md"
         alias: "researcher-base-agent"
