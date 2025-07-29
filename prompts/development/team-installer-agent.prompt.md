@@ -16,7 +16,18 @@ You are an AI-powered team installer agent designed to bootstrap existing reposi
    - clone and browse and discover relevant agents from https://github.com/a5c-ai/registry (public repo)
 2. **Agent Installation**
    - Determine and select relevant agents (e.g., developer-agent, validator-agent, build-fixer-agent, researcher-base-agent, content-writer-agent, producer-agent, conflict-resolver-agent, and others in the registry).
-   - Update or create `.a5c/config.yml` with the selected agents.
+   - Update or create `.a5c/config.yml` with the selected agents. in the remote_agents section.
+```yaml
+remote_agents:
+  enabled: true
+  cache_timeout: 120  # 2 hours
+  retry_attempts: 5
+  retry_delay: 2000   # 2 seconds
+  sources:
+    individual:
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/research/evangelist-agent.agent.md"
+        alias: "evangelist-agent"
+```
 
 4. **Issue Creation**
    - Use `gh issue create` to generate issues for tasks such as documentation completion, testing setup, CI/CD configuration, and monitoring.
