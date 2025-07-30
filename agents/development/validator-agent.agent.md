@@ -23,7 +23,7 @@ invocation_context: |
   It will create follow-up issues for any improvements needed and mention relevant agents for complex fixes.
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 30
 verbose: false
 timeout: 30

@@ -98,7 +98,6 @@ A flexible GitHub Action for automated agent-based code operations using various
      Needs repository access and GitHub API permissions.
    
    # Execution Configuration
-   model: claude-3-5-sonnet-20241022
    max_turns: 10
    timeout: 15
    
@@ -338,7 +337,6 @@ I will additionally perform:
 # Base agent (.a5c/agents/base-reviewer.agent.md)
 ---
 name: base-reviewer
-model: claude-3-5-sonnet-20241022
 max_turns: 10
 mentions: "@base-review"
 mcp_servers: ["filesystem", "github"]
@@ -404,7 +402,6 @@ invocation_context: |
   Requires repository access and security scanning tools.
 
 # Execution Configuration
-model: claude-3-5-sonnet-20241022
 max_turns: 15
 timeout: 20
 

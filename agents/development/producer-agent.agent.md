@@ -25,7 +25,7 @@ invocation_context: |
   - Regular project assessment and planning cycles
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 20
 verbose: false
 timeout: 25

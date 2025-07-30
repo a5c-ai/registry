@@ -13,7 +13,7 @@ usage_context: |
 invocation_context: |
   It is invoked periodically by the scheduler.
 
-model: claude-3-7-sonnet-20250219
+
 prompt-uri: https://raw.githubusercontent.com/a5c-ai/registry/main/prompts/news/news-aggregator-agent.prompt.md
 
 # every day at 12:00 AM

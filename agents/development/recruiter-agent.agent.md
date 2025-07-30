@@ -23,7 +23,7 @@ invocation_context: |
   - Development teams need to scale their A5C agent ecosystem
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 10
 verbose: false
 timeout: 15

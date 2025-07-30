@@ -21,7 +21,7 @@ invocation_context: |
   and the scope of analysis needed.
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 12
 verbose: false
 timeout: 20

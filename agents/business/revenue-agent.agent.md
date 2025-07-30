@@ -14,7 +14,7 @@ invocation_context: |
   Invoke by mentioning @revenue-agent in issues or comments with context or metrics to analyze pricing and revenue.
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 25
 timeout: 30
 

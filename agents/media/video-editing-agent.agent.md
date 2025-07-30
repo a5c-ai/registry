@@ -25,7 +25,7 @@ invocation_context: |
   - Professional video editing and effects are needed
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 15
 verbose: false
 timeout: 30

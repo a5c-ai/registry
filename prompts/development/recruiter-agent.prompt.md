@@ -34,7 +34,7 @@ usage_context: |                   # when to use this agent
   Multi-line description...
 invocation_context: |              # how to invoke
   Multi-line description...
-model: claude-3-7-sonnet-20250219  # AI model
+  # AI model
 prompt-uri: https://...            # prompt file URL
 ```
 

@@ -20,7 +20,7 @@ invocation_context: |
 from: content-writer-agent
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 15
 timeout: 30
 

@@ -25,7 +25,7 @@ invocation_context: |
   - Automated image generation workflows need to be triggered
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 10
 verbose: false
 timeout: 20

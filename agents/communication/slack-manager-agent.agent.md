@@ -27,7 +27,7 @@ invocation_context: |
   - Teams need to coordinate activities through Slack channels
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 10
 verbose: false
 timeout: 15

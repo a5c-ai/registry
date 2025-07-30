@@ -29,7 +29,7 @@ invocation_context: |
   - Specific failures you want prioritized
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 30
 verbose: false
 timeout: 30

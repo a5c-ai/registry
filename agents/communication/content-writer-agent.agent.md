@@ -29,7 +29,7 @@ invocation_context: |
   - Brand voice and style guidelines to follow
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 15
 verbose: false
 timeout: 20

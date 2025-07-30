@@ -19,7 +19,7 @@ invocation_context: |
 from: novelties-scanner-base-agent
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 20
 verbose: true
 timeout: 30

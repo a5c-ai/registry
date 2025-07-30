@@ -18,7 +18,7 @@ invocation_context: |
   Provide repository context or specific instructions for additional agents to install.
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 40
 verbose: true
 timeout: 60

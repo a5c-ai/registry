@@ -18,7 +18,7 @@ invocation_context: |
   refactoring, performance optimization, and technical implementation questions.
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 30
 verbose: false
 timeout: 30

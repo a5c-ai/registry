@@ -19,7 +19,7 @@ invocation_context: |
   Works best when provided with project description, requirements, or technical specifications.
 
 # Execution Configuration
-model: claude-3-7-sonnet-20250219
+
 max_turns: 50
 verbose: true
 timeout: 60
