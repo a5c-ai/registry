@@ -1,33 +1,81 @@
-name: A5C
-
+name: a5c
+env:
+  DISABLE_AUTOUPDATER: 1
+  CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: 1
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  AZURE_OPENAI_PROJECT_NAME: ${{ vars.AZURE_OPENAI_PROJECT_NAME || '' }}
+  AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY || '' }}
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || '' }}  
+  DEBUG: ${{ github.event.inputs.debug || 'false' }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+  DISCORD_GUILD_ID: ${{ vars.DISCORD_GUILD_ID }}
+  A5C_CLI_TOOL: ${{ vars.A5C_CLI_TOOL }}
+  SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN || '' }}         
+  SLACK_SIGNING_SECRET: ${{ secrets.SLACK_SIGNING_SECRET || '' }}
+  SLACK_APP_TOKEN: ${{ secrets.SLACK_APP_TOKEN || '' }}
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN || '' }}
+  VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID || '' }}
+  VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID || '' }}
+  SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN || '' }}
+  SUPABASE_ORG_ID: ${{ vars.SUPABASE_ORG_ID || '' }}
+  SUPABASE_PROJECT_REF: ${{ vars.SUPABASE_PROJECT_REF || '' }}
+  SUPABASE_PROJECT_URL:  ${{ vars.SUPABASE_PROJECT_URL || '' }}
+  SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD || '' }}
+  STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY || '' }}
+  STRIPE_PUBLISHABLE_KEY: ${{ secrets.STRIPE_PUBLISHABLE_KEY || '' }}
+  STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET || '' }}
+  STRIPE_WEBHOOK_URL: ${{ vars.STRIPE_WEBHOOK_URL || '' }}
+  STRIPE_WEBHOOK_ID: ${{ vars.STRIPE_WEBHOOK_ID || '' }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID || '' }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY || '' }}
+  AWS_REGION: ${{ vars.AWS_REGION || '' }}
+  # gcloud credentials
+  GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS || '' }}
+  # azure credentials
+  AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID || '' }}
+  AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET || '' }}
+  AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID || '' }}
+  AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID || '' }}
+  # auth credentials
+  GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID || '' }}
+  GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET || '' }}
+  AUTH_GITHUB_CLIENT_ID: ${{ secrets.AUTH_GITHUB_CLIENT_ID || '' }}
+  AUTH_GITHUB_CLIENT_SECRET: ${{ secrets.AUTH_GITHUB_CLIENT_SECRET || '' }}
+  AUTH_GITHUB_ORG_ID: ${{ vars.AUTH_GITHUB_ORG_ID || '' }}
+  AUTH_GITHUB_ORG_NAME: ${{ vars.AUTH_GITHUB_ORG_NAME || '' }}
+  AUTH_GITHUB_ORG_DESCRIPTION: ${{ vars.AUTH_GITHUB_ORG_DESCRIPTION || '' }}
+  # other credentials
+  HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY || '' }}
+  HEROKU_APP_NAME: ${{ vars.HEROKU_APP_NAME || '' }}
+  HEROKU_APP_ID: ${{ vars.HEROKU_APP_ID || '' }}
+  HEROKU_APP_URL: ${{ vars.HEROKU_APP_URL || '' }}
 # Universal event triggers - the agent router will handle filtering
 on:
   # Pull Request Events
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches: [main, develop, master]
-  
+
   # Push Events
   push:
     branches: [main, develop, master]
-  
+
   # Issue Events
   issues:
     types: [opened, edited, labeled]
-  
+
   # Issue Comment Events
   issue_comment:
     types: [created, edited]
-  
+
   # Scheduled Events
   schedule:
-    # Security scan: Every Monday at 2 AM
-    - cron: '0 2 * * 1'
-    # Weekly analysis: Every Sunday at 1 AM
-    - cron: '0 1 * * 0'
-  # workflow_run:
-  #   workflows: [a5c]
-  #   types: [completed]
+    # Every 30 minutes
+    - cron: '*/30 * * * *'
+  workflow_run:
+    types: [completed]
+    workflows: [Build, Deploy, Tests, Release, E2E Tests]
 
   # Manual Triggers
   workflow_dispatch:
@@ -50,8 +98,17 @@ jobs:
       pull-requests: write
       issues: write
       security-events: write
-      actions: read
-    
+      actions: write
+      attestations: write
+      checks: write
+      deployments: write
+      discussions: write
+      id-token: write
+      models: read
+      packages: write
+      pages: write
+      statuses: write
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -59,47 +116,39 @@ jobs:
           fetch-depth: 0
       - name: Filter Self Workflow-run
         id: filter-self
+        # in case this is a workflow_run event, skip if the workflow did not fail.
+        if: github.event_name == 'workflow_run' && (github.event.workflow_run.conclusion != 'failure' || github.event.workflow_run.head_branch != 'main')
         run: |
-          if [ "$GITHUB_WORKFLOW" = "a5c" ]; then
-            echo "::set-output name=skip::true"
+          echo "::set-output name=skip::true"
+          exit 0
+      - name: Setup Node.js
+        if: steps.filter-self.outputs.skip != 'true'
+        uses: actions/setup-node@v4
+        continue-on-error: true
+        with:
+          node-version: 22
+          cache: 'npm'
+          check-latest: true
+      - name: Run npm install (if package.json exists)
+        if: steps.filter-self.outputs.skip != 'true'
+        continue-on-error: true
+        run: |
+          if [ -f package.json ]; then
+            npm i
           fi
-          echo "::set-output name=skip::false"
-
-
       - name: Run A5C
         id: agents
         uses: a5c-ai/action@main
-        if: steps.filter-self.outputs.skip == 'false'
+        if: steps.filter-self.outputs.skip != 'true'
         with:
           # Auto-routing by default, unless specific agent is requested
           agent_uri: ${{ github.event.inputs.agent_uri || '' }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-        env:
-          DISABLE_AUTOUPDATER: 1
-          CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: 1               
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY || '' }}          
-          AZURE_OPENAI_PROJECT_NAME: ${{ vars.AZURE_OPENAI_PROJECT_NAME || '' }}
-          DEBUG: ${{ github.event.inputs.debug || 'false' }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ACTIONS_RUNTIME_TOKEN: ${{ env.ACTIONS_RUNTIME_TOKEN }}
-          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-          DISCORD_GUILD_ID: ${{ vars.DISCORD_GUILD_ID }}
-
-
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
-        if: steps.agents.outputs.output_directory != ''
-        with:
-          name: agent-output
-          path: ${{ steps.agents.outputs.output_directory }}
-          if-no-files-found: error
-      - name: Upload agent outputs
-        id: upload-outputs
+      - name: Upload artifacts
+        id: upload-artifacts
         uses: actions/upload-artifact@v4
         with:
-            name: a5c-artifacts
-            path: |
-              /tmp/agent-output.md
-              /tmp/agent-output-*/**
+          name: a5c-artifacts
+          path: |
+            /tmp/agent-output.md
+            /tmp/agent-output-*/**
