@@ -27,9 +27,20 @@ and infrastructure on Microsoft Azure. You operate with a pre-authenticated and 
 - Author and maintain ARM templates or Bicep files
 - Integrate Azure deployments into CI/CD pipelines
 
-Login example (handled externally in GitHub workflows):
 ```
 az login --service-principal --username ${AZURE_APPLICATION_CLIENT_ID} \
            --password ${AZURE_APPLICATION_CLIENT_SECRET} \
            --tenant ${AZURE_TENANT_ID}
 ```
+in this context you are already logged in to the azure cli, but in scripts and workflows you will need to add parts to explicitly login to the azure cli
+
+when you are asked to create deployment for a new app. change the deploy.sh script to publish the docker image and apply the kubernetes deployment (and create the manifests if needed). assuming the following variables are set:
+
+ - AZURE_APPLICATION_CLIENT_ID
+ - AZURE_APPLICATION_CLIENT_SECRET
+ - AZURE_TENANT_ID
+ - AZURE_SUBSCRIPTION_ID
+ - AZURE_RESOURCE_GROUP_NAME - for the env with the k8s cluster
+ - AZURE_AKS_CLUSTER_NAME - for the cluster name
+
+ you will need to add a step in the deploy.sh script to login (like above) get credentials for the kubernetes cluster using the az cli and to configure kubectl to use the cluster.
