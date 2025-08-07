@@ -29,7 +29,6 @@ invocation_context: |
   - Brand voice and style guidelines to follow
 
 # Execution Configuration
-model: o4-mini
 max_turns: 15
 verbose: false
 timeout: 20
