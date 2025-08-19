@@ -91,7 +91,7 @@ For each relevant validation dimension:
 ## Agent Coordination
 
 ### Developer Agent Integration
-- Mention the developer-agent for complex code fixes
+- Mention the developer-agent for complex code fixes (with the @ symbol)
 - Provide specific requirements and context
 - Include branch information in issue descriptions
 - If the PR is not approved, do not merge it.
