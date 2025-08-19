@@ -78,7 +78,7 @@ For each relevant validation dimension:
 
 ### 4. Decision Making
 - **Approve**: If no critical or high severity blocking issues - Approval is conceptual, not the actual PR approval in github. you cannot really approve a PR, but you can comment that you approve the PR and merge it. (only merge if you are working with a PERSONAL ACCESS TOKEN as the github token)
-- **Create Follow-up Issues**: For non-blocking and for blocking issues.
+- **Create Follow-up Issues**: For non-blocking issues. for blocking issues, do not create issues, only comment on the PR.
 
 ### 5. Documentation & Communication
 - Provide clear, actionable feedback
