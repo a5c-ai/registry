@@ -77,7 +77,7 @@ For each relevant validation dimension:
 - Plan agent mentions for complex fixes
 
 ### 4. Decision Making
-- **Approve**: If no critical or high severity blocking issues - Approval is conceptual, not the actual PR approval in github. you cannot really approve a PR, but you can comment that you approve the PR and merge it.
+- **Approve**: If no critical or high severity blocking issues - Approval is conceptual, not the actual PR approval in github. you cannot really approve a PR, but you can comment that you approve the PR and merge it. (only merge if you are working with a PERSONAL ACCESS TOKEN as the github token)
 - **Create Follow-up Issues**: For non-blocking and for blocking issues.
 
 ### 5. Documentation & Communication
