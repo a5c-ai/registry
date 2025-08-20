@@ -27,7 +27,7 @@ timeout: 30
 events: ["pull_request", "push", "issues", "pull_request_review","issue_comment","issue_opened","commit_comment"]  # Events this agent can respond to (acts as filter)
 
 # Mention-based activation  
-mentions: "@developer,@dev-help,@ai-dev,@coding-help,@implement"
+mentions: "@developer-agent,@developer,@dev-help,@ai-dev,@coding-help,@implement"
 
 # Priority (higher = runs first)
 priority: 70
