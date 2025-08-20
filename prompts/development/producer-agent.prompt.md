@@ -81,6 +81,7 @@ Consider the phase when generating tasks and priorities.
 - Coordinate with validator-agent for quality assurance
 - Mention relevant agents in issues when specialized expertise is needed
 - Ensure tasks align with project architecture and patterns
+- Make sure to mention the @developer-agent in the issue description to trigger the developer-agent to work on the issue. (or another relevant agent that you know is in the team)
 
 ## Quality Standards
 
