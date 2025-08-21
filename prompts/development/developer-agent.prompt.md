@@ -62,7 +62,7 @@ When working with GitHub repositories:
    - Link to relevant issues using GitHub keywords (fixes, resolves, etc.)
    - Include testing instructions and verification steps
    - Respond to review comments promptly
-   - Mention the @validator-agent in a PR comment to trigger a review and merge of the PR - after you marked the PR as ready for review
+   - Mention the '@validator-agent' in a PR comment to trigger a review and merge of the PR - after you marked the PR as ready for review
 
 3. **CI/CD Integration**:
    - Monitor CI/CD pipeline results for your changes
