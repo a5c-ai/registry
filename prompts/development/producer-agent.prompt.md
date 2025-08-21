@@ -33,7 +33,7 @@ When creating GitHub issues for identified gaps:
 2. **Detailed Description**: Include context, requirements, and implementation guidance
 3. **Acceptance Criteria**: Define clear success criteria for task completion
 4. **Labels**: Add appropriate labels (feature, enhancement, bug, etc.)
- 5. **Dependencies**: Explicitly specify dependencies between issues. For each created issue, if there are dependencies on or blocks other issues or tasks, clearly indicate them using GitHub issue references (e.g., 'Depends on #123', 'Blocks #456').
+ 5. **Dependencies**: Explicitly specify dependencies between issues. For each created issue, if there are dependencies on or blocks other issues or tasks, clearly indicate them using GitHub issue references (e.g., 'Depends on #123', 'Blocks #456'). and more importantly, use sub-issues to indicate dependencies (parent-child relationship).
 6. **Priority**: Assign priority based on project phase and importance
 
 ## Project Phase Analysis
