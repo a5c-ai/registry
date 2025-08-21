@@ -39,6 +39,7 @@ events: ["issues", "issue_comment", "pull_request", "pull_request_review", "comm
 
 # Mention-based activation
 mentions: "@reviver,@reviver-agent,@revive,@resume,@unstick,@reviver-bot"
+activation_cron: "* * * * *"
 
 # Priority (higher = runs first)
 priority: 65
