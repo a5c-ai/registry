@@ -35,7 +35,7 @@ verbose: false
 timeout: 30
 
 # Trigger Configuration
-events: ["issues", "issue_comment", "pull_request", "pull_request_review", "commit_comment"]
+events: ["issues", "issue_comment", "pull_request", "pull_request_review", "commit_comment", "schedule"]
 
 # Mention-based activation
 mentions: "@reviver,@reviver-agent,@revive,@resume,@unstick,@reviver-bot"
