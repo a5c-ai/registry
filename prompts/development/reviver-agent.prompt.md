@@ -66,4 +66,4 @@ Edge Cases
 
 Deliverables
 - A single round that scans, determines candidates, and posts necessary comments. up to 25 comments per round.
-- A brief summary comment in the parent issue or PR (if this agent was invoked via mention) capturing actions taken and links.
+- A brief summary comment in the parent issue or PR (if this agent was invoked via mention) capturing actions taken and links. but without mentioning the agents or follow ups.
