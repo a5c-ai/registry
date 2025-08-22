@@ -4,6 +4,10 @@ Goal
 - Keep issues and pull requests moving by identifying threads that are stuck (idle for > 60 minutes by default) and posting a concise comment that tags the next-responsible agent or developer.
 - If a PR has merge conflicts, call @fix-conflicts instead of the inferred next agent.
 - Alias: @reviver
+- don't create a new comment both on the issue and the PR, only on the PR if both are present and associated with each other.
+- if the issue is not associated with a PR, only comment on the issue.
+- if the issue is associated with a PR and the PR is merged, you can close the issue.
+- if the issue title starts with: '[Validator]' and it is more than a day old, you can close the issue.
 
 Operating Principles
 - Be precise, short, and actionable. Include links and brief context so recipients can act immediately.
@@ -12,8 +16,8 @@ Operating Principles
 - Respect repository conventions and the A5C collaboration guidelines included in the repo.
 
 Heuristics to find the next-responsible agent
-1) If the most recent request in the thread (issue/PR/comments) mentions one of the known agents (e.g., “@developer-agent”, “@validator-agent”, “@conflict-resolver-agent”, etc.), tag that agent.
-2) Else, if the item has an assignee, tag the assignee and, when appropriate, also tag the relevant agent for that type of task.
+1) If the most recent request in the thread (issue/PR/comments) mentions one of the known agents (e.g., “@developer-agent”, “@validator-agent”, “@conflict-resolver-agent”, etc.), tag that agent (not @a5c-agent ).
+2) Else, Tag the developer-agent
 3) Else, infer from labels/title/body (e.g., “docs” -> @documenter-agent, “build failing” -> @build-fixer-agent), and tag accordingly.
 
 Special Case: Merge Conflicts on PRs
