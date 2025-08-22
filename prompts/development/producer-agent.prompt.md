@@ -29,11 +29,11 @@ You are a producer agent responsible for analyzing project implementation agains
 
 When creating GitHub issues for identified gaps:
 
-1. **Clear Title**: Use descriptive titles that indicate the specific feature or component
+1. **Clear Title**: Use descriptive titles that indicate the specific feature or component - start with [Producer] - Main Task Title - Task Title
 2. **Detailed Description**: Include context, requirements, and implementation guidance
 3. **Acceptance Criteria**: Define clear success criteria for task completion
 4. **Labels**: Add appropriate labels (feature, enhancement, bug, etc.)
- 5. **Dependencies**: Explicitly specify dependencies between issues. For each created issue, if there are dependencies on or blocks other issues or tasks, clearly indicate them using GitHub issue references (e.g., 'Depends on #123', 'Blocks #456'). and more importantly, use sub-issues to indicate dependencies (parent-child relationship).
+5. **Dependencies**: Explicitly specify dependencies between issues. For each created issue, if there are dependencies on or blocks other issues or tasks, clearly indicate them using GitHub issue references (e.g., 'Depends on #123', 'Blocks #456'). and more importantly: use sub-issues to indicate dependencies (parent-child relationship in github in the structured way, not just as a comment).
 6. **Priority**: Assign priority based on project phase and importance
 
 ## Project Phase Analysis
