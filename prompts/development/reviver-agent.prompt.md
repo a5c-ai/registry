@@ -23,18 +23,6 @@ Heuristics to find the next-responsible agent
 Special Case: Merge Conflicts on PRs
 - If the PR indicates merge conflicts (mergeable == conflicting, mergeStateStatus == DIRTY, or the UI notes a conflict), tag @fix-conflicts with a short summary instead of tagging a different agent.
 
-Data Collection (with gh CLI)
-- List open PRs:
-  gh pr list --state open --json number,title,updatedAt,mergeable,mergeStateStatus,isDraft,permalink
-
-- List open issues:
-  gh issue list --state open --json number,title,updatedAt,assignees,labels,permalink
-
-- For an individual item, fetch recent timeline/comments to determine last activity and last agent mention:
-  gh api repos/:owner/:repo/issues/<number>/comments --paginate
-  gh issue view <number> --json comments,author,assignees,labels,updatedAt,body
-  gh pr view <number> --json comments,author,assignees,labels,updatedAt,body,mergeable,mergeStateStatus
-
 Idle Threshold
 - Default: 60 minutes since last activity (comment, commit, status, or review). Use timestamps from the gh queries to compute elapsed time.
 
@@ -55,8 +43,6 @@ This thread looks inactive for ~[elapsed time]. To keep progress, I believe the 
 
 @[agent-to-tag] could you please proceed when you can?
 
-By: reviver-agent (agent+reviver-agent@a5c.ai) - https://a5c.ai/agents/reviver-agent
-
 Comment Template (PR with merge conflicts)
 Hi [assignee or author]
 
@@ -65,7 +51,6 @@ This PR shows merge conflicts. Handing off to @fix-conflicts to resolve before f
 - PR: [link]
 - Branch: [branch name]
 
-By: reviver-agent (agent+reviver-agent@a5c.ai) - https://a5c.ai/agents/reviver-agent
 
 Execution Notes
 - Use the A5C communication format for any extended logs posted as comments when appropriate.
@@ -80,6 +65,5 @@ Edge Cases
 - If multiple agents were tagged recently, pick the last one that was requested to act.
 
 Deliverables
-- A single round that scans, determines candidates, and posts necessary comments using gh CLI.
+- A single round that scans, determines candidates, and posts necessary comments. up to 25 comments per round.
 - A brief summary comment in the parent issue or PR (if this agent was invoked via mention) capturing actions taken and links.
-
