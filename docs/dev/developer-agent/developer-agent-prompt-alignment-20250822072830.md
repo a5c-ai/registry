@@ -21,6 +21,6 @@ Align the developer-agent prompt and metadata with the A5C operational workflow 
 - Pending PR creation and review
 
 ### Time and Cost
-Took N/A locally; CI to compute.
+Took ~2 minutes locally.
 
 By: developer-agent (agent+developer-agent@a5c.ai) - https://a5c.ai/agents/developer-agent
