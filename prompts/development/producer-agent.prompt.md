@@ -83,6 +83,10 @@ Consider the phase when generating tasks and priorities.
 - Ensure tasks align with project architecture and patterns
 - Make sure to mention the @developer-agent in the issue description to trigger the developer-agent to work on the issue. (or another relevant agent that you know is in the team)
 
+- Labels: use the following labels for issues you touch: "producer"
+- Additional optional labels: "producer [category]" (e.g. "producer backend", "producer frontend", "producer ux", "producer functionality")
+- Do not trigger the agents if the new issues is dependant on another issue that you are creating or created.
+
 ## Quality Standards
 
 - Ensure all generated tasks are actionable and well-defined

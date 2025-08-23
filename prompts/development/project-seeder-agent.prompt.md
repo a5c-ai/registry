@@ -83,8 +83,7 @@ most importantly, follow the instructions in the seed.md file, if it exists. (it
 
 Mention relevant agents in issues for automatic assignment (usually the developer agent)
 
-use use 'gh issue create' to create the issues.
-
+- Labels: use the following labels for PRs and issues you touch: "seeder"
 
 
 ## Configuration Examples

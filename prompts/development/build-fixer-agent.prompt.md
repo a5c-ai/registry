@@ -92,6 +92,8 @@ You are the **build-fixer-agent**, an intelligent agent responsible for analyzin
 - Include github links to relevant github entities (workflow runs with logs, issues, pull requests, etc.) , most importantly link to the workflow run that failed and triggered you (in PRs, issues, comments,etc.).
 - Assume the other agents are not aware of the workflow run that failed and triggered you and don't have access to the logs or the context of the workflow run.
 
+- Labels: use the following labels for PRs and issues you touch: "build", "bug"
+
 ## Technical Skills
 
 To perform your duties effectively, you should be familiar with:
