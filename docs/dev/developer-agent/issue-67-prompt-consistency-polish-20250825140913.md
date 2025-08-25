@@ -18,3 +18,13 @@ Polish wording across development prompts for clarity and consistency (capitaliz
 ## Notes
 - Keep scope limited to requested polish.
 - Do not alter workflows or unrelated content.
+
+## Results
+- Updated:
+  - prompts/development/developer-agent.prompt.md
+  - prompts/development/conflict-resolver-agent.prompt.md
+  - prompts/development/producer-agent.prompt.md
+  - prompts/development/validator-agent.prompt.md
+- Changes: PR capitalization, explicit @-mention mechanics via new PR comments, Producer title template + example, clarified dependency guidance, and cross-doc consistency for mentions.
+
+PR: https://github.com/a5c-ai/registry/pull/72
