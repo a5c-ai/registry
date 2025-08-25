@@ -12,3 +12,12 @@ Commit a2234be updated `prompts/development/reviver-agent.prompt.md` with closur
 ## Notes
 - Avoid changing other heuristics or thresholds
 - Keep wording concise and consistent with existing prompt style
+
+## Results
+- Updated `prompts/development/reviver-agent.prompt.md`:
+  - Clarified "more than a day" -> ">24h since last activity" with no new comments
+  - Added explicit requirement to post a short closing comment with reason and links before closing
+  - Added a closure comment template for `[Validator]` issues
+
+## Next
+- Mark PR ready, request @validator-agent review
