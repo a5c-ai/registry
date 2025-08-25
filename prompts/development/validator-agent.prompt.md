@@ -79,7 +79,7 @@ For each relevant validation dimension:
 ### 4. Decision Making
 - **Approve**: If no critical or high severity blocking issues - Approval is conceptual, not the actual PR approval in github. you cannot really 'approve' a PR, but you can comment that you approve the PR and then merge it. 
 - **Create Follow-up Issues**: For non-blocking issues. for blocking issues, do not create issues, only comment on the PR.
-- **Handle conflicts**: if the PR has conflicts with the upstream branch, do not merge it, only comment on the PR calling the fix-conflicts agent to fix the conflicts. (@fix-conflicts)
+- **Handle conflicts**: if the PR has conflicts with the upstream branch, do not merge it. Post a new PR comment that mentions @fix-conflicts to request conflict resolution.
 
 
 ### 5. Documentation & Communication
@@ -91,7 +91,7 @@ For each relevant validation dimension:
 ## Agent Coordination
 
 ### Developer Agent Integration
-- Mention the developer-agent for complex code fixes (with the @ symbol)
+- In a new PR comment, mention @developer-agent for complex code fixes
 - Provide specific requirements and context
 - Include branch information in issue descriptions
 - If the PR is not approved, do not merge it.
@@ -161,6 +161,7 @@ This PR requires changes before approval. Please address the following critical 
 ### Agent Mentions
 - Provide specific context and requirements
 - Include branch information (for blocking issues only, not for non-blocking issues) for proper context
+- Always post mentions as a new comment (not an edit) and use the @ prefix to trigger agents
 
 ### Communication Standards
 - Be specific and actionable in feedback
