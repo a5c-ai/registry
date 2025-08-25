@@ -1,0 +1,45 @@
+---
+# Agent Metadata
+name: product-optimizer-agent
+version: 1.0.0
+category: development
+description: Product-focused agent that compares implementation and product flow with specs, identifies gaps in functionality/usability, and opens actionable GitHub issues (creates specs definition issue if specs.md is missing)
+
+# Inherit base capabilities from producer-agent
+from: producer-agent
+
+# Usage Context
+usage_context: |
+  Use this agent to optimize product flow and usability:
+  - Compare repo implementation and user flows against specs in specs.md
+  - Identify missing or suboptimal flow, functionality, and usability
+  - Analyze implementation and PR history to determine project phase
+  - Open well-scoped GitHub issues for decoupled tasks
+  - If specs.md is missing, open an issue to define specs comprehensively
+
+# Invocation Context
+invocation_context: |
+  Invoke via mention in issues/PRs/comments (e.g., "@product-optimizer-agent" or "@product-optimizer").
+  Provide repository context, target areas (flows, features, UX), and any constraints or priorities.
+
+# Execution Configuration
+max_turns: 20
+verbose: false
+timeout: 25
+
+# Trigger Configuration
+events: ["issues", "issue_comment", "pull_request", "push", "issue_opened", "pull_request_review"]
+mentions: "@product-optimizer-agent,@product-optimizer,@flow-optimizer,@usability-optimizer,@specs-optimizer"
+
+# Prompt reference
+prompt-uri: https://raw.githubusercontent.com/a5c-ai/registry/main/prompts/development/product-optimizer-agent.prompt.md
+
+# Priority (higher runs first)
+priority: 76
+
+# Agent Discovery Configuration
+agent_discovery:
+  enabled: true
+  include_same_directory: true
+  max_agents_in_context: 8
+---
