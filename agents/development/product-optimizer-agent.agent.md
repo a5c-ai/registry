@@ -28,8 +28,9 @@ verbose: false
 timeout: 25
 
 # Trigger Configuration
-events: ["issues", "issue_comment", "pull_request", "push", "issue_opened", "pull_request_review"]
+events: ["issues", "issue_comment", "pull_request", "push", "issue_opened", "pull_request_review", "schedule"]
 mentions: "@product-optimizer-agent,@product-optimizer,@flow-optimizer,@usability-optimizer,@specs-optimizer"
+activation_cron: "0 9,21 * * *"
 
 # Prompt reference
 prompt-uri: https://raw.githubusercontent.com/a5c-ai/registry/main/prompts/development/product-optimizer-agent.prompt.md
