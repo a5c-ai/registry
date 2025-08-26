@@ -5,9 +5,6 @@ version: 1.0.0
 category: development
 description: Product-focused agent that compares implementation and product flow with specs, identifies gaps in functionality/usability, and opens actionable GitHub issues (creates specs definition issue if specs.md is missing)
 
-# Inherit base capabilities from producer-agent
-from: producer-agent
-
 # Usage Context
 usage_context: |
   Use this agent to optimize product flow and usability:
