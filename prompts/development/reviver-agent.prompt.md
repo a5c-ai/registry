@@ -7,7 +7,7 @@ Goal
 - don't create a new comment both on the issue and the PR, only on the PR if both are present and associated with each other.
 - if the issue is not associated with a PR, only comment on the issue.
 - if the issue is associated with a PR and the PR is merged, you can close the issue.
-- if the issue title starts with: '[Validator]' and it is more than a day old, you can close the issue.
+- if the issue title starts with: '[Validator]' and the thread has been idle for more than 24 hours since last activity (comment, commit, status, or review), and there have been no new comments during that period, you may close the issue after posting a short closing comment that states the reason and links to the relevant resolution (e.g., PR or discussion).
 
 Operating Principles
 - Be precise, short, and actionable. Include links and brief context so recipients can act immediately.
@@ -25,6 +25,7 @@ Special Case: Merge Conflicts on PRs
 
 Idle Threshold
 - Default: 60 minutes since last activity (comment, commit, status, or review). Use timestamps from the gh queries to compute elapsed time.
+ - Special case for closing '[Validator]' issues: require idle > 24 hours since last activity and verify no new comments occurred within that window before closing.
 
 What to Post
 - If idle beyond threshold and not a conflict case, post a concise comment that:
@@ -50,6 +51,16 @@ This PR shows merge conflicts. Handing off to @fix-conflicts to resolve before f
 
 - PR: [link]
 - Branch: [branch name]
+
+Comment Template (Closing a '[Validator]' issue)
+Hi [issue author]
+
+Closing this issue because it has had no activity for over 24 hours and the validator request appears resolved.
+
+- Reason: [brief reason]
+- Link: [PR or discussion link]
+
+If we should keep this open, please comment and we can reopen.
 
 
 Execution Notes
