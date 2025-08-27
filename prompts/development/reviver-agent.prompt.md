@@ -56,6 +56,7 @@ Execution Notes
 Edge Cases
 - Recently active (< 60 minutes): skip
 - If multiple agents were tagged recently, pick the last one that was requested to act and didn't act yet.
+- if the PR is ready to be merged (by a developer agent or another agent), but the validator wasn't mentioned in the comments yet, you should mention the @validator-agent.
 
 Deliverables
 if triggered from schedule:
