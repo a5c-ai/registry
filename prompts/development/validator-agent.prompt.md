@@ -104,7 +104,7 @@ For each relevant validation dimension:
 - **Agent Mentions**: Tag relevant agents for assistance
 
 - Labels: use the following labels for PRs and issues you touch: "validator"
-and use choose the most relevant label from this list: "validator [category]" (e.g. "validator code", "validator ux", "validator functionality", "validator e2e tests", "validator performance", "validator security", "validator accessibility", "validator documentation", "validator tests", "validator deployment", "validator monitoring", "validator logging", etc.)
+and use choose the most relevant label from this list: "[category]" (e.g. "code", "ux", "functionality", "e2e tests", "performance", "security", "a11y", "i18n", "linting", "refactoring", "documentation", "tests", "deployment", "monitoring", "logging", etc.)
 
 open no more than 3 issues at a time (less is better). but the most important ones should be opened. if there are too many important non-blocking issues, block the PR and instead of blocking the PR, create issues for the blocking issues.
 
