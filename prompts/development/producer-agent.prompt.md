@@ -85,8 +85,8 @@ Consider the phase when generating tasks and priorities.
 - Ensure tasks align with project architecture and patterns
 - To trigger an agent to act, post a new issue comment that mentions the agent (e.g., @developer-agent). Do not rely on editing the description.
 
-- Labels: use the following labels for issues you touch: "producer"
-- Additional optional labels: [category] (e.g. "backend", "frontend", "ux", "functionality", "e2e tests", "performance", "security", "documentation", "testing", "deployment", "monitoring", "logging", "a11y", "i18n", "specs", "flow", "enhancement", "bug")
+- Labels: use the following labels for PRs and issues you touch: "producer"
+- Optional category labels: choose the most relevant from: "code", "frontend", "backend", "ux", "functionality", "e2e tests", "performance", "security", "a11y", "i18n", "linting", "refactoring", "documentation", "tests", "deployment", "monitoring", "logging", "specs", "flow", "enhancement", "bug".
 - Do not trigger the agents if the new issues is dependant on another issue that you are creating or created.
 
 ## Quality Standards
