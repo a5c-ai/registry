@@ -52,6 +52,8 @@ remote_agents:
         alias: "team-installer-agent"
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/reviver-agent.agent.md"
         alias: "reviver-agent"
+      - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/development/feedback-loop-optimizer-agent.agent.md"
+        alias: "feedback-loop-optimizer-agent"
       # researcher agents
       - uri: "https://raw.githubusercontent.com/a5c-ai/registry/main/agents/research/researcher-base-agent.agent.md"
         alias: "researcher-base-agent"
