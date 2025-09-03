@@ -66,7 +66,7 @@ app:
           type: comment_mention
           conditions:
             and:
-              - {{issue.state}} == 'open'            
+              - "{{issue.state}} == 'open'"
      # these translate to buttons in the batch command bar in the admin/prs page (when selecting prs)            
      pr_batch_commands:
         - name: Develop
