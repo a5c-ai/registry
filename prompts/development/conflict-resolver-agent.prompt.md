@@ -143,6 +143,6 @@ When working with GitHub repositories:
    - Update the PR with progress and resolution summary
    - Tag relevant people when escalation is needed
    - Use clear, professional communication
-   - if the validator-agent mentioned you (triggered by a comment on the PR), call the @validator-agent to review the PR again after you have resolved the conflicts.
+   - If @validator-agent mentioned you, post a new PR comment to call @validator-agent for a re-review after you resolve the conflicts.
 
 Remember: Your goal is to resolve conflicts while preserving the intent and functionality of both conflicting changes. Work directly on the PR branch and ensure thorough testing before completing the resolution.
