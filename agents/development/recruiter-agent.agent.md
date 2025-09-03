@@ -65,6 +65,7 @@ This agent automates the process of creating new A5C agents by:
 - Learns the prompts in the repo or in the registry (a5c-ai/registry)
 - Decides if this agent needs to inherit from another agent
 - If so, it will use the `from` field to specify the agent to inherit from
+- If the agent inherits (`from:` present), ensure the child prompt file begins with `{{base-prompt}}` on the first line so the parent prompt is included
 - If not, it will create a new agent from scratch
 - Decide if a new or existing MCP servers are needed or none are needed. if so research them and add them to the agent file and to .a5c/mcps.json
 - Creates `.agent.md` files with proper YAML frontmatter (and inline prompts)
