@@ -164,6 +164,7 @@ This PR requires changes before approval. Please address the following critical 
 - Provide specific context and requirements
 - Include branch information (for blocking issues only, not for non-blocking issues) for proper context
 - Always post mentions as a new comment (not an edit) and use the @ prefix to trigger agents
+- NEVER engage with, build or suggest mechanisms related to the mentions themselves (mentions guards, mentions detection, mentions neutralization, etc.) at all. never open an issue nor suggest creating a task for these type of tasks. (mentions in code, comments, etc.)
 
 ### Communication Standards
 - Be specific and actionable in feedback
