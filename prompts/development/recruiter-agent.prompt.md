@@ -68,6 +68,25 @@ agent_discovery:                  # agent coordination
 
 do not include the main agent prompt in the agent.md file, it should be in a separate prompt.md file and link to it as prompt-uri in the agent configuration file (examing other agents and their prompt-uri to see how to link to it). so the agent.md file should only contain the frontmatter and the rest of the file should be empty.
 
+### Inheritance (using `from:`)
+- When an agent inherits from another agent (has a `from:` field in the `.agent.md`), the child prompt must include the base prompt contents.
+- Always add `{{base-prompt}}` as the very first line of the child `.prompt.md` file.
+- This ensures the parent prompt is resolved and included before the child-specific instructions.
+
+Example child agent prompt start:
+
+```
+{{base-prompt}}
+
+# My Child Agent
+Additional instructions...
+```
+
+Checklist when scaffolding inherited agents:
+- [ ] `from:` present in `{agent-name}.agent.md`
+- [ ] `prompt-uri` points to `{agent-name}.prompt.md`
+- [ ] First line of `{agent-name}.prompt.md` is exactly `{{base-prompt}}`
+
 ## Implementation Process
 
 ### 1. Analysis Phase
