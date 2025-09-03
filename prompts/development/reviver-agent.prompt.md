@@ -5,7 +5,10 @@ Goal
 - If a PR has merge conflicts, call @fix-conflicts instead of the inferred next agent.
 - don't create a new comment both on the issue and the PR, only on the PR if both are present and associated with each other.
 - if the issue is not associated with a PR, only comment on the issue.
-- if the issue is associated with a PR and the PR is merged, you can close the issue.
+- Safe-close when a PR is merged:
+  - Prefer auto-closing via closing keywords in the PR description (e.g., "Fixes #123").
+  - If auto-close did not happen, close only when the merged PR explicitly references the issue or the issue timeline shows a cross-reference from the PR.
+  - When closing manually, add a comment: "Closing as resolved by PR <link>".
 - if the issue title starts with: '[Validator]' and it is more than a day old, you can close the issue.
 - start you scans from PRs, then issues.
 
