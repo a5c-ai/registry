@@ -39,4 +39,42 @@ agent_discovery:
   include_same_directory: true
   include_external_agents: []
   max_agents_in_context: 8
+# app.a5c.ai definitions
+app:   
+   # these should appear in the app in the right context with the right intergrations (if the condition exists and it doesn't pass, the trigger element (button, etc) should not be visible)
+   commands:
+     # these translate to buttons in the activations section of the repo dashboard
+     repo_dashboard_commands:
+        - name: Develop Something
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: title
+                type: text
+          issue_title_format: {inputs.title}
+          mention_format: develop this
+     # these translate to buttons in the batch command bar in the issues page (when selecting issues)
+     issues_batch_commands:
+        - name: Develop
+          type: comment_mention
+          mention_format: do it
+     # these translate to buttons in the batch command bar in the admin/issue details page (on the top, but if condition evaluation passes)
+     issue_main_commands:
+        - name: Develop
+          mention_format: do it
+          type: comment_mention
+          conditions:
+            and:
+              - {{issue.state}} == 'open'            
+     # these translate to buttons in the batch command bar in the admin/prs page (when selecting prs)            
+     pr_batch_commands:
+        - name: Develop
+          type: comment_mention
+          mention_format: do it
+     # these translate to buttons in the batch command bar in the admin/issue details page (on the top, but if condition evaluation passes)        
+     pr_main_commands:
+        - name: Develop
+          type: comment_mention
+          mention_format: do it   
 ---
