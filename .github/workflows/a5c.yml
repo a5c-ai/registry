@@ -53,26 +53,26 @@ env:
 # Universal event triggers - the agent router will handle filtering
 on:
   # Pull Request Events
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches: [main, develop, master]
+  # pull_request:
+  #   types: [opened, synchronize, reopened, closed]
+  #   branches: [main, develop, master]
 
   # Push Events
-  push:
-    branches: [main, develop, master]
+  # push:
+    # branches: [main, develop, master]
 
   # Issue Events
   issues:
-    types: [opened, edited, labeled]
+    types: [opened]
 
   # Issue Comment Events
   issue_comment:
-    types: [created, edited]
+    types: [created]
 
   # Scheduled Events
-  schedule:
-    # Every 30 minutes
-    - cron: '*/30 * * * *'
+  # schedule:
+  #   # Every 30 minutes
+  #   - cron: '*/30 * * * *'
   workflow_run:
     types: [completed]
     workflows: [Build, Deploy, Tests, Release, E2E Tests]
