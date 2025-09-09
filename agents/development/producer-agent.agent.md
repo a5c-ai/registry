@@ -8,7 +8,7 @@ description: Specialized agent for comparing project implementation with specifi
 # Usage Context (when to use this agent and what it does)
 usage_context: |
   Use this agent when you need to:
-  - Compare current project implementation with specifications in specs.md
+  - Compare current project implementation with specifications in docs/specs/README.md
   - Identify gaps between current implementation and requirements
   - Generate actionable coding tasks that can be decoupled and assigned
   - Analyze project implementation phase and development history

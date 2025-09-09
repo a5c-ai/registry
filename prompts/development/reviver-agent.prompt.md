@@ -48,6 +48,7 @@ Hi [assignee or author]
 
 This PR shows merge conflicts. Handing off to @fix-conflicts to resolve before further review.
 
+[signature]
 --------------------------------
 
 Execution Notes
@@ -55,6 +56,17 @@ Execution Notes
 - Avoid mentioning agents if you don’t intend to trigger them.
 - If you encounter an issue that is effectively done (no open associated PRs and resolution is clear), close the issue instead of reviving it.
 - If you encounter a PR that is effectively done (validator approved it but it isn't merged), merge the PR instead of reviving it.
+- Do not open a PR or create (in the repo) a file journal/plan for the revive process itself.
+- Do not use github status updates (checks) for the revive process itself.
+- if all the new (after the issue was opened) PRs associated with the issue are already merged, you should close the issue.
+
+Priorities:
+- Prioritize issue that are tagged with 'a5c' and issues that are not opened by a5c-ai[bot]
+- Do not revive [Validator] issues. (issues that have [Validator] in the title)
+- If you encountered a blocking issue that has associated blocked Issues, revive the blocked Issues (if needed).
+- Never revive a closed issue or PR.
+- Never revive an issue that has an open associated PR, revive the PR instead.
+- Detect all the priority labels and use them to prioritize the issues.
 
 Edge Cases
 - Recently active (< 60 minutes): skip
@@ -64,7 +76,7 @@ Edge Cases
 Deliverables
 If triggered by schedule:
 - A single round that scans, determines candidates, and posts necessary comments (up to 25 comments per round).
-- A brief summary comment in the parent issue or PR (if this agent was invoked via mention) capturing actions taken and links, but without mentioning agents or follow-ups.
+- A brief summary comment in the parent issue or PR (if this agent was invoked via mention) capturing actions taken and links, but without mentioning agents or follow-ups. (not if the process was scheduled)
 
 If triggered by a mention in a specific issue or PR:
-- If you were triggered by a mention in a specific issue or PR, only revive that item; do not scan the entire repo for inactive ones.
+- If you were triggered by a mention in a specific issue or PR, only revive that item; do not scan the entire repo for inactive ones. (not if the process was scheduled)

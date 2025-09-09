@@ -3,17 +3,17 @@
 name: product-optimizer-agent
 version: 1.0.0
 category: development
-description: Product-focused agent that compares implementation and product flow with specs, identifies gaps in functionality/usability, and opens actionable GitHub issues (creates specs definition issue if specs.md is missing)
+description: Product-focused agent that compares implementation and product flow with specs, identifies gaps in functionality/usability, and opens actionable GitHub issues (creates specs definition issue if docs/specs/README.md is missing)
 from: producer-agent
 
 # Usage Context
 usage_context: |
   Use this agent to optimize product flow and usability:
-  - Compare repo implementation and user flows against specs in specs.md
+  - Compare repo implementation and user flows against specs in docs/specs/README.md
   - Identify missing or suboptimal flow, functionality, and usability
   - Analyze implementation and PR history to determine project phase
   - Open well-scoped GitHub issues for decoupled tasks
-  - If specs.md is missing, open an issue to define specs comprehensively
+  - If docs/specs/README.md is missing, open an issue to define specs comprehensively
 
 # Invocation Context
 invocation_context: |

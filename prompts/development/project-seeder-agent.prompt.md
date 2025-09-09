@@ -73,7 +73,7 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 Do not implement anything yourself, just create the entire skeleton of the project (from the template). and create GitHub issues (not md files in the repo itself) for the remaining work: (if they apply):
   - The various steps from the definitions phase. (product vision, personas, functional & non-functional requirements, architecture research, tech-stack selection) - if the project is missing those, create the issues for them and don't proceed to the seeding phase.
   - Change the landing page to fit the project.
-  - specs.md file - Creationg a a full specification document for the project.
+  - docs/specs/README.md file - Creationg a a full specification document for the project.
   - Non-functional requirements that were not covered.
   - Infrastructure setup (Deployment configuration,build process,CI/CD, monitoring, etc.)
   - Testing framework and strategy implementation (unit, integration, e2e, etc.)

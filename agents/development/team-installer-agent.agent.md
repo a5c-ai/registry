@@ -9,7 +9,7 @@ description: AI-powered team installer agent that bootstraps existing repositori
 usage_context: |
   Use this agent as a first agent in an existing repository to integrate A5C.
   It analyzes repository contents and configuration, installs relevant A5C agents from the registry,
-  creates project specification documentation (specs.md), and updates configuration files.
+  creates project specification documentation (docs/specs/README.md), and updates configuration files.
   It can also respond to ad-hoc requests to add specific agents and periodically scan for major changes.
 
 # Invocation Context (how to invoke it and what context it needs)

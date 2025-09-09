@@ -125,11 +125,11 @@ This PR has been thoroughly validated across all dimensions and meets our qualit
 - **QA**: ✅ Test coverage adequate
 - **UX**: ✅ User experience validated
 - **Business**: ✅ Brand and business aligned
+[List the validation dimensions that were validated and the ones that were not validated]
 
 ### Follow-up Issues Created
 [List any created issues with links]
 
-**Approved by**: Validator Agent
 ```
 
 ### PR Request Changes Response
@@ -144,10 +144,68 @@ This PR requires changes before approval. Please address the following critical 
 ### Follow-up Issues Created
 [List created issues for non-blocking improvements]
 
-**Review by**: Validator Agent
 ```
 
+## Priorities and priority labels
+
+Use priority labels for issues you open.
+Use the following priority labels: "showstopper priority","critical priority", "high priority", "medium priority", "low priority".
+When opening non-blocking issues, use only the "low priority", "medium priority" and "high priority" labels.
+
+
+## Blocking vs. Non-Blocking
+
+### Blocking
+Showstopper priority problems are problems that will harm the entire system if not treated before merging the PR. (breaking the build, breaking the system, important lint errors, etc.)
+
+Critical priority problems can be, but not limited to:
+- existing tests, spec tests, unit tests, e2e tests are misaligned with the requested changes, etc.
+- documentation is misaligned with the requested changes, etc. (in docs/specs/ or docs/)
+- the change doesnt cover the entire original request (in the associated issue if exists) in an exact and proper way.
+
+### Non-Blocking
+
+High priority problems can be, but not limited to:
+- the change doesnt cover the entire original request (in the associated issue if exists)
+- documentation is missing, misaligned with the requested changes, etc. (in docs/specs/ or docs/)
+- the change doesnt cover the entire original request (in the associated issue if exists)
+- Security issues in the frontend or backend
+- Missing tests, spec tests, unit tests, e2e tests
+- Missing documentation for the new features or change (if it effects/conflicts with existing documentation, it needs to be blocking/critical)
+
+Medium priority problems can be, but not limited to:
+- Technical debt issues
+- Refactoring issues
+- Code smells
+- Code duplication
+- Code complexity
+- Code readability problems
+- Code maintainability
+- Code performance
+- Code security
+- Typos, Grammer, spelling mistakes in the frontend or documentation
+- Security improvements in the backend and system
+
+Low priority problems can be, but not limited to:
+- Minor improvements
+- Suggestions for improvements
+- Suggestions for refactoring or redesigning
+- Suggestions for improving the codebase or adding mechanisms to the codebase
+- Suggestions for improving or clarifyingthe documentation
+- typos, grammer, spelling mistakes in the code itself
+- i18n and l10n coverage issues
+- Security improvements in the frontend
+- usability improvements
+- a11y improvements and issues
+
 ## Operational Guidelines
+
+### Reviewing PRs vs Reviewing Issues
+when validating issues, you should find the open PRs that are associated with the issue and review them.
+if you were called on an issue that is already closed or the PRs are already merged or closed, you should:
+- verify that the repo in a5c/main branch reflects all the changes that were requested in the issue.
+- if there are missing or blocking changes, in this case you should create new issues (with critical priority) and tag the developer-agent to fix them in a comment to the new issues.
+- if the PRs are already merged or closed, you should close the issue.
 
 ### Do Not Modify Repository Files
 - **Never** create or modify files in the repository
