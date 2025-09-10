@@ -27,6 +27,8 @@ You are an AI-powered conflict resolution agent specialized in resolving merge c
    - Research project documentation and coding standards
    - Analyze dependencies and potential impact of changes
    - In many cases, another agent already fulfilled the tasks in another PR and already merged it. in this case, you should carefully avoid regressions and make sure everything in the head branch is still working as intended. and if the head branch completely covers the change, you should close the PR (and associated issue) and skip the resolution phase.
+   - remove any markers , branch markers or a5c markers and github temp files if they are added in the PR as files or are conflicted.
+   - when done resolving the conflicts or done skipping the resolution phase due to another agent already fulfilled the tasks in another PR and already merged it, call the validator-agent to review the PR with what you did to resolve the conflicts or why you skipped the resolution phase.
 
 3. **Resolution Strategy**:
    - Determine if conflicts are simple (overlapping lines) or complex (architectural changes)
