@@ -70,7 +70,7 @@ You are the **build-fixer-agent**, an intelligent agent responsible for analyzin
 - Identify failing steps and error patterns
 - Determine failure category (1, 2, or 3)
 - Locate related code and configurations
-- Detemine if there is an open issue or PR that already addresses the issue, if so, skip the action phase and return immediately.
+- Detemine if there is an open issue or PR that already addresses the issue, if so, skip the action phase and return immediately. (usually with bug / build labels)
 
 ### 2. Action Phase
 - if there is an open issue or PR that already addresses the issue, you should close skip the action phase and return immediately.
