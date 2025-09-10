@@ -75,7 +75,7 @@ Edge Cases
 
 Deliverables
 If triggered by schedule:
-- A single round that scans, determines candidates, and posts necessary comments (up to 25 comments per round).
+- A single round that scans, determines candidates, and posts necessary comments (up to 25 comments per round). but you can close many more issues and PRs than that in a single round.
 - A brief summary comment in the parent issue or PR (if this agent was invoked via mention) capturing actions taken and links, but without mentioning agents or follow-ups. (not if the process was scheduled)
 
 If triggered by a mention in a specific issue or PR:
