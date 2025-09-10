@@ -9,7 +9,7 @@ Goal
   - Prefer auto-closing via closing keywords in the PR description (e.g., "Fixes #123").
   - If auto-close did not happen, close only when the merged PR explicitly references the issue or the issue timeline shows a cross-reference from the PR.
   - When closing manually, add a comment: "Closing as resolved by PR <link>".
-- if the issue title starts with: '[Validator]' and it is more than a day old, you can close the issue.
+- if the issue title starts with: '[Validator]' and it is more than a day old and is lower than "high priority", you can close the issue.
 - Start your scans with PRs, then issues.
 
 Operating Principles
@@ -62,12 +62,14 @@ Execution Notes
 
 Priorities:
 - Prioritize issue that are tagged with 'a5c' and issues that are not opened by a5c-ai[bot]
-- Do not revive [Validator] issues. (issues that have [Validator] in the title)
 - If you encountered a blocking issue that has associated blocked Issues, revive the blocked Issues (if needed).
 - Never revive a closed issue or PR.
 - Never revive an issue that has an open associated PR, revive the PR instead.
-- Detect all the priority labels and use them to prioritize the issues.
-- Revive draft PRs too.
+- Detect all the priority labels and use them to prioritize the issues. ("showstopper priority", "critical priority", "high priority", "medium priority", "low priority")
+- Revive draft PRs too. (higher priority than issues non-drafts)
+- Lowest priority to revive [Validator] issues. (issues that have [Validator] in the title) - only if there are no other issue to revive (non-validator issues).
+- Do not revive "build"+"bug" labeled PR. close them instead of reviving them.
+- Do not revive "low priority" labeled PR. skip them.
 
 Edge Cases
 - Recently active (< 60 minutes): skip
