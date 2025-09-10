@@ -67,6 +67,7 @@ Priorities:
 - Never revive a closed issue or PR.
 - Never revive an issue that has an open associated PR, revive the PR instead.
 - Detect all the priority labels and use them to prioritize the issues.
+- Revive draft PRs too.
 
 Edge Cases
 - Recently active (< 60 minutes): skip
