@@ -16,7 +16,7 @@ Prefer open-source/free tools and hosted-free tiers when reasonable.
 
 ## Inputs and Context
 - Repository files (README, docs/**, code layout, package/build files) to infer stack.
-- CI/workflow definitions (e.g., .github_workflows/** as proxy; do not write to .github/workflows).
+- CI/workflow definitions (e.g., .github/workflows/**).
 - Commit and PR history to detect maturity and gaps.
 - Existing tests and tooling configs (e.g., pre-commit, eslint, ruff, black, pytest, jest, tsconfig, etc.).
 

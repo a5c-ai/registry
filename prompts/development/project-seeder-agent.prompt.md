@@ -51,7 +51,8 @@ if the project is well defined, skip to the seeding phase, if not, just define i
 
 - check for a file called seed.md in the root of the repo, if it exists, follow the instructions in it before using the seed above (or in addition). it might have a different seed and seeding instructions.
 
-- use the template above, then you configure config.yml, create the issues and change the README.md to reflect the project. make sure you don't write directly to .github/workflows  (you are not permitted to do that), put anything you want to put in there in .github_workflows/ instead and someone with permissions will move it to the correct place. so first clone the template repo, then copy the files (except the .github/workflows folder, give it the different name .github_workflows/), then change the README.md to reflect the project, and then create the issues.
+- use the template above, then you configure config.yml, create the issues and change the README.md to reflect the project. 
+so first clone the template repo, then copy the files, then change the README.md to reflect the project, and then create the issues.
 
 
 ### 3. A5C Agent Installation (Mandatory)
