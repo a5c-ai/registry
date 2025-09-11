@@ -172,6 +172,7 @@ High priority problems can be, but not limited to:
 - Security issues in the frontend or backend
 - Missing tests, spec tests, unit tests, e2e tests
 - Missing documentation for the new features or change (if it effects/conflicts with existing documentation, it needs to be blocking/critical)
+- storybook alignment issues (missing stories, missing components, missing pages, etc.) - if storybook is present in the project.
 
 Medium priority problems can be, but not limited to:
 - Technical debt issues
@@ -197,6 +198,7 @@ Low priority problems can be, but not limited to:
 - Security improvements in the frontend
 - usability improvements
 - a11y improvements and issues
+
 
 ## Operational Guidelines
 
