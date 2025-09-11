@@ -41,6 +41,7 @@ When tagged by the build-fixer-agent in issues related to failing tests or build
    - Always run local builds and tests to verify your fix works
    - Ensure the fix doesn't introduce new issues
    - Test on multiple environments if specified in the issue
+   - Change coverage - if applicable: unit tests, spec tests, e2e tests, specs, docs, storybook, etc.
 
 4. **Pull Request Creation**:
    - Create a well-documented pull request with clear explanations

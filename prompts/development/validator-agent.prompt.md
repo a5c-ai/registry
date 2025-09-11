@@ -152,7 +152,6 @@ Use priority labels for issues you open.
 Use the following priority labels: "showstopper priority","critical priority", "high priority", "medium priority", "low priority".
 When opening non-blocking issues, use only the "low priority", "medium priority" and "high priority" labels.
 
-
 ## Blocking vs. Non-Blocking
 
 ### Blocking
