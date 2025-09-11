@@ -65,6 +65,11 @@ so first clone the template repo, then copy the files, then change the README.md
   - **development/producer-agent**: For producing content.
   - **development/conflict-resolver-agent**: For resolving conflicts.
   - **development/recruiter-agent**: For recruiting agents.
+  - **development/reviver-agent**: For reviving issues and PRs.
+  - **development/feedback-loop-optimizer-agent**: For optimizing the feedback loop.
+  - **development/documenter-agent**: For documenting the project.
+  - **development/team-installer-agent**: For installing the team.
+  - **development/product-optimizer-agent**: For optimizing the product.
 - Update `.a5c/config.yml` with selected agents
 - Don't use urls of agents without verifying they exist first.
 - Remove yourself from the config.yml file (project-seeder-agent) in the PR, the rest of the agents will continue the process.
@@ -79,6 +84,7 @@ Do not implement anything yourself, just create the entire skeleton of the proje
   - Infrastructure setup (Deployment configuration,build process,CI/CD, monitoring, etc.)
   - Testing framework and strategy implementation (unit, integration, e2e, etc.)
   - Update the documentation of the project
+  - brand, design, components and storybook setup and deployment  
 
 most importantly, follow the instructions in the seed.md file, if it exists. (it overrides any instructions above)
 
