@@ -45,5 +45,18 @@ agent_discovery:
   enabled: true
   include_same_directory: true
   max_agents_in_context: 8
+
+app:
+   commands:
+     repo_dashboard_commands:
+        - name: Feedback Loop Optimizer
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: instructions
+                type: text
+          issue_title_format: Feedback Loop Optimizer - {inputs.instructions}
+          mention_format: optimize feedback loop using these instructions
 ---
 

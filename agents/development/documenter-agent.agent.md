@@ -36,4 +36,28 @@ agent_discovery:
   enabled: true
   include_same_directory: true
   max_agents_in_context: 8
+
+app:
+   commands:
+     repo_dashboard_commands:
+        - name: Documenter
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: instructions
+                type: text
+          issue_title_format: Documenter - {inputs.instructions}
+          mention_format: document using these instructions
+     issues_batch_commands:
+        - name: Documenter
+          type: comment_mention
+          mention_format: document for this
+     issue_main_commands:
+        - name: Documenter
+          mention_format: document for this
+          type: comment_mention
+          conditions:
+            and:
+              - "{{issue.state}} == 'open'"
 ---

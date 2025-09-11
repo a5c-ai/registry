@@ -46,4 +46,45 @@ agent_discovery:
   enabled: true
   include_same_directory: true
   max_agents_in_context: 8
+
+app:
+   commands:
+     repo_dashboard_commands:
+        - name: Produce
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: title
+                type: text
+          issue_title_format: Producer - {inputs.title}
+          mention_format: produce this
+        - name: Producer Gaps Scan
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: title
+                type: instructions
+          issue_title_format: Producer Gaps Scan - {inputs.title}
+          mention_format: to a gaps scan
+     issues_batch_commands:
+        - name: Producer
+          type: comment_mention
+          mention_format: produce this
+     issue_main_commands:
+        - name: Producer
+          mention_format: produce this
+          type: comment_mention
+          conditions:
+            and:
+              - "{{issue.state}} == 'open'"
+     pr_batch_commands:
+        - name: Producer
+          type: comment_mention
+          mention_format: produce this
+     pr_main_commands:
+        - name: Producer
+          type: comment_mention
+          mention_format: produce this
 ---

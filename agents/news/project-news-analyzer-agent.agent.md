@@ -18,4 +18,16 @@ prompt-uri: https://raw.githubusercontent.com/a5c-ai/registry/main/prompts/news/
 events: ["push"]
 paths: "docs/news/articles/topics/*/*/*/*/*.md"
 
+app:
+   commands:
+     repo_dashboard_commands:
+        - name: Project News Analyzer
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: instructions
+                type: text
+          issue_title_format: Project News Analyzer - {inputs.instructions}
+          mention_format: analyze project news using these instructions
 ---

@@ -54,4 +54,18 @@ agent_discovery:
     - Relaying agent responses back to Discord channels
     - Facilitating agent collaboration through Discord threads and channels
     - Managing permissions for which Discord users can access which agents
+
+app:
+   commands:
+     repo_dashboard_commands:
+        - name: Discord Task
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: instructions
+                type: text
+          issue_title_format: Discord - {inputs.instructions}
+          mention_format: do your scan or fulfill the instructions
+
 ---

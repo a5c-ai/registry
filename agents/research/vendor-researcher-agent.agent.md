@@ -45,4 +45,17 @@ agent_discovery:
   enabled: true
   include_same_directory: true
   include_external_agents: ["researcher-base-agent", "developer-agent", "documentation-agent"]
+
+app:
+   commands:
+     repo_dashboard_commands:
+        - name: Vendor Researcher
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: instructions
+                type: text
+          issue_title_format: Vendor Researcher - {inputs.instructions}
+          mention_format: research vendors using these instructions
 ---

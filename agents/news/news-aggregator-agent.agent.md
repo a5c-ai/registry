@@ -20,4 +20,16 @@ prompt-uri: https://raw.githubusercontent.com/a5c-ai/registry/main/prompts/news/
 activation_cron: "0 0 * * *"
 mentions: "@daily-news-aggregator"
 
+app:
+   commands:
+     repo_dashboard_commands:
+        - name: Daily News Aggregator
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: instructions
+                type: text
+          issue_title_format: Daily News Aggregator - {inputs.instructions}
+          mention_format: aggregate daily news using these instructions
 ---

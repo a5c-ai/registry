@@ -42,4 +42,17 @@ agent_discovery:
   include_same_directory: true
   include_external_agents: ["sre-base-agent","developer-agent"]
   max_agents_in_context: 6
+
+app:
+   commands:
+     repo_dashboard_commands:
+        - name: DevOps/SRE
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: instructions
+                type: text                
+          issue_title_format: DevOps/SRE - {inputs.instructions}
+          mention_format: do it
 ---

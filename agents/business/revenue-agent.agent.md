@@ -29,3 +29,16 @@ prompt-uri: https://raw.githubusercontent.com/a5c-ai/registry/main/prompts/busin
 # Agent Discovery Configuration
 agent_discovery:
   enabled: true
+
+app:
+   commands:
+     repo_dashboard_commands:
+        - name: Revenue
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: instructions
+                type: text
+          issue_title_format: Revenue - {inputs.instructions}
+          mention_format: optimize revenue using these instructions

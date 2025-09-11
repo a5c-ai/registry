@@ -40,4 +40,17 @@ agent_discovery:
   include_same_directory: true
   include_external_agents: []
   max_agents_in_context: 12
+
+app:
+   commands:
+     repo_dashboard_commands:
+        - name: Seed Project
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: instructions
+                type: text
+          issue_title_format: Seed Project - {inputs.instructions}
+          mention_format: seed project using these instructions
 ---

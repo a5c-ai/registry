@@ -45,4 +45,28 @@ agent_discovery:
   include_same_directory: true
   include_external_agents: ["content-writer-agent", "developer-agent"]
   max_agents_in_context: 8
+
+app:
+   commands:
+     repo_dashboard_commands:
+        - name: Content Validator
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: instructions
+                type: text
+          issue_title_format: Content Validator - {inputs.instructions}
+          mention_format: validate content using these instructions
+     issues_batch_commands:
+        - name: Content Validator
+          type: comment_mention
+          mention_format: validate content for this
+     issue_main_commands:
+        - name: Content Validator
+          mention_format: validate content for this
+          type: comment_mention
+          conditions:
+            and:
+              - "{{issue.state}} == 'open'"
 ---

@@ -56,4 +56,25 @@ agent_discovery:
     - Collaborating with documentation-agent to maintain consistent messaging
     - Receiving technical details from developer agents to ensure accuracy
     - Providing content suggestions to media generation agents for visual alignment
+
+app:
+   commands:
+     repo_dashboard_commands:
+        - name: Content Writer
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: instructions
+                type: text
+          issue_title_format: Content Writer - {inputs.instructions}
+          mention_format: write content using these instructions
+     issues_batch_commands:
+        - name: Content Writer
+          type: comment_mention
+          mention_format: write content for this
+     issue_main_commands:
+        - name: Content Writer
+          mention_format: write content for this
+          type: comment_mention
 ---

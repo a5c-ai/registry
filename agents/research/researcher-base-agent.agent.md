@@ -44,4 +44,28 @@ agent_discovery:
   include_same_directory: true
   include_external_agents: ["developer-agent", "documentation-agent", "news-aggregator-agent"]
   max_agents_in_context: 8
+
+app:
+   commands:
+     repo_dashboard_commands:
+        - name: Researcher
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: instructions
+                type: text
+          issue_title_format: Researcher - {inputs.instructions}
+          mention_format: research using these instructions
+     issues_batch_commands:
+        - name: Researcher
+          type: comment_mention
+          mention_format: research for this
+     issue_main_commands:
+        - name: Researcher
+          mention_format: research for this
+          type: comment_mention
+          conditions:
+            and:
+              - "{{issue.state}} == 'open'"
 ---

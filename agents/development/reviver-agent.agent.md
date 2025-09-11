@@ -51,5 +51,44 @@ agent_discovery:
   include_same_directory: true
   include_external_agents: ["conflict-resolver-agent", "developer-agent"]
   max_agents_in_context: 8
+
+app:   
+   # these should appear in the app in the right context with the right intergrations (if the condition exists and it doesn't pass, the trigger element (button, etc) should not be visible)
+   commands:
+     # these translate to buttons in the activations section of the repo dashboard
+     repo_dashboard_commands:
+        - name: Revive
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: instructions
+                type: text
+          issue_title_format: {inputs.instructions}
+          mention_format: revive using these instructions
+     # these translate to buttons in the batch command bar in the issues page (when selecting issues)
+     issues_batch_commands:
+        - name: Revive
+          type: comment_mention
+          mention_format: do it
+     # these translate to buttons in the batch command bar in the admin/issue details page (on the top, but if condition evaluation passes)
+     issue_main_commands:
+        - name: Revive
+          mention_format: do it
+          type: comment_mention
+          conditions:
+            and:
+              - "{{issue.state}} == 'open'"
+     # these translate to buttons in the batch command bar in the admin/prs page (when selecting prs)            
+     pr_batch_commands:
+        - name: Revive
+          type: comment_mention
+          mention_format: do it
+     # these translate to buttons in the batch command bar in the admin/issue details page (on the top, but if condition evaluation passes)        
+     pr_main_commands:
+        - name: Revive
+          type: comment_mention
+          mention_format: do it   
+
 ---
 
