@@ -51,7 +51,7 @@ agent_discovery:
 app:
    commands:
      repo_dashboard_commands:
-        - name: Produce
+        - name: Produce Something
           type: new_issue_and_comment_mention
           inputs:
             type: modal
@@ -60,15 +60,15 @@ app:
                 type: text
           issue_title_format: Producer - {inputs.title}
           mention_format: produce this
-        - name: Producer Gaps Scan
+        - name: Advance Project
           type: new_issue_and_comment_mention
           inputs:
             type: modal
             fields:
               - name: title
                 type: instructions
-          issue_title_format: Producer Gaps Scan - {inputs.title}
-          mention_format: to a gaps scan
+          issue_title_format: Producer Generic Scan - {inputs.title}
+          mention_format: do a generic scan (not under a specific issue)
      issues_batch_commands:
         - name: Producer
           type: comment_mention
