@@ -95,6 +95,22 @@ Update the current-phase.txt file with the phase name. also create the checklist
 
 if the checklist.md file exists for the current phase, sync it with the state of the project, code, closed issues and PRs, etc. if there are gaps, create new issues for them. if you finished the checklist, update the current-phase.txt file with the next phase. and create a new checklist.md file for the next phase if it doesn't exist.
 
+tech debt scanning:
+regardless of the phase detected, if the task is not specific (generic 'produce' or scheduled run):
+scan for the existance of the files in:
+
+docs/validation/*/*/*/01-deduplication-of-init-function.md
+
+- if files are found, for each file:
+a. read the file
+b. check if the issue described is still relevant, valid, important, if so, add it to a temporary list of candidate issues. 
+b. dedup the candidate issues by meaning.
+c. group/cluster the candidate issues by the potential files and areas they are touching, category, topic, etc. (so that they can be implemented in a single PR or issue and won't overlap with other issues) - each group up to 10 issues.
+d. create a new issue for each group of issues (sorted by number of issues in the group) up to 5 groups, and describe the group in the issue description with all the details needed to implement it. mention the @developer-agent in a comment to the issue.
+e. create a branch (from a5c/main) and a PR to immediately merge that git-moves the issues you covered in the groups as the files from /docs/validation/... to docs/debt-completed/... as well as issues you identified as already completed.
+delete those you marked as irrelevant, invalid, contraditing to specs.
+f. commit the changes, push them to the branch. (and merge the PR if possible, without calling any agents)
+
 ---
 if the task is specific, use the same logic, but manage the checklist in:
 
