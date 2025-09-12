@@ -50,6 +50,9 @@ Analyze the project to understand its current phase (if called without a specifi
 - docs/producer/phases/[phase]/user-personas.md
 - docs/producer/phases/[phase]/goals.md
 - docs/producer/phases/[phase]/needs.md
+- docs/producer/phases/[phase]/vision.md
+- docs/specs/README.md - initial outline for the specifications.
+
 
 1. Specification Phase: Specifications are not yet defined, and the project is in the specification phase.
 - create an overview of the specifications in docs/producer/phases/[phase]/specifications.md
@@ -67,8 +70,20 @@ Analyze the project to understand its current phase (if called without a specifi
 - docs/producer/phases/[phase]/data-models/
 - docs/producer/phases/[phase]/apis/
 - docs/producer/phases/[phase]/events/
+- docs/producer/phases/[phase]/testing/
+- docs/producer/phases/[phase]/deployment/
 
 1. Scaffolding Phase: Basic structure (from seeds if possible), minimal implementation or stub implementations.
+- Change the landing page to fit the project.
+- create a new README.md file for the project.
+- find and add a logo to the project.
+- research and scaffold architecture components from seeds if possible. (look in seed.md file for a partial list of seeds)
+- create the remaining components and integrations and adapt the scaffolded seeds if needed.
+- Infrastructure setup (Deployment configuration,build process,CI/CD, monitoring, etc.)
+- Testing framework and strategy implementation (unit, integration, e2e, etc.)
+- brand, design, components and storybook setup and deployment  
+- documentation setup and deployment - if applicable.
+
 1. Development Phase: Active feature development, bug fixes.
 1. Maturity Phase: Feature-complete with refinements, tech debt fixes, etc.
 1. Maintenance Phase: Bug fixes and minor enhancements, Optimization, Operations, etc.
@@ -90,7 +105,7 @@ docs/producer/issues/[issue-or-pr-id]/phases/current-phase.txt
 each phase or checklist item can be optional, depending on the context and how complicated the task is, the scope, etc.
 
 For specific development tasks, the phases are:
-1. Specification Phase: Specifications are not yet defined, and the task is in the specification phase:
+1. Requirements and Specification Phase: Specifications are not yet defined, and the task is in the specification phase:
 - create/align specifications and documentation for the task/requested changes.
 - create/align tests definitions/plan for the task/requested changes.
 - create/align the technical implementation plan / deployment for the task/requested changes.
@@ -157,3 +172,23 @@ For specific development tasks, the phases are:
 - Link tasks to specifications and requirements
 
 When responding to requests for project analysis, provide comprehensive assessments with clear action items and next steps. Always ensure your analysis is thorough and your generated tasks are ready for implementation.
+
+## Seeds for scaffolding
+
+if the description of the project in github contains a different template, use it instead of the default one and also update the seed.md file to reflect the new template and enhanced instructions.
+
+Precedence priority of seeding and description to use:
+- project description (in github) - overrides everything else. (might say: 'based on this repo: ...')
+- seed.md file - additional seeding instructions and includes the template to use (a link to a github repo)
+
+always read all of them, since the overrides are partials.
+
+Make sure to add the template in the new readme and links to it documentation / original readme
+
+## notes for the various phases (include it as contexts for relevant issues you create)
+
+- architecture research should compare at least three analogous OSS projects before tech-stack selection.
+- the tech-stack selection should be based on the architecture research.
+
+- check for a file called seed.md in the root of the repo, if it exists, follow the instructions in it before using the seed above (or in addition). it might have a different seed and seeding/producing instructions.
+
