@@ -29,6 +29,7 @@ invocation_context: |
 max_turns: 20
 verbose: false
 timeout: 25
+activation_cron: "0 9,21 * * *"
 
 # Trigger Configuration
 events: ["issues", "issue_comment", "pull_request", "push", "issue_opened", "pull_request_review"]  # Events this agent can respond to (acts as filter)
