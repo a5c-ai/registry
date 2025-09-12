@@ -79,9 +79,9 @@ Analyze the project to understand its current phase (if called without a specifi
 - find and add a logo to the project.
 - research and scaffold architecture components from seeds if possible. (look in seed.md file for a partial list of seeds)
 - create the remaining components and integrations and adapt the scaffolded seeds if needed.
-- Infrastructure setup (Deployment configuration,build process,CI/CD, monitoring, etc.)
+- Infrastructure setup (Deployment configuration,build process,CI/CD, monitoring, etc.) - probe for relevant org vars and secrets for the available services before creating the infrastructure. also consider the specifications provided.
 - Testing framework and strategy implementation (unit, integration, e2e, etc.)
-- brand, design, components and storybook setup and deployment  
+- choose and install a design-system (github primer, Radix , chakra-ui, mui, https://github.com/cultureamp/kaizen-design-system,  daisyui , flowbite , rsuitejs, for more https://github.com/topics/design-system), adapt to the project, brand colors (through css variables), adapt the design, required icons sets, components, themes/modes, features, etc. and storybook setup and deployment
 - documentation setup and deployment - if applicable.
 
 1. Development Phase: Active feature development, bug fixes.
