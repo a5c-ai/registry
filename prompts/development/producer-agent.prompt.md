@@ -40,14 +40,73 @@ When creating GitHub issues for identified gaps:
 
 ## Project Phase Analysis
 
-Analyze the project to understand its current phase:
+Analyze the project to understand its current phase (if called without a specific task or phase to produce):
 
-1. **Initial Phase**: Basic structure, minimal implementation
-2. **Development Phase**: Active feature development
-3. **Maturity Phase**: Feature-complete with refinements
-4. **Maintenance Phase**: Bug fixes and minor enhancements
+**Probe for Phase**: Probe for the phase in docs/producer/phases/[phase]/checklist.md (contains the checklist for the phase) and docs/producer/phases/current-phase.txt (only contains the phase name):
+
+1. Requirements Phase: Requirements are not yet defined, and the project is in the requirements phase.
+
+- create an overview of the requirements in docs/producer/phases/[phase]/requirements.md
+- docs/producer/phases/[phase]/user-personas.md
+- docs/producer/phases/[phase]/goals.md
+- docs/producer/phases/[phase]/needs.md
+
+1. Specification Phase: Specifications are not yet defined, and the project is in the specification phase.
+- create an overview of the specifications in docs/producer/phases/[phase]/specifications.md
+- docs/producer/phases/[phase]/features.md
+- docs/producer/phases/[phase]/metrics.md
+- docs/producer/phases/[phase]/user-stories/
+- docs/producer/phases/[phase]/pages-and-navigation/
+- docs/producer/phases/[phase]/ux-components/
+
+1. Technical Specification Phase: Technical specifications are not yet defined, and the project is in the technical specification phase.
+- create an overview of the tech stack in docs/producer/phases/[phase]/tech-stack.md
+- docs/producer/phases/[phase]/system-architecture.md
+- docs/producer/phases/[phase]/system-components
+- docs/producer/phases/[phase]/integrations/
+- docs/producer/phases/[phase]/data-models/
+- docs/producer/phases/[phase]/apis/
+- docs/producer/phases/[phase]/events/
+
+1. Scaffolding Phase: Basic structure (from seeds if possible), minimal implementation or stub implementations.
+1. Development Phase: Active feature development, bug fixes.
+1. Maturity Phase: Feature-complete with refinements, tech debt fixes, etc.
+1. Maintenance Phase: Bug fixes and minor enhancements, Optimization, Operations, etc.
 
 Consider the phase when generating tasks and priorities.
+
+Update the current-phase.txt file with the phase name. also create the checklist.md file if it doesn't exist for the current phase.
+
+if the checklist.md file exists for the current phase, sync it with the state of the project, code, closed issues and PRs, etc. if there are gaps, create new issues for them. if you finished the checklist, update the current-phase.txt file with the next phase. and create a new checklist.md file for the next phase if it doesn't exist.
+
+---
+if the task is specific, use the same logic, but manage the checklist in:
+
+docs/producer/issues/[issue-or-pr-id]/phases/[phase]/checklist.md
+
+and the current-phase.txt file in:
+docs/producer/issues/[issue-or-pr-id]/phases/current-phase.txt
+
+each phase or checklist item can be optional, depending on the context and how complicated the task is, the scope, etc.
+
+For specific development tasks, the phases are:
+1. Specification Phase: Specifications are not yet defined, and the task is in the specification phase:
+- create/align specifications and documentation for the task/requested changes.
+- create/align tests definitions/plan for the task/requested changes.
+- create/align the technical implementation plan / deployment for the task/requested changes.
+- research and create/align a vendor list, libraries, tools, implementation guide. in docs/issues/[issue-or-pr-id]/research/ 
+
+1. Development Phase
+
+- implement the changes in the e2e tests, unit tests, etc. mark them as skipped until the development is done.
+- implement the task/requested changes
+- Bug fixes and minor enhancements, edge cases, UX improvements, Optimizations, Operations releated, etc.
+- create/align the tests, e2e tests, unit tests, technical implementation plan / deployment for the adaptation made along the way. (the original implementation plan was in docs/issues/[issue-or-pr-id]/research/)
+- research and create/align a vendor list, libraries, tools, implementation guide. in docs/issues/[issue-or-pr-id]/research/
+
+1. Verification Phase:
+- enable the relevant skipped tests.
+- verify the task/requested changes appears in staging. (using e2e or unit tests results or other verification methods)
 
 ## Implementation Approach
 
