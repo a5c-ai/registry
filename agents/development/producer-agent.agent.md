@@ -51,7 +51,7 @@ agent_discovery:
 app:
    commands:
      repo_dashboard_commands:
-        - name: Produce Something
+        - name: ⭐ Produce Something
           type: new_issue_and_comment_mention
           inputs:
             type: modal
@@ -60,7 +60,7 @@ app:
                 type: text
           issue_title_format: Producer - {inputs.title}
           mention_format: produce this
-        - name: Advance Project
+        - name: 🚀 Advance Project
           type: new_issue_and_comment_mention
           inputs:
             type: modal
@@ -70,22 +70,22 @@ app:
           issue_title_format: Producer Generic Scan - {inputs.title}
           mention_format: do a generic scan (not under a specific issue)
      issues_batch_commands:
-        - name: Producer
+        - name: ⭐ Produce
           type: comment_mention
           mention_format: produce this
      issue_main_commands:
-        - name: Producer
+        - name: ⭐ Produce
           mention_format: produce this
           type: comment_mention
           conditions:
             and:
               - "{{issue.state}} == 'open'"
      pr_batch_commands:
-        - name: Producer
+        - name: ⭐ Produce
           type: comment_mention
           mention_format: produce this
      pr_main_commands:
-        - name: Producer
+        - name: ⭐ Produce
           type: comment_mention
           mention_format: produce this
 ---

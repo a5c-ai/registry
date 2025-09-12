@@ -58,7 +58,7 @@ agent_discovery:
 app:
    commands:
      repo_dashboard_commands:
-        - name: Discord Task
+        - name: 💬 Discord Task
           type: new_issue_and_comment_mention
           inputs:
             type: modal

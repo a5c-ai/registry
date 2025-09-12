@@ -45,7 +45,7 @@ app:
    commands:
      # these translate to buttons in the activations section of the repo dashboard
      repo_dashboard_commands:
-        - name: Develop Something
+        - name: 🔨 Develop
           type: new_issue_and_comment_mention
           inputs:
             type: modal
@@ -56,12 +56,12 @@ app:
           mention_format: develop this
      # these translate to buttons in the batch command bar in the issues page (when selecting issues)
      issues_batch_commands:
-        - name: Develop
+        - name: 🔨 Develop
           type: comment_mention
           mention_format: do it
      # these translate to buttons in the batch command bar in the admin/issue details page (on the top, but if condition evaluation passes)
      issue_main_commands:
-        - name: Develop
+        - name: 🔨 Develop
           mention_format: do it
           type: comment_mention
           conditions:
@@ -69,12 +69,12 @@ app:
               - "{{issue.state}} == 'open'"
      # these translate to buttons in the batch command bar in the admin/prs page (when selecting prs)            
      pr_batch_commands:
-        - name: Develop
+        - name: 🔨 Develop
           type: comment_mention
           mention_format: do it
      # these translate to buttons in the batch command bar in the admin/issue details page (on the top, but if condition evaluation passes)        
      pr_main_commands:
-        - name: Develop
+        - name: 🔨 Develop
           type: comment_mention
           mention_format: do it   
 ---

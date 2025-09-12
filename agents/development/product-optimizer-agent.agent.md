@@ -45,7 +45,7 @@ agent_discovery:
 app:
    commands:
      repo_dashboard_commands:
-        - name: Product Optimizer
+        - name: 📦 Optimizer Product
           type: new_issue_and_comment_mention
           inputs:
             type: modal

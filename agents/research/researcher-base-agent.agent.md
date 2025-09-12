@@ -48,7 +48,7 @@ agent_discovery:
 app:
    commands:
      repo_dashboard_commands:
-        - name: Researcher
+        - name: 🔬 Research
           type: new_issue_and_comment_mention
           inputs:
             type: modal
@@ -58,11 +58,11 @@ app:
           issue_title_format: Researcher - {inputs.instructions}
           mention_format: research using these instructions
      issues_batch_commands:
-        - name: Researcher
+        - name: 🔬 Research
           type: comment_mention
           mention_format: research for this
      issue_main_commands:
-        - name: Researcher
+        - name: 🔬 Research
           mention_format: research for this
           type: comment_mention
           conditions:

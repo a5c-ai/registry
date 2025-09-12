@@ -49,7 +49,7 @@ agent_discovery:
 app:
    commands:
      repo_dashboard_commands:
-        - name: Feedback Loop Optimizer
+        - name: 🔄 Optimize Feedback Loop
           type: new_issue_and_comment_mention
           inputs:
             type: modal

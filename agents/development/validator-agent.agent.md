@@ -48,7 +48,7 @@ agent_discovery:
 app:
    commands:
      repo_dashboard_commands:
-        - name: Tech Debt and Gaps Scan
+        - name: 🔍 Tech Debt and Gaps Scan
           type: new_issue_and_comment_mention
           inputs:
             type: modal
@@ -58,22 +58,22 @@ app:
           issue_title_format: Validate - Tech Debt and Gaps Scan - {inputs.instructions}
           mention_format: do it
      issues_batch_commands:
-        - name: Validate
+        - name: 🔍 Validate
           type: comment_mention
           mention_format: validate this
      issue_main_commands:
-        - name: Validate
+        - name: 🔍 Validate
           mention_format: validate this
           type: comment_mention
           conditions:
             and:
               - "{{issue.state}} == 'open'"
      pr_batch_commands:
-        - name: Validate
+        - name: 🔍 Validate
           type: comment_mention
           mention_format: validate this
      pr_main_commands:
-        - name: Validate
+        - name: 🔍 Validate
           type: comment_mention
           mention_format: validate this
 ---

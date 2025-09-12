@@ -49,7 +49,7 @@ agent_discovery:
 app:
    commands:
      repo_dashboard_commands:
-        - name: Content Validator
+        - name: 🔍 Validate Content
           type: new_issue_and_comment_mention
           inputs:
             type: modal
@@ -59,11 +59,11 @@ app:
           issue_title_format: Content Validator - {inputs.instructions}
           mention_format: validate content using these instructions
      issues_batch_commands:
-        - name: Content Validator
+        - name: 🔍 Validate Content
           type: comment_mention
           mention_format: validate content for this
      issue_main_commands:
-        - name: Content Validator
+        - name: 🔍 Validate Content
           mention_format: validate content for this
           type: comment_mention
           conditions:

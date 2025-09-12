@@ -60,7 +60,7 @@ agent_discovery:
 app:
    commands:
      repo_dashboard_commands:
-        - name: Content Writer
+        - name: 📝 Write Content
           type: new_issue_and_comment_mention
           inputs:
             type: modal
@@ -70,11 +70,11 @@ app:
           issue_title_format: Content Writer - {inputs.instructions}
           mention_format: write content using these instructions
      issues_batch_commands:
-        - name: Content Writer
+        - name: 📝 Write Content
           type: comment_mention
           mention_format: write content for this
      issue_main_commands:
-        - name: Content Writer
+        - name: 📝 Write Content
           mention_format: write content for this
           type: comment_mention
 ---

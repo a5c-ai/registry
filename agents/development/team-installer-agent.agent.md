@@ -39,4 +39,17 @@ agent_discovery:
   include_same_directory: true
   include_external_agents: []
   max_agents_in_context: 12
+
+app:
+  commands:
+    repo_dashboard_commands:
+      - name: 🤖 Recruit Team Agents
+        type: new_issue_and_comment_mention
+        inputs:
+          type: modal
+          fields:
+            - name: instructions
+              type: text
+        issue_title_format: Team Installer - {inputs.instructions}
+        mention_format: scan the registry and context/repository and install team agents using these instructions
 ---

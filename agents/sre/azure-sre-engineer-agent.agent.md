@@ -46,7 +46,7 @@ agent_discovery:
 app:
    commands:
      repo_dashboard_commands:
-        - name: DevOps/SRE
+        - name: 🛠️ DevOps/SRE
           type: new_issue_and_comment_mention
           inputs:
             type: modal

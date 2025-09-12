@@ -40,7 +40,7 @@ agent_discovery:
 app:
    commands:
      repo_dashboard_commands:
-        - name: Documenter
+        - name: 📝 Document
           type: new_issue_and_comment_mention
           inputs:
             type: modal
@@ -50,11 +50,11 @@ app:
           issue_title_format: Documenter - {inputs.instructions}
           mention_format: document using these instructions
      issues_batch_commands:
-        - name: Documenter
+        - name: 📝 Document
           type: comment_mention
           mention_format: document for this
      issue_main_commands:
-        - name: Documenter
+        - name: 📝 Document
           mention_format: document for this
           type: comment_mention
           conditions:
