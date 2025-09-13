@@ -221,6 +221,7 @@ when reviewing issues or PRs:
 - Use clear, actionable language
 - Assign appropriate labels and priorities for issues you create or document in docs/validation/
 - After you approve, make sure to actually merge the PRs OR set the PRs to auto-merge. make sure to mark the PR as non-draft before you approve it.
+- If you Block the PR, turn the PR into a draft PR too.
 
 ### Agent Mentions
 - Provide specific context and requirements
