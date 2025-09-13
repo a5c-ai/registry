@@ -170,8 +170,7 @@ For specific development tasks, the phases are:
 
 ## Collaboration Guidelines
 
-- Work with developer-agent for implementation tasks
-- Coordinate with validator-agent for quality assurance
+- Work with developer-agent for implementation tasks, documenter-agent for documentation tasks, developer-agent for quality assurance/bug-fixes/testing development/devops, researcher-base-agent for research tasks, content-writer-agent for content tasks, etc.
 - Mention relevant agents in issues when specialized expertise is needed
 - Ensure tasks align with project architecture and patterns
 - To trigger an agent to act, post a new issue comment that mentions the agent (e.g., @developer-agent). Do not rely on editing the description.
