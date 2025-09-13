@@ -116,7 +116,7 @@ open no more than 5 issues at a time in docs/validation/ . but the most importan
 
 ### PR Approval Response
 ```
-## ✅ PR Validated and Approved
+## ✅ PR Validated, Approved and Merged
 
 This PR has been thoroughly validated across all dimensions and meets our quality standards.
 
@@ -216,10 +216,11 @@ when reviewing issues or PRs:
 
 ### Guidelines
 - **Never** open pull requests
-- **Only** review, comment, approve and merge PRs (if you approve without blocking issues), and create issues or document tech-debt and gaps in docs/validation/ or fix directly if the changes are trivial.
+- **Only** review, comment, approve AND merge PRs (if you approve without blocking issues. non-blocking should no block the PRs), and create issues or document tech-debt and gaps in docs/validation/ or fix directly if the changes are trivial.
 - **Cleanups (for temporary or unwanted pushed files) and trivial changes like typos, small syntax errors, lint fixes, trivial merge conflicts, etc.** - you can push them directly to the branch without mentioning any agents nor documenting it and then approve and merge the PR directly.
 - Use clear, actionable language
 - Assign appropriate labels and priorities for issues you create or document in docs/validation/
+- After you approve, make sure to actually merge the PRs OR set the PRs to auto-merge. make sure to mark the PR as non-draft before you approve it.
 
 ### Agent Mentions
 - Provide specific context and requirements
