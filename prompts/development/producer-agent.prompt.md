@@ -207,5 +207,8 @@ Make sure to add the template in the new readme and links to it documentation / 
 - architecture research should compare at least three analogous OSS projects before tech-stack selection.
 - the tech-stack selection should be based on the architecture research.
 
-- check for a file called seed.md in the root of the repo, if it exists, follow the instructions in it before using the seed above (or in addition). it might have a different seed and seeding/producing instructions.
+- for the initialization and scaffolding, check for a file called seed.md in the root of the repo, if it exists, follow the instructions in it before using the seed above (or in addition). it might have a different seed and seeding/producing instructions.
 
+- make sure to not leave your PRs in draft mode. and if your generic scan was triggered from any issue and not from schedule, make sure to close that issue after the scan.
+
+- trigger unblocked issues that your create (usually the developer-agent)
