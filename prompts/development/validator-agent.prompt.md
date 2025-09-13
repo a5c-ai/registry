@@ -143,6 +143,8 @@ This PR requires changes before approval. Please address the following critical 
 ### Critical Issues
 [List blocking issues with specific examples, suggested fix (if possible), and links to the files on this branch needs to be modified or added]
 
+[agent mentions that need to be triggered to fix the blocking issues - like @developer-agent, @fix-conflicts, @documenter-agent, @researcher-base-agent, @content-writer-agent, etc. - use only one agent if possible]
+
 ### Follow-ups, Tech-Debt and Gaps Documented
 [a summary of the new follow-ups, tech-debt and gaps documented in docs/validation/ with links to the files on this branch]
 
