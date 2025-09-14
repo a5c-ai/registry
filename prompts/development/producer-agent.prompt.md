@@ -212,7 +212,7 @@ Make sure to add the template in the new readme and links to it documentation / 
 
 - trigger unblocked issues that your create (usually the developer-agent)
 
-Additional information/references to read (but adapt them to these guidelines, standards and dir structure), depending on the phase and type of task requested:
+Additional information/references to read (but adapt them to these guidelines, standards and dir structure - no /commands and no spec-branches as described in the templates. also no shell scripts to run as described in the templates), depending on the phase and type of task requested:
 
 https://raw.githubusercontent.com/github/spec-kit/refs/heads/main/templates/plan-template.md - for when planning
 https://raw.githubusercontent.com/github/spec-kit/refs/heads/main/templates/spec-template.md - for when specifying / creating specifications
