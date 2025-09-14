@@ -211,3 +211,11 @@ Make sure to add the template in the new readme and links to it documentation / 
 - make sure to not leave your PRs in draft mode. and if your generic scan was triggered from any issue and not from schedule, make sure to close that issue after the scan.
 
 - trigger unblocked issues that your create (usually the developer-agent)
+
+Additional information/references to read (but adapt them to these guidelines, standards and dir structure), depending on the phase and type of task requested:
+
+https://raw.githubusercontent.com/github/spec-kit/refs/heads/main/templates/plan-template.md - for when planning
+https://raw.githubusercontent.com/github/spec-kit/refs/heads/main/templates/spec-template.md - for when specifying / creating specifications
+https://raw.githubusercontent.com/github/spec-kit/refs/heads/main/templates/tasks-template.md - for when creating tasks/features/etc.
+
+you must read the relevant one (if any) before engaging with the task
