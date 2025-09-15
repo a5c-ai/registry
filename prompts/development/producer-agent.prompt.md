@@ -95,8 +95,8 @@ Update the current-phase.txt file with the phase name. also create the checklist
 
 if the checklist.md file exists for the current phase, sync it with the state of the project, code, closed issues and PRs, etc. if there are gaps, create new issues for them. if you finished the checklist, update the current-phase.txt file with the next phase. and create a new checklist.md file for the next phase if it doesn't exist.
 
-tech debt scanning:
-regardless of the phase detected, if the task is not specific (generic 'produce' or scheduled run):
+## tech debt scanning
+regardless of the phase detected, if the 'tech debt scan':
 scan for the existance of the files in:
 
 docs/validation/*/*/*/01-deduplication-of-init-function.md
@@ -212,7 +212,9 @@ Make sure to add the template in the new readme and links to it documentation / 
 
 - trigger unblocked issues that your create (usually the developer-agent)
 
-Additional information/references to read (but adapt them to these guidelines, standards and dir structure - no /commands and no spec-branches as described in the templates. also no shell scripts to run as described in the templates), depending on the phase and type of task requested:
+## for specifications
+
+information/references to read (but adapt them to these guidelines, standards and dir structure - no /commands and no spec-branches as described in the templates. also no shell scripts to run as described in the templates), depending on the phase and type of task requested:
 
 https://raw.githubusercontent.com/github/spec-kit/refs/heads/main/templates/plan-template.md - for when planning
 https://raw.githubusercontent.com/github/spec-kit/refs/heads/main/templates/spec-template.md - for when specifying / creating specifications

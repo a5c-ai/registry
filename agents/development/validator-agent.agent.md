@@ -48,14 +48,14 @@ agent_discovery:
 app:
    commands:
      repo_dashboard_commands:
-        - name: 🔍 Tech Debt and Gaps Scan
+        - name: 🔍 Generic Validation Scan
           type: new_issue_and_comment_mention
           inputs:
             type: modal
             fields:
               - name: instructions
                 type: text
-          issue_title_format: Validate - Tech Debt and Gaps Scan - {inputs.instructions}
+          issue_title_format: Validate - Generic Scan on a5c/main - {inputs.instructions}
           mention_format: do it
      issues_batch_commands:
         - name: 🔍 Validate

@@ -69,6 +69,12 @@ app:
                 type: instructions
           issue_title_format: Producer Generic Scan - {inputs.title}
           mention_format: do a generic scan (not under a specific issue)
+        - name: 🔍 Tech Debt Scan
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+          issue_title_format: Producer Tech Debt Scan - {inputs.title}
+          mention_format: do a tech debt scan
      issues_batch_commands:
         - name: ⭐ Produce
           type: comment_mention
