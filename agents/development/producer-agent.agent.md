@@ -56,17 +56,14 @@ app:
           inputs:
             type: modal
             fields:
-              - name: title
+              - name: instructions
                 type: text
-          issue_title_format: Producer - {inputs.title}
+          issue_title_format: Producer - {inputs.instructions}
           mention_format: produce this
         - name: 🚀 Advance Project
           type: new_issue_and_comment_mention
           inputs:
             type: modal
-            fields:
-              - name: title
-                type: instructions
           issue_title_format: Producer Generic Scan - {inputs.title}
           mention_format: do a generic scan (not under a specific issue)
         - name: 🔍 Tech Debt Scan
