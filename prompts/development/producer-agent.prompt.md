@@ -75,6 +75,7 @@ Analyze the project to understand its current phase (if called without a specifi
 - docs/producer/phases/[phase]/deployment/
 
 1. Scaffolding Phase: Basic structure (from seeds if possible), minimal implementation or stub implementations.
+
 - Change the landing page to fit the project.
 - create a new README.md file for the project.
 - find and add a logo to the project.
@@ -84,6 +85,7 @@ Analyze the project to understand its current phase (if called without a specifi
 - Testing framework and strategy implementation (unit, integration, e2e, etc.)
 - adapt the design-system to the project, brand colors (through css variables), adapt the design, required icons sets (bootstrap, font-awesome, material-icons, octicons, feather, heroicons, remixicon, lucide, etc.), components, themes/modes/flags (light, dark, high-contrast, low-contrast, reduced motion, system), features, etc. and storybook setup and deployment
 - documentation setup and deployment - if applicable.
+- create .devcontainer/devcontainer.json - that installs and runs the project (if applicable - using script/dev-setup.sh and script/dev-run.sh) - for codespaces, vscode, etc.
 
 1. Development Phase: Active feature development, bug fixes.
 1. Maturity Phase: Feature-complete with refinements, tech debt fixes, etc.
