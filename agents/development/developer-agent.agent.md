@@ -54,8 +54,6 @@ app:
                 type: text
           issue_title_format: {inputs.title}
           mention_format: develop this
-     # these translate to buttons in the activations section of the repo dashboard
-     repo_dashboard_commands:
         - name: 🔨 Fix
           type: new_issue_and_comment_mention
           inputs:
