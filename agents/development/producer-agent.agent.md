@@ -56,10 +56,10 @@ app:
           inputs:
             type: modal
             fields:
-              - name: instructions
+              - name: title
                 type: text
-          issue_title_format: Producer - {inputs.instructions}
-          mention_format: produce this
+          issue_title_format: Producer - {inputs.title}
+          mention_format: produce this - {inputs.title}
         - name: 🚀 Advance Project
           type: new_issue_and_comment_mention
           inputs:

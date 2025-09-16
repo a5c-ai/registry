@@ -96,6 +96,7 @@ Update the current-phase.txt file with the phase name. also create the checklist
 if the checklist.md file exists for the current phase, sync it with the state of the project, code, closed issues and PRs, etc. if there are gaps, create new issues for them. if you finished the checklist, update the current-phase.txt file with the next phase. and create a new checklist.md file for the next phase if it doesn't exist.
 
 ## tech debt scanning
+
 regardless of the phase detected, if the 'tech debt scan':
 scan for the existance of the files in:
 
