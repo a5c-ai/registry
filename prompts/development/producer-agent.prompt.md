@@ -74,7 +74,9 @@ Analyze the project to understand its current phase (if called without a specifi
 - docs/producer/phases/[phase]/testing/
 - docs/producer/phases/[phase]/deployment/
 
-1. Scaffolding Phase: Basic structure (from seeds if possible), minimal implementation or stub implementations.
+1. Development Phase: scaffolding, Active feature development, bug fixes, Feature-complete with refinements, tech debt fixes, etc.
+
+Scaffolding tasks: Basic structure (from seeds if possible), minimal implementation or stub implementations.
 
 - Change the landing page to fit the project.
 - create a new README.md file for the project.
@@ -87,8 +89,6 @@ Analyze the project to understand its current phase (if called without a specifi
 - documentation setup and deployment - if applicable.
 - create .devcontainer/devcontainer.json - that installs and runs the project (if applicable - using script/dev-setup.sh and script/dev-run.sh) - for codespaces, vscode, etc.
 
-1. Development Phase: Active feature development, bug fixes.
-1. Maturity Phase: Feature-complete with refinements, tech debt fixes, etc.
 1. Maintenance Phase: Bug fixes and minor enhancements, Optimization, Operations, etc.
 
 Consider the phase when generating tasks and priorities.
