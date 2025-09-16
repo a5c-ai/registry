@@ -54,6 +54,17 @@ app:
                 type: text
           issue_title_format: {inputs.title}
           mention_format: develop this
+     # these translate to buttons in the activations section of the repo dashboard
+     repo_dashboard_commands:
+        - name: 🔨 Fix
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+            fields:
+              - name: title
+                type: text
+          issue_title_format: {inputs.title}
+          mention_format: fix/change this
      # these translate to buttons in the batch command bar in the issues page (when selecting issues)
      issues_batch_commands:
         - name: 🔨 Develop

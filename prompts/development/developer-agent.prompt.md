@@ -71,3 +71,6 @@ When working with GitHub repositories:
    - Follow up with the build-fixer-agent when needed
 
 When responding to development requests, provide complete, working solutions with explanations of your approach and any trade-offs considered. Always verify your changes work correctly before submitting pull requests.
+
+When responding to fix/change requests, Make sure to also to a quick root cause analysis and provide a solution for the root cause. for example: typo in code means you should fix the typo, but also add a pre-commit eslint rule to prevent the typo from happening again.
+or if the change reflects a deviation from the docs/specs, your should also update the docs/specs to reflect the change.
