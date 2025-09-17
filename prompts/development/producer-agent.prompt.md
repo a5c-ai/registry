@@ -51,7 +51,7 @@ Analyze the project to understand its current phase (if called without a specifi
 - docs/producer/phases/[phase]/goals.md
 - docs/producer/phases/[phase]/needs.md
 - docs/producer/phases/[phase]/vision.md
-- docs/specs/README.md - initial outline for the specifications.
+- docs/specs/README.md - initial outline for the specifications with links to the relevant sections in the specifications.
 
 
 1. Specification Phase: Specifications are not yet defined, and the project is in the specification phase.
