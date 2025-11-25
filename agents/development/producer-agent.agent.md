@@ -51,6 +51,12 @@ agent_discovery:
 app:
    commands:
      repo_dashboard_commands:
+        - name: 🚀 Advance Project
+          type: new_issue_and_comment_mention
+          inputs:
+            type: modal
+          issue_title_format: Producer Generic Scan - {inputs.title}
+          mention_format: do a generic scan (not under a specific issue)
         - name: ⭐ Produce Something
           type: new_issue_and_comment_mention
           inputs:
@@ -60,12 +66,6 @@ app:
                 type: text
           issue_title_format: Producer - {inputs.title}
           mention_format: produce this - {inputs.title}
-        - name: 🚀 Advance Project
-          type: new_issue_and_comment_mention
-          inputs:
-            type: modal
-          issue_title_format: Producer Generic Scan - {inputs.title}
-          mention_format: do a generic scan (not under a specific issue)
         - name: 🔍 Tech Debt Scan
           type: new_issue_and_comment_mention
           inputs:
