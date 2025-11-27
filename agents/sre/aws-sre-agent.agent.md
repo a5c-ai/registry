@@ -23,7 +23,7 @@ from: sre-base-agent
 
 max_turns: 15
 verbose: false
-timeout: 25
+timeout: 120
 
 # Trigger Configuration
 events: ["issues", "issue_comment", "pull_request", "pull_request_review"]
